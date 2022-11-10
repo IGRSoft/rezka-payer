@@ -20,6 +20,11 @@ TODO:
  * Search from details
  * Subtitles
 
+Known Issues:
+ * not sorts series
+ * tvOS icon
+ * some media not parses
+
 ---
 
 *WIP - work in progress
