@@ -1,0 +1,1249 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A50D8FCF28ABF5E7008C66AA /* MediaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FCE28ABF5E7008C66AA /* MediaContentView.swift */; };
+		A50D8FD028ABF5E7008C66AA /* MediaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FCE28ABF5E7008C66AA /* MediaContentView.swift */; };
+		A50D8FD128ABF5E7008C66AA /* MediaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FCE28ABF5E7008C66AA /* MediaContentView.swift */; };
+		A50D8FD428ABF6AC008C66AA /* MediaCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FD328ABF6AC008C66AA /* MediaCategoriesViewModel.swift */; };
+		A50D8FD528ABF6AC008C66AA /* MediaCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FD328ABF6AC008C66AA /* MediaCategoriesViewModel.swift */; };
+		A50D8FD628ABF6AC008C66AA /* MediaCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FD328ABF6AC008C66AA /* MediaCategoriesViewModel.swift */; };
+		A50D8FDA28ABF7CF008C66AA /* MediaBookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FD928ABF7CF008C66AA /* MediaBookmarksViewModel.swift */; };
+		A50D8FDB28ABF7CF008C66AA /* MediaBookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FD928ABF7CF008C66AA /* MediaBookmarksViewModel.swift */; };
+		A50D8FDC28ABF7CF008C66AA /* MediaBookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FD928ABF7CF008C66AA /* MediaBookmarksViewModel.swift */; };
+		A50D8FDE28ABF7E4008C66AA /* MediaSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FDD28ABF7E4008C66AA /* MediaSearchView.swift */; };
+		A50D8FDF28ABF7E4008C66AA /* MediaSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FDD28ABF7E4008C66AA /* MediaSearchView.swift */; };
+		A50D8FE028ABF7E4008C66AA /* MediaSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FDD28ABF7E4008C66AA /* MediaSearchView.swift */; };
+		A50D8FE628ABF838008C66AA /* rezka-player--InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A50D8FE228ABF838008C66AA /* rezka-player--InfoPlist.strings */; };
+		A50D8FE728ABF838008C66AA /* rezka-player--InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A50D8FE228ABF838008C66AA /* rezka-player--InfoPlist.strings */; };
+		A50D8FE828ABF838008C66AA /* rezka-player--InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A50D8FE228ABF838008C66AA /* rezka-player--InfoPlist.strings */; };
+		A50D8FEE28ABF9A3008C66AA /* MediaHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FED28ABF9A3008C66AA /* MediaHistoryView.swift */; };
+		A50D8FEF28ABF9A3008C66AA /* MediaHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FED28ABF9A3008C66AA /* MediaHistoryView.swift */; };
+		A50D8FF028ABF9A3008C66AA /* MediaHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FED28ABF9A3008C66AA /* MediaHistoryView.swift */; };
+		A559FEA429117EEE0004380B /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559FEA329117EEE0004380B /* PlayerViewController.swift */; };
+		A559FEA529117EEE0004380B /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559FEA329117EEE0004380B /* PlayerViewController.swift */; };
+		A559FEA629117EEE0004380B /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559FEA329117EEE0004380B /* PlayerViewController.swift */; };
+		A57D2DB028AEB11600E98298 /* MediaItemViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2DAF28AEB11600E98298 /* MediaItemViewView.swift */; };
+		A57D2DB128AEB11600E98298 /* MediaItemViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2DAF28AEB11600E98298 /* MediaItemViewView.swift */; };
+		A57D2DB228AEB11600E98298 /* MediaItemViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2DAF28AEB11600E98298 /* MediaItemViewView.swift */; };
+		A57D2DB428AEB2CD00E98298 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2DB328AEB2CD00E98298 /* Media.swift */; };
+		A57D2DB528AEB2CD00E98298 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2DB328AEB2CD00E98298 /* Media.swift */; };
+		A57D2DB628AEB2CD00E98298 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2DB328AEB2CD00E98298 /* Media.swift */; };
+		A57D2DB828AEB34600E98298 /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2DB728AEB34600E98298 /* MediaViewModel.swift */; };
+		A57D2DB928AEB34600E98298 /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2DB728AEB34600E98298 /* MediaViewModel.swift */; };
+		A57D2DBA28AEB34600E98298 /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2DB728AEB34600E98298 /* MediaViewModel.swift */; };
+		A57D2DBD28AEB39D00E98298 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2DBC28AEB39D00E98298 /* DataStore.swift */; };
+		A57D2DBE28AEB39D00E98298 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2DBC28AEB39D00E98298 /* DataStore.swift */; };
+		A57D2DBF28AEB39D00E98298 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2DBC28AEB39D00E98298 /* DataStore.swift */; };
+		A598C17628B2A4A60034717C /* DataFetchPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17528B2A4A60034717C /* DataFetchPhase.swift */; };
+		A598C17728B2A4A60034717C /* DataFetchPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17528B2A4A60034717C /* DataFetchPhase.swift */; };
+		A598C17828B2A4A60034717C /* DataFetchPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17528B2A4A60034717C /* DataFetchPhase.swift */; };
+		A598C17E28B2A5670034717C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17A28B2A5670034717C /* Cache.swift */; };
+		A598C17F28B2A5670034717C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17A28B2A5670034717C /* Cache.swift */; };
+		A598C18028B2A5670034717C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17A28B2A5670034717C /* Cache.swift */; };
+		A598C18128B2A5670034717C /* CacheEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17B28B2A5670034717C /* CacheEntry.swift */; };
+		A598C18228B2A5670034717C /* CacheEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17B28B2A5670034717C /* CacheEntry.swift */; };
+		A598C18328B2A5670034717C /* CacheEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17B28B2A5670034717C /* CacheEntry.swift */; };
+		A598C18428B2A5670034717C /* CacheImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17C28B2A5670034717C /* CacheImplementation.swift */; };
+		A598C18528B2A5670034717C /* CacheImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17C28B2A5670034717C /* CacheImplementation.swift */; };
+		A598C18628B2A5670034717C /* CacheImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17C28B2A5670034717C /* CacheImplementation.swift */; };
+		A598C18728B2A5670034717C /* KeysTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17D28B2A5670034717C /* KeysTracker.swift */; };
+		A598C18828B2A5670034717C /* KeysTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17D28B2A5670034717C /* KeysTracker.swift */; };
+		A598C18928B2A5670034717C /* KeysTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C17D28B2A5670034717C /* KeysTracker.swift */; };
+		A598C18E28B2A7730034717C /* EmptyPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C18D28B2A7730034717C /* EmptyPlaceholderView.swift */; };
+		A598C18F28B2A7730034717C /* EmptyPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C18D28B2A7730034717C /* EmptyPlaceholderView.swift */; };
+		A598C19028B2A7730034717C /* EmptyPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C18D28B2A7730034717C /* EmptyPlaceholderView.swift */; };
+		A598C19328B2A7B00034717C /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C19228B2A7B00034717C /* RetryView.swift */; };
+		A598C19428B2A7B00034717C /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C19228B2A7B00034717C /* RetryView.swift */; };
+		A598C19528B2A7B00034717C /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C19228B2A7B00034717C /* RetryView.swift */; };
+		A5A7416128F6F34500B884F7 /* DetailedMediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7416028F6F34500B884F7 /* DetailedMediaItemView.swift */; };
+		A5A7416228F6F34500B884F7 /* DetailedMediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7416028F6F34500B884F7 /* DetailedMediaItemView.swift */; };
+		A5A7416328F6F34500B884F7 /* DetailedMediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7416028F6F34500B884F7 /* DetailedMediaItemView.swift */; };
+		A5A7416A28F738F500B884F7 /* DetailedMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7416928F738F500B884F7 /* DetailedMedia.swift */; };
+		A5A7416B28F738F500B884F7 /* DetailedMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7416928F738F500B884F7 /* DetailedMedia.swift */; };
+		A5A7416C28F738F500B884F7 /* DetailedMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7416928F738F500B884F7 /* DetailedMedia.swift */; };
+		A5A7416F28F73A4200B884F7 /* DetailedMediaRezkaAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7416E28F73A4200B884F7 /* DetailedMediaRezkaAPIResponse.swift */; };
+		A5A7417028F73A4200B884F7 /* DetailedMediaRezkaAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7416E28F73A4200B884F7 /* DetailedMediaRezkaAPIResponse.swift */; };
+		A5A7417128F73A4200B884F7 /* DetailedMediaRezkaAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7416E28F73A4200B884F7 /* DetailedMediaRezkaAPIResponse.swift */; };
+		A5A7417828F73E0D00B884F7 /* DetailedMediaItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7417728F73E0D00B884F7 /* DetailedMediaItemViewModel.swift */; };
+		A5A7417928F73E0D00B884F7 /* DetailedMediaItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7417728F73E0D00B884F7 /* DetailedMediaItemViewModel.swift */; };
+		A5A7417A28F73E0D00B884F7 /* DetailedMediaItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7417728F73E0D00B884F7 /* DetailedMediaItemViewModel.swift */; };
+		A5A7417D28F7F0A200B884F7 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7417C28F7F0A200B884F7 /* ImagePreviewView.swift */; };
+		A5A7417E28F7F0A200B884F7 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7417C28F7F0A200B884F7 /* ImagePreviewView.swift */; };
+		A5A7417F28F7F0A200B884F7 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7417C28F7F0A200B884F7 /* ImagePreviewView.swift */; };
+		A5A7418128F7F1CA00B884F7 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7418028F7F1CA00B884F7 /* CacheAsyncImage.swift */; };
+		A5A7418228F7F1CA00B884F7 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7418028F7F1CA00B884F7 /* CacheAsyncImage.swift */; };
+		A5A7418328F7F1CA00B884F7 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7418028F7F1CA00B884F7 /* CacheAsyncImage.swift */; };
+		A5A7418628F7FF4400B884F7 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = A5A7418528F7FF4400B884F7 /* OrderedCollections */; };
+		A5A7418928F7FF5500B884F7 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = A5A7418828F7FF5500B884F7 /* OrderedCollections */; };
+		A5A7418B28F7FF5B00B884F7 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = A5A7418A28F7FF5B00B884F7 /* OrderedCollections */; };
+		A5A7419128F82F9100B884F7 /* Dictionary+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419028F82F9100B884F7 /* Dictionary+SwiftUI.swift */; };
+		A5A7419228F82F9100B884F7 /* Dictionary+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419028F82F9100B884F7 /* Dictionary+SwiftUI.swift */; };
+		A5A7419328F82F9100B884F7 /* Dictionary+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419028F82F9100B884F7 /* Dictionary+SwiftUI.swift */; };
+		A5A7419528F8745800B884F7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419428F8745800B884F7 /* MenuView.swift */; };
+		A5A7419628F8745800B884F7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419428F8745800B884F7 /* MenuView.swift */; };
+		A5A7419728F8745800B884F7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419428F8745800B884F7 /* MenuView.swift */; };
+		A5A7419928F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419828F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift */; };
+		A5A7419A28F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419828F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift */; };
+		A5A7419B28F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419828F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift */; };
+		A5A741AA2902D76900B884F7 /* SizeClassAdaptiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741A92902D76900B884F7 /* SizeClassAdaptiveView.swift */; };
+		A5A741AB2902D76900B884F7 /* SizeClassAdaptiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741A92902D76900B884F7 /* SizeClassAdaptiveView.swift */; };
+		A5A741AC2902D76900B884F7 /* SizeClassAdaptiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741A92902D76900B884F7 /* SizeClassAdaptiveView.swift */; };
+		A5A741AE2902D86600B884F7 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741AD2902D86600B884F7 /* CategoryList.swift */; };
+		A5A741AF2902D86600B884F7 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741AD2902D86600B884F7 /* CategoryList.swift */; };
+		A5A741B02902D86600B884F7 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741AD2902D86600B884F7 /* CategoryList.swift */; };
+		A5A741B22902D8B300B884F7 /* PreviewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741B12902D8B300B884F7 /* PreviewDetailView.swift */; };
+		A5A741B32902D8B300B884F7 /* PreviewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741B12902D8B300B884F7 /* PreviewDetailView.swift */; };
+		A5A741B42902D8B300B884F7 /* PreviewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741B12902D8B300B884F7 /* PreviewDetailView.swift */; };
+		A5A741B82902D97200B884F7 /* CategoriesListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741B72902D97200B884F7 /* CategoriesListItem.swift */; };
+		A5A741B92902D97200B884F7 /* CategoriesListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741B72902D97200B884F7 /* CategoriesListItem.swift */; };
+		A5A741BA2902D97200B884F7 /* CategoriesListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741B72902D97200B884F7 /* CategoriesListItem.swift */; };
+		A5A741BC2902DBCD00B884F7 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741BB2902DBCD00B884F7 /* CategoryView.swift */; };
+		A5A741BD2902DBCD00B884F7 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741BB2902DBCD00B884F7 /* CategoryView.swift */; };
+		A5A741BE2902DBCD00B884F7 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741BB2902DBCD00B884F7 /* CategoryView.swift */; };
+		A5A741C02902DC0200B884F7 /* SubcategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741BF2902DC0200B884F7 /* SubcategoryListView.swift */; };
+		A5A741C12902DC0200B884F7 /* SubcategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741BF2902DC0200B884F7 /* SubcategoryListView.swift */; };
+		A5A741C22902DC0200B884F7 /* SubcategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741BF2902DC0200B884F7 /* SubcategoryListView.swift */; };
+		A5A741C42902DC2A00B884F7 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741C32902DC2A00B884F7 /* ListItemView.swift */; };
+		A5A741C52902DC2A00B884F7 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741C32902DC2A00B884F7 /* ListItemView.swift */; };
+		A5A741C62902DC2A00B884F7 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741C32902DC2A00B884F7 /* ListItemView.swift */; };
+		A5A741C82902DC7600B884F7 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741C72902DC7600B884F7 /* CategoryListView.swift */; };
+		A5A741C92902DC7600B884F7 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741C72902DC7600B884F7 /* CategoryListView.swift */; };
+		A5A741CA2902DC7600B884F7 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741C72902DC7600B884F7 /* CategoryListView.swift */; };
+		A5A741CC2902DE8B00B884F7 /* RezkaNavigationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741CB2902DE8B00B884F7 /* RezkaNavigationApi.swift */; };
+		A5A741CD2902DE8B00B884F7 /* RezkaNavigationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741CB2902DE8B00B884F7 /* RezkaNavigationApi.swift */; };
+		A5A741CE2902DE8B00B884F7 /* RezkaNavigationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741CB2902DE8B00B884F7 /* RezkaNavigationApi.swift */; };
+		A5A741D02902DEBA00B884F7 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741CF2902DEBA00B884F7 /* ApiConstants.swift */; };
+		A5A741D12902DEBA00B884F7 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741CF2902DEBA00B884F7 /* ApiConstants.swift */; };
+		A5A741D22902DEBA00B884F7 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741CF2902DEBA00B884F7 /* ApiConstants.swift */; };
+		A5A741D52902E10500B884F7 /* RezkaConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D42902E10500B884F7 /* RezkaConstantsApi.swift */; };
+		A5A741D62902E10500B884F7 /* RezkaConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D42902E10500B884F7 /* RezkaConstantsApi.swift */; };
+		A5A741D72902E10500B884F7 /* RezkaConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D42902E10500B884F7 /* RezkaConstantsApi.swift */; };
+		A5A741D92902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D82902E5AA00B884F7 /* NavigationRezkaApiResponse.swift */; };
+		A5A741DA2902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D82902E5AA00B884F7 /* NavigationRezkaApiResponse.swift */; };
+		A5A741DB2902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D82902E5AA00B884F7 /* NavigationRezkaApiResponse.swift */; };
+		A5A741DD2902EB3E00B884F7 /* Strings+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741DC2902EB3E00B884F7 /* Strings+Filter.swift */; };
+		A5A741DE2902EB3E00B884F7 /* Strings+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741DC2902EB3E00B884F7 /* Strings+Filter.swift */; };
+		A5A741DF2902EB3E00B884F7 /* Strings+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741DC2902EB3E00B884F7 /* Strings+Filter.swift */; };
+		A5A741E12902F48400B884F7 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741E02902F48400B884F7 /* ContentViewModel.swift */; };
+		A5A741E22902F48400B884F7 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741E02902F48400B884F7 /* ContentViewModel.swift */; };
+		A5A741E32902F48400B884F7 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741E02902F48400B884F7 /* ContentViewModel.swift */; };
+		A5B79D2F28ABEF6A006CAF8E /* rezka_playerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B79D1F28ABEF68006CAF8E /* rezka_playerApp.swift */; };
+		A5B79D3028ABEF6A006CAF8E /* rezka_playerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B79D1F28ABEF68006CAF8E /* rezka_playerApp.swift */; };
+		A5B79D3128ABEF6A006CAF8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B79D2028ABEF68006CAF8E /* ContentView.swift */; };
+		A5B79D3228ABEF6A006CAF8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B79D2028ABEF68006CAF8E /* ContentView.swift */; };
+		A5B79D3328ABEF6A006CAF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B79D2128ABEF6A006CAF8E /* Assets.xcassets */; };
+		A5B79D3428ABEF6A006CAF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B79D2128ABEF6A006CAF8E /* Assets.xcassets */; };
+		A5B79D4F28ABF10C006CAF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B79D2128ABEF6A006CAF8E /* Assets.xcassets */; };
+		A5B79D5028ABF110006CAF8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B79D2028ABEF68006CAF8E /* ContentView.swift */; };
+		A5B79D5128ABF115006CAF8E /* rezka_playerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B79D1F28ABEF68006CAF8E /* rezka_playerApp.swift */; };
+		A5BB8F4A28AEB4E30070CC77 /* CategoryMedias.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8F4928AEB4E30070CC77 /* CategoryMedias.swift */; };
+		A5BB8F4B28AEB4E30070CC77 /* CategoryMedias.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8F4928AEB4E30070CC77 /* CategoryMedias.swift */; };
+		A5BB8F4C28AEB4E30070CC77 /* CategoryMedias.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8F4928AEB4E30070CC77 /* CategoryMedias.swift */; };
+		A5BB8F4E28AEB5200070CC77 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8F4D28AEB5200070CC77 /* Category.swift */; };
+		A5BB8F4F28AEB5200070CC77 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8F4D28AEB5200070CC77 /* Category.swift */; };
+		A5BB8F5028AEB5200070CC77 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8F4D28AEB5200070CC77 /* Category.swift */; };
+		A5BB8F5328AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8F5228AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift */; };
+		A5BB8F5428AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8F5228AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift */; };
+		A5BB8F5528AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8F5228AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift */; };
+		A5BB8F5728AEB8920070CC77 /* RezkaMediaApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8F5628AEB8920070CC77 /* RezkaMediaApi.swift */; };
+		A5BB8F5828AEB8920070CC77 /* RezkaMediaApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8F5628AEB8920070CC77 /* RezkaMediaApi.swift */; };
+		A5BB8F5928AEB8920070CC77 /* RezkaMediaApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8F5628AEB8920070CC77 /* RezkaMediaApi.swift */; };
+		A5C2236229053CCC002B49D5 /* CaseIterable+Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C2236129053CCC002B49D5 /* CaseIterable+Index.swift */; };
+		A5C2236329053CCC002B49D5 /* CaseIterable+Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C2236129053CCC002B49D5 /* CaseIterable+Index.swift */; };
+		A5C2236429053CCC002B49D5 /* CaseIterable+Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C2236129053CCC002B49D5 /* CaseIterable+Index.swift */; };
+		A5C22366290551DE002B49D5 /* StreamRezkaApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C22365290551DE002B49D5 /* StreamRezkaApiResponse.swift */; };
+		A5C22367290551DE002B49D5 /* StreamRezkaApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C22365290551DE002B49D5 /* StreamRezkaApiResponse.swift */; };
+		A5C22368290551DE002B49D5 /* StreamRezkaApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C22365290551DE002B49D5 /* StreamRezkaApiResponse.swift */; };
+		A5C2236A29056FBB002B49D5 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C2236929056FBB002B49D5 /* String+Base64.swift */; };
+		A5C2236B29056FBB002B49D5 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C2236929056FBB002B49D5 /* String+Base64.swift */; };
+		A5C2236C29056FBB002B49D5 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C2236929056FBB002B49D5 /* String+Base64.swift */; };
+		A5DF36DE28EC871B00E0C5C0 /* MediaContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DF36DD28EC871B00E0C5C0 /* MediaContentViewModel.swift */; };
+		A5DF36DF28EC871B00E0C5C0 /* MediaContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DF36DD28EC871B00E0C5C0 /* MediaContentViewModel.swift */; };
+		A5DF36E028EC871B00E0C5C0 /* MediaContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DF36DD28EC871B00E0C5C0 /* MediaContentViewModel.swift */; };
+		A5DF36E328EC9AB200E0C5C0 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A5DF36E228EC9AB200E0C5C0 /* SwiftSoup */; };
+		A5DF36E628EC9ABF00E0C5C0 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A5DF36E528EC9ABF00E0C5C0 /* SwiftSoup */; };
+		A5DF36E828EC9AC600E0C5C0 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A5DF36E728EC9AC600E0C5C0 /* SwiftSoup */; };
+		A5F6AB5E291D6864001D21FA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6AB5D291D6864001D21FA /* SearchBarView.swift */; };
+		A5F6AB5F291D6864001D21FA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6AB5D291D6864001D21FA /* SearchBarView.swift */; };
+		A5F6AB60291D6864001D21FA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6AB5D291D6864001D21FA /* SearchBarView.swift */; };
+		A5F6AB62291D68DE001D21FA /* MediaSearchContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6AB61291D68DE001D21FA /* MediaSearchContentViewModel.swift */; };
+		A5F6AB63291D68DE001D21FA /* MediaSearchContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6AB61291D68DE001D21FA /* MediaSearchContentViewModel.swift */; };
+		A5F6AB64291D68DE001D21FA /* MediaSearchContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6AB61291D68DE001D21FA /* MediaSearchContentViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A50D8FCE28ABF5E7008C66AA /* MediaContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContentView.swift; sourceTree = "<group>"; };
+		A50D8FD328ABF6AC008C66AA /* MediaCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCategoriesViewModel.swift; sourceTree = "<group>"; };
+		A50D8FD928ABF7CF008C66AA /* MediaBookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaBookmarksViewModel.swift; sourceTree = "<group>"; };
+		A50D8FDD28ABF7E4008C66AA /* MediaSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSearchView.swift; sourceTree = "<group>"; };
+		A50D8FE328ABF838008C66AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = "Base.lproj/rezka-player--InfoPlist.strings"; sourceTree = "<group>"; };
+		A50D8FED28ABF9A3008C66AA /* MediaHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaHistoryView.swift; sourceTree = "<group>"; };
+		A559FEA329117EEE0004380B /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		A57D2DAF28AEB11600E98298 /* MediaItemViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemViewView.swift; sourceTree = "<group>"; };
+		A57D2DB328AEB2CD00E98298 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		A57D2DB728AEB34600E98298 /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
+		A57D2DBC28AEB39D00E98298 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		A598C17528B2A4A60034717C /* DataFetchPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchPhase.swift; sourceTree = "<group>"; };
+		A598C17A28B2A5670034717C /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		A598C17B28B2A5670034717C /* CacheEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheEntry.swift; sourceTree = "<group>"; };
+		A598C17C28B2A5670034717C /* CacheImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheImplementation.swift; sourceTree = "<group>"; };
+		A598C17D28B2A5670034717C /* KeysTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeysTracker.swift; sourceTree = "<group>"; };
+		A598C18D28B2A7730034717C /* EmptyPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceholderView.swift; sourceTree = "<group>"; };
+		A598C19228B2A7B00034717C /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
+		A5A7416028F6F34500B884F7 /* DetailedMediaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMediaItemView.swift; sourceTree = "<group>"; };
+		A5A7416928F738F500B884F7 /* DetailedMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMedia.swift; sourceTree = "<group>"; };
+		A5A7416E28F73A4200B884F7 /* DetailedMediaRezkaAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMediaRezkaAPIResponse.swift; sourceTree = "<group>"; };
+		A5A7417728F73E0D00B884F7 /* DetailedMediaItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMediaItemViewModel.swift; sourceTree = "<group>"; };
+		A5A7417C28F7F0A200B884F7 /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
+		A5A7418028F7F1CA00B884F7 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
+		A5A7419028F82F9100B884F7 /* Dictionary+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+SwiftUI.swift"; sourceTree = "<group>"; };
+		A5A7419428F8745800B884F7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		A5A7419828F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesMediaRezkaAPIResponse.swift; sourceTree = "<group>"; };
+		A5A7419C28F88E6C00B884F7 /* rezka-player-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "rezka-player-Info.plist"; sourceTree = "<group>"; };
+		A5A741A92902D76900B884F7 /* SizeClassAdaptiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeClassAdaptiveView.swift; sourceTree = "<group>"; };
+		A5A741AD2902D86600B884F7 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
+		A5A741B12902D8B300B884F7 /* PreviewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDetailView.swift; sourceTree = "<group>"; };
+		A5A741B72902D97200B884F7 /* CategoriesListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListItem.swift; sourceTree = "<group>"; };
+		A5A741BB2902DBCD00B884F7 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		A5A741BF2902DC0200B884F7 /* SubcategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryListView.swift; sourceTree = "<group>"; };
+		A5A741C32902DC2A00B884F7 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
+		A5A741C72902DC7600B884F7 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		A5A741CB2902DE8B00B884F7 /* RezkaNavigationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RezkaNavigationApi.swift; sourceTree = "<group>"; };
+		A5A741CF2902DEBA00B884F7 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		A5A741D42902E10500B884F7 /* RezkaConstantsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RezkaConstantsApi.swift; sourceTree = "<group>"; };
+		A5A741D82902E5AA00B884F7 /* NavigationRezkaApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRezkaApiResponse.swift; sourceTree = "<group>"; };
+		A5A741DC2902EB3E00B884F7 /* Strings+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Filter.swift"; sourceTree = "<group>"; };
+		A5A741E02902F48400B884F7 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		A5B79D1F28ABEF68006CAF8E /* rezka_playerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rezka_playerApp.swift; sourceTree = "<group>"; };
+		A5B79D2028ABEF68006CAF8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A5B79D2128ABEF6A006CAF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5B79D2628ABEF6A006CAF8E /* rezka-player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rezka-player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5B79D2C28ABEF6A006CAF8E /* rezka-player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rezka-player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5B79D2E28ABEF6A006CAF8E /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		A5B79D4128ABF0D5006CAF8E /* rezka-player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rezka-player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5BB8F4928AEB4E30070CC77 /* CategoryMedias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMedias.swift; sourceTree = "<group>"; };
+		A5BB8F4D28AEB5200070CC77 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		A5BB8F5228AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRezkaAPIResponse.swift; sourceTree = "<group>"; };
+		A5BB8F5628AEB8920070CC77 /* RezkaMediaApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RezkaMediaApi.swift; sourceTree = "<group>"; };
+		A5C2236129053CCC002B49D5 /* CaseIterable+Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseIterable+Index.swift"; sourceTree = "<group>"; };
+		A5C22365290551DE002B49D5 /* StreamRezkaApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamRezkaApiResponse.swift; sourceTree = "<group>"; };
+		A5C2236929056FBB002B49D5 /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
+		A5DF36DD28EC871B00E0C5C0 /* MediaContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContentViewModel.swift; sourceTree = "<group>"; };
+		A5F6AB5D291D6864001D21FA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		A5F6AB61291D68DE001D21FA /* MediaSearchContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSearchContentViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A5B79D2328ABEF6A006CAF8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5A7418628F7FF4400B884F7 /* OrderedCollections in Frameworks */,
+				A5DF36E328EC9AB200E0C5C0 /* SwiftSoup in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B79D2928ABEF6A006CAF8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5A7418928F7FF5500B884F7 /* OrderedCollections in Frameworks */,
+				A5DF36E628EC9ABF00E0C5C0 /* SwiftSoup in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B79D3E28ABF0D5006CAF8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5A7418B28F7FF5B00B884F7 /* OrderedCollections in Frameworks */,
+				A5DF36E828EC9AC600E0C5C0 /* SwiftSoup in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A50D8FCD28ABF503008C66AA /* MediaContent */ = {
+			isa = PBXGroup;
+			children = (
+				A50D8FCE28ABF5E7008C66AA /* MediaContentView.swift */,
+				A5DF36DD28EC871B00E0C5C0 /* MediaContentViewModel.swift */,
+			);
+			path = MediaContent;
+			sourceTree = "<group>";
+		};
+		A50D8FD228ABF691008C66AA /* MediaCategories */ = {
+			isa = PBXGroup;
+			children = (
+				A5BB8F4928AEB4E30070CC77 /* CategoryMedias.swift */,
+				A5BB8F4D28AEB5200070CC77 /* Category.swift */,
+				A50D8FD328ABF6AC008C66AA /* MediaCategoriesViewModel.swift */,
+			);
+			path = MediaCategories;
+			sourceTree = "<group>";
+		};
+		A50D8FD728ABF738008C66AA /* MediaSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A50D8FDD28ABF7E4008C66AA /* MediaSearchView.swift */,
+				A5F6AB5D291D6864001D21FA /* SearchBarView.swift */,
+				A5F6AB61291D68DE001D21FA /* MediaSearchContentViewModel.swift */,
+			);
+			path = MediaSearch;
+			sourceTree = "<group>";
+		};
+		A50D8FD828ABF7AD008C66AA /* MediaBookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				A50D8FD928ABF7CF008C66AA /* MediaBookmarksViewModel.swift */,
+			);
+			path = MediaBookmarks;
+			sourceTree = "<group>";
+		};
+		A50D8FE128ABF838008C66AA /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				A50D8FE228ABF838008C66AA /* rezka-player--InfoPlist.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
+		A50D8FEC28ABF990008C66AA /* MediaHistory */ = {
+			isa = PBXGroup;
+			children = (
+				A50D8FED28ABF9A3008C66AA /* MediaHistoryView.swift */,
+			);
+			path = MediaHistory;
+			sourceTree = "<group>";
+		};
+		A50D8FF528AC069F008C66AA /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				A5A7418028F7F1CA00B884F7 /* CacheAsyncImage.swift */,
+				A5A7419428F8745800B884F7 /* MenuView.swift */,
+				A5A741A92902D76900B884F7 /* SizeClassAdaptiveView.swift */,
+				A5A741B62902D93200B884F7 /* Navigation */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		A559FEA229117EDB0004380B /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				A559FEA329117EEE0004380B /* PlayerViewController.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		A57D2DAE28AEB0F100E98298 /* MediaItem */ = {
+			isa = PBXGroup;
+			children = (
+				A57D2DAF28AEB11600E98298 /* MediaItemViewView.swift */,
+				A57D2DB328AEB2CD00E98298 /* Media.swift */,
+				A57D2DB728AEB34600E98298 /* MediaViewModel.swift */,
+			);
+			path = MediaItem;
+			sourceTree = "<group>";
+		};
+		A57D2DBB28AEB38F00E98298 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				A598C17928B2A5670034717C /* Cache */,
+				A57D2DBC28AEB39D00E98298 /* DataStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		A598C17928B2A5670034717C /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				A598C17A28B2A5670034717C /* Cache.swift */,
+				A598C17B28B2A5670034717C /* CacheEntry.swift */,
+				A598C17C28B2A5670034717C /* CacheImplementation.swift */,
+				A598C17D28B2A5670034717C /* KeysTracker.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		A598C18B28B2A7540034717C /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				A5A7417628F73DA300B884F7 /* DetailedMediaItem */,
+				A598C18C28B2A7630034717C /* General */,
+				A5A7417B28F7F08500B884F7 /* ImagePreview */,
+				A50D8FD828ABF7AD008C66AA /* MediaBookmarks */,
+				A50D8FD228ABF691008C66AA /* MediaCategories */,
+				A50D8FEC28ABF990008C66AA /* MediaHistory */,
+				A57D2DAE28AEB0F100E98298 /* MediaItem */,
+				A50D8FCD28ABF503008C66AA /* MediaContent */,
+				A50D8FD728ABF738008C66AA /* MediaSearch */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		A598C18C28B2A7630034717C /* General */ = {
+			isa = PBXGroup;
+			children = (
+				A598C18D28B2A7730034717C /* EmptyPlaceholderView.swift */,
+				A598C19228B2A7B00034717C /* RetryView.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		A5A7416428F7097900B884F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A5A7419028F82F9100B884F7 /* Dictionary+SwiftUI.swift */,
+				A5A741DC2902EB3E00B884F7 /* Strings+Filter.swift */,
+				A5C2236129053CCC002B49D5 /* CaseIterable+Index.swift */,
+				A5C2236929056FBB002B49D5 /* String+Base64.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A5A7416D28F73A2D00B884F7 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				A5A7416E28F73A4200B884F7 /* DetailedMediaRezkaAPIResponse.swift */,
+				A5BB8F5228AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift */,
+				A5A7419828F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift */,
+				A5A741D82902E5AA00B884F7 /* NavigationRezkaApiResponse.swift */,
+				A5C22365290551DE002B49D5 /* StreamRezkaApiResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		A5A7417628F73DA300B884F7 /* DetailedMediaItem */ = {
+			isa = PBXGroup;
+			children = (
+				A5A7416928F738F500B884F7 /* DetailedMedia.swift */,
+				A5A7416028F6F34500B884F7 /* DetailedMediaItemView.swift */,
+				A5A7417728F73E0D00B884F7 /* DetailedMediaItemViewModel.swift */,
+			);
+			path = DetailedMediaItem;
+			sourceTree = "<group>";
+		};
+		A5A7417B28F7F08500B884F7 /* ImagePreview */ = {
+			isa = PBXGroup;
+			children = (
+				A5A7417C28F7F0A200B884F7 /* ImagePreviewView.swift */,
+			);
+			path = ImagePreview;
+			sourceTree = "<group>";
+		};
+		A5A741B62902D93200B884F7 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				A5A741AD2902D86600B884F7 /* CategoryList.swift */,
+				A5A741B12902D8B300B884F7 /* PreviewDetailView.swift */,
+				A5A741B72902D97200B884F7 /* CategoriesListItem.swift */,
+				A5A741BB2902DBCD00B884F7 /* CategoryView.swift */,
+				A5A741BF2902DC0200B884F7 /* SubcategoryListView.swift */,
+				A5A741C32902DC2A00B884F7 /* ListItemView.swift */,
+				A5A741C72902DC7600B884F7 /* CategoryListView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		A5A741D32902E0E100B884F7 /* Rezka */ = {
+			isa = PBXGroup;
+			children = (
+				A5A7416D28F73A2D00B884F7 /* Responses */,
+				A5BB8F5628AEB8920070CC77 /* RezkaMediaApi.swift */,
+				A5A741CB2902DE8B00B884F7 /* RezkaNavigationApi.swift */,
+				A5A741D42902E10500B884F7 /* RezkaConstantsApi.swift */,
+			);
+			path = Rezka;
+			sourceTree = "<group>";
+		};
+		A5B79D1928ABEF68006CAF8E = {
+			isa = PBXGroup;
+			children = (
+				A5A7419C28F88E6C00B884F7 /* rezka-player-Info.plist */,
+				A50D8FE128ABF838008C66AA /* Localizations */,
+				A5B79D1E28ABEF68006CAF8E /* Shared */,
+				A5B79D2D28ABEF6A006CAF8E /* macOS */,
+				A5B79D4228ABF0D5006CAF8E /* tvOS */,
+				A5B79D2728ABEF6A006CAF8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A5B79D1E28ABEF68006CAF8E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A559FEA229117EDB0004380B /* Player */,
+				A5A7416428F7097900B884F7 /* Extensions */,
+				A5BB8F5128AEB7940070CC77 /* Api */,
+				A57D2DBB28AEB38F00E98298 /* Stores */,
+				A598C18B28B2A7540034717C /* Media */,
+				A50D8FF528AC069F008C66AA /* CustomView */,
+				A5B79D1F28ABEF68006CAF8E /* rezka_playerApp.swift */,
+				A5B79D2028ABEF68006CAF8E /* ContentView.swift */,
+				A5A741E02902F48400B884F7 /* ContentViewModel.swift */,
+				A5B79D2128ABEF6A006CAF8E /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A5B79D2728ABEF6A006CAF8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5B79D2628ABEF6A006CAF8E /* rezka-player.app */,
+				A5B79D2C28ABEF6A006CAF8E /* rezka-player.app */,
+				A5B79D4128ABF0D5006CAF8E /* rezka-player.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5B79D2D28ABEF6A006CAF8E /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				A5B79D2E28ABEF6A006CAF8E /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		A5B79D4228ABF0D5006CAF8E /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
+		A5BB8F5128AEB7940070CC77 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				A5A741D32902E0E100B884F7 /* Rezka */,
+				A5A741CF2902DEBA00B884F7 /* ApiConstants.swift */,
+				A598C17528B2A4A60034717C /* DataFetchPhase.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5B79D2528ABEF6A006CAF8E /* rezka-player (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5B79D3728ABEF6A006CAF8E /* Build configuration list for PBXNativeTarget "rezka-player (iOS)" */;
+			buildPhases = (
+				A5B79D2228ABEF6A006CAF8E /* Sources */,
+				A5B79D2328ABEF6A006CAF8E /* Frameworks */,
+				A5B79D2428ABEF6A006CAF8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "rezka-player (iOS)";
+			packageProductDependencies = (
+				A5DF36E228EC9AB200E0C5C0 /* SwiftSoup */,
+				A5A7418528F7FF4400B884F7 /* OrderedCollections */,
+			);
+			productName = "rezka-player (iOS)";
+			productReference = A5B79D2628ABEF6A006CAF8E /* rezka-player.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A5B79D2B28ABEF6A006CAF8E /* rezka-player (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5B79D3A28ABEF6A006CAF8E /* Build configuration list for PBXNativeTarget "rezka-player (macOS)" */;
+			buildPhases = (
+				A5B79D2828ABEF6A006CAF8E /* Sources */,
+				A5B79D2928ABEF6A006CAF8E /* Frameworks */,
+				A5B79D2A28ABEF6A006CAF8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "rezka-player (macOS)";
+			packageProductDependencies = (
+				A5DF36E528EC9ABF00E0C5C0 /* SwiftSoup */,
+				A5A7418828F7FF5500B884F7 /* OrderedCollections */,
+			);
+			productName = "rezka-player (macOS)";
+			productReference = A5B79D2C28ABEF6A006CAF8E /* rezka-player.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A5B79D4028ABF0D5006CAF8E /* rezka-player */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5B79D4C28ABF0D6006CAF8E /* Build configuration list for PBXNativeTarget "rezka-player" */;
+			buildPhases = (
+				A5B79D3D28ABF0D5006CAF8E /* Sources */,
+				A5B79D3E28ABF0D5006CAF8E /* Frameworks */,
+				A5B79D3F28ABF0D5006CAF8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "rezka-player";
+			packageProductDependencies = (
+				A5DF36E728EC9AC600E0C5C0 /* SwiftSoup */,
+				A5A7418A28F7FF5B00B884F7 /* OrderedCollections */,
+			);
+			productName = "rezka-player";
+			productReference = A5B79D4128ABF0D5006CAF8E /* rezka-player.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A5B79D1A28ABEF68006CAF8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1400;
+				ORGANIZATIONNAME = "IGR Soft";
+				TargetAttributes = {
+					A5B79D2528ABEF6A006CAF8E = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					A5B79D2B28ABEF6A006CAF8E = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					A5B79D4028ABF0D5006CAF8E = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = A5B79D1D28ABEF68006CAF8E /* Build configuration list for PBXProject "rezka-player" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A5B79D1928ABEF68006CAF8E;
+			packageReferences = (
+				A5DF36E128EC9AB200E0C5C0 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				A5A7418428F7FF4400B884F7 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
+			productRefGroup = A5B79D2728ABEF6A006CAF8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5B79D2528ABEF6A006CAF8E /* rezka-player (iOS) */,
+				A5B79D2B28ABEF6A006CAF8E /* rezka-player (macOS) */,
+				A5B79D4028ABF0D5006CAF8E /* rezka-player */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A5B79D2428ABEF6A006CAF8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50D8FE628ABF838008C66AA /* rezka-player--InfoPlist.strings in Resources */,
+				A5B79D3328ABEF6A006CAF8E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B79D2A28ABEF6A006CAF8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50D8FE728ABF838008C66AA /* rezka-player--InfoPlist.strings in Resources */,
+				A5B79D3428ABEF6A006CAF8E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B79D3F28ABF0D5006CAF8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50D8FE828ABF838008C66AA /* rezka-player--InfoPlist.strings in Resources */,
+				A5B79D4F28ABF10C006CAF8E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A5B79D2228ABEF6A006CAF8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5A7416F28F73A4200B884F7 /* DetailedMediaRezkaAPIResponse.swift in Sources */,
+				A5A741AA2902D76900B884F7 /* SizeClassAdaptiveView.swift in Sources */,
+				A57D2DB828AEB34600E98298 /* MediaViewModel.swift in Sources */,
+				A598C18E28B2A7730034717C /* EmptyPlaceholderView.swift in Sources */,
+				A5A7417828F73E0D00B884F7 /* DetailedMediaItemViewModel.swift in Sources */,
+				A598C19328B2A7B00034717C /* RetryView.swift in Sources */,
+				A5A741B22902D8B300B884F7 /* PreviewDetailView.swift in Sources */,
+				A5A7416128F6F34500B884F7 /* DetailedMediaItemView.swift in Sources */,
+				A5C2236229053CCC002B49D5 /* CaseIterable+Index.swift in Sources */,
+				A5C22366290551DE002B49D5 /* StreamRezkaApiResponse.swift in Sources */,
+				A5A7419528F8745800B884F7 /* MenuView.swift in Sources */,
+				A5A7419928F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */,
+				A5A741D92902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */,
+				A598C18128B2A5670034717C /* CacheEntry.swift in Sources */,
+				A5A741E12902F48400B884F7 /* ContentViewModel.swift in Sources */,
+				A5A741C02902DC0200B884F7 /* SubcategoryListView.swift in Sources */,
+				A5BB8F5328AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift in Sources */,
+				A5A741B82902D97200B884F7 /* CategoriesListItem.swift in Sources */,
+				A5A741D02902DEBA00B884F7 /* ApiConstants.swift in Sources */,
+				A5A741D52902E10500B884F7 /* RezkaConstantsApi.swift in Sources */,
+				A5A741C82902DC7600B884F7 /* CategoryListView.swift in Sources */,
+				A5A7417D28F7F0A200B884F7 /* ImagePreviewView.swift in Sources */,
+				A5A7418128F7F1CA00B884F7 /* CacheAsyncImage.swift in Sources */,
+				A5B79D3128ABEF6A006CAF8E /* ContentView.swift in Sources */,
+				A598C17628B2A4A60034717C /* DataFetchPhase.swift in Sources */,
+				A5A7419128F82F9100B884F7 /* Dictionary+SwiftUI.swift in Sources */,
+				A57D2DB428AEB2CD00E98298 /* Media.swift in Sources */,
+				A598C17E28B2A5670034717C /* Cache.swift in Sources */,
+				A50D8FD428ABF6AC008C66AA /* MediaCategoriesViewModel.swift in Sources */,
+				A50D8FDA28ABF7CF008C66AA /* MediaBookmarksViewModel.swift in Sources */,
+				A5BB8F5728AEB8920070CC77 /* RezkaMediaApi.swift in Sources */,
+				A57D2DB028AEB11600E98298 /* MediaItemViewView.swift in Sources */,
+				A5DF36DE28EC871B00E0C5C0 /* MediaContentViewModel.swift in Sources */,
+				A5C2236A29056FBB002B49D5 /* String+Base64.swift in Sources */,
+				A5A741AE2902D86600B884F7 /* CategoryList.swift in Sources */,
+				A5A741C42902DC2A00B884F7 /* ListItemView.swift in Sources */,
+				A5BB8F4E28AEB5200070CC77 /* Category.swift in Sources */,
+				A57D2DBD28AEB39D00E98298 /* DataStore.swift in Sources */,
+				A598C18428B2A5670034717C /* CacheImplementation.swift in Sources */,
+				A559FEA429117EEE0004380B /* PlayerViewController.swift in Sources */,
+				A5A741BC2902DBCD00B884F7 /* CategoryView.swift in Sources */,
+				A5A741DD2902EB3E00B884F7 /* Strings+Filter.swift in Sources */,
+				A50D8FEE28ABF9A3008C66AA /* MediaHistoryView.swift in Sources */,
+				A5F6AB62291D68DE001D21FA /* MediaSearchContentViewModel.swift in Sources */,
+				A50D8FDE28ABF7E4008C66AA /* MediaSearchView.swift in Sources */,
+				A50D8FCF28ABF5E7008C66AA /* MediaContentView.swift in Sources */,
+				A5BB8F4A28AEB4E30070CC77 /* CategoryMedias.swift in Sources */,
+				A5B79D2F28ABEF6A006CAF8E /* rezka_playerApp.swift in Sources */,
+				A5A7416A28F738F500B884F7 /* DetailedMedia.swift in Sources */,
+				A5A741CC2902DE8B00B884F7 /* RezkaNavigationApi.swift in Sources */,
+				A5F6AB5E291D6864001D21FA /* SearchBarView.swift in Sources */,
+				A598C18728B2A5670034717C /* KeysTracker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B79D2828ABEF6A006CAF8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5A7417028F73A4200B884F7 /* DetailedMediaRezkaAPIResponse.swift in Sources */,
+				A5A741AB2902D76900B884F7 /* SizeClassAdaptiveView.swift in Sources */,
+				A57D2DB928AEB34600E98298 /* MediaViewModel.swift in Sources */,
+				A598C18F28B2A7730034717C /* EmptyPlaceholderView.swift in Sources */,
+				A5A7417928F73E0D00B884F7 /* DetailedMediaItemViewModel.swift in Sources */,
+				A598C19428B2A7B00034717C /* RetryView.swift in Sources */,
+				A5A741B32902D8B300B884F7 /* PreviewDetailView.swift in Sources */,
+				A5A7416228F6F34500B884F7 /* DetailedMediaItemView.swift in Sources */,
+				A5C2236329053CCC002B49D5 /* CaseIterable+Index.swift in Sources */,
+				A5C22367290551DE002B49D5 /* StreamRezkaApiResponse.swift in Sources */,
+				A5A7419628F8745800B884F7 /* MenuView.swift in Sources */,
+				A5A7419A28F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */,
+				A5A741DA2902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */,
+				A598C18228B2A5670034717C /* CacheEntry.swift in Sources */,
+				A5A741E22902F48400B884F7 /* ContentViewModel.swift in Sources */,
+				A5A741C12902DC0200B884F7 /* SubcategoryListView.swift in Sources */,
+				A5BB8F5428AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift in Sources */,
+				A5A741B92902D97200B884F7 /* CategoriesListItem.swift in Sources */,
+				A5A741D12902DEBA00B884F7 /* ApiConstants.swift in Sources */,
+				A5A741D62902E10500B884F7 /* RezkaConstantsApi.swift in Sources */,
+				A5A741C92902DC7600B884F7 /* CategoryListView.swift in Sources */,
+				A5A7417E28F7F0A200B884F7 /* ImagePreviewView.swift in Sources */,
+				A5A7418228F7F1CA00B884F7 /* CacheAsyncImage.swift in Sources */,
+				A5B79D3228ABEF6A006CAF8E /* ContentView.swift in Sources */,
+				A598C17728B2A4A60034717C /* DataFetchPhase.swift in Sources */,
+				A5A7419228F82F9100B884F7 /* Dictionary+SwiftUI.swift in Sources */,
+				A57D2DB528AEB2CD00E98298 /* Media.swift in Sources */,
+				A598C17F28B2A5670034717C /* Cache.swift in Sources */,
+				A50D8FD528ABF6AC008C66AA /* MediaCategoriesViewModel.swift in Sources */,
+				A50D8FDB28ABF7CF008C66AA /* MediaBookmarksViewModel.swift in Sources */,
+				A5BB8F5828AEB8920070CC77 /* RezkaMediaApi.swift in Sources */,
+				A57D2DB128AEB11600E98298 /* MediaItemViewView.swift in Sources */,
+				A5DF36DF28EC871B00E0C5C0 /* MediaContentViewModel.swift in Sources */,
+				A5C2236B29056FBB002B49D5 /* String+Base64.swift in Sources */,
+				A5A741AF2902D86600B884F7 /* CategoryList.swift in Sources */,
+				A5A741C52902DC2A00B884F7 /* ListItemView.swift in Sources */,
+				A5BB8F4F28AEB5200070CC77 /* Category.swift in Sources */,
+				A57D2DBE28AEB39D00E98298 /* DataStore.swift in Sources */,
+				A598C18528B2A5670034717C /* CacheImplementation.swift in Sources */,
+				A559FEA529117EEE0004380B /* PlayerViewController.swift in Sources */,
+				A5A741BD2902DBCD00B884F7 /* CategoryView.swift in Sources */,
+				A5A741DE2902EB3E00B884F7 /* Strings+Filter.swift in Sources */,
+				A50D8FEF28ABF9A3008C66AA /* MediaHistoryView.swift in Sources */,
+				A5F6AB63291D68DE001D21FA /* MediaSearchContentViewModel.swift in Sources */,
+				A50D8FDF28ABF7E4008C66AA /* MediaSearchView.swift in Sources */,
+				A50D8FD028ABF5E7008C66AA /* MediaContentView.swift in Sources */,
+				A5BB8F4B28AEB4E30070CC77 /* CategoryMedias.swift in Sources */,
+				A5B79D3028ABEF6A006CAF8E /* rezka_playerApp.swift in Sources */,
+				A5A7416B28F738F500B884F7 /* DetailedMedia.swift in Sources */,
+				A5A741CD2902DE8B00B884F7 /* RezkaNavigationApi.swift in Sources */,
+				A5F6AB5F291D6864001D21FA /* SearchBarView.swift in Sources */,
+				A598C18828B2A5670034717C /* KeysTracker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B79D3D28ABF0D5006CAF8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5A7417128F73A4200B884F7 /* DetailedMediaRezkaAPIResponse.swift in Sources */,
+				A5A741AC2902D76900B884F7 /* SizeClassAdaptiveView.swift in Sources */,
+				A57D2DBA28AEB34600E98298 /* MediaViewModel.swift in Sources */,
+				A598C19028B2A7730034717C /* EmptyPlaceholderView.swift in Sources */,
+				A5A7417A28F73E0D00B884F7 /* DetailedMediaItemViewModel.swift in Sources */,
+				A598C19528B2A7B00034717C /* RetryView.swift in Sources */,
+				A5A741B42902D8B300B884F7 /* PreviewDetailView.swift in Sources */,
+				A5A7416328F6F34500B884F7 /* DetailedMediaItemView.swift in Sources */,
+				A5C2236429053CCC002B49D5 /* CaseIterable+Index.swift in Sources */,
+				A5C22368290551DE002B49D5 /* StreamRezkaApiResponse.swift in Sources */,
+				A5A7419728F8745800B884F7 /* MenuView.swift in Sources */,
+				A5A7419B28F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */,
+				A5A741DB2902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */,
+				A598C18328B2A5670034717C /* CacheEntry.swift in Sources */,
+				A5A741E32902F48400B884F7 /* ContentViewModel.swift in Sources */,
+				A5A741C22902DC0200B884F7 /* SubcategoryListView.swift in Sources */,
+				A5BB8F5528AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift in Sources */,
+				A5A741BA2902D97200B884F7 /* CategoriesListItem.swift in Sources */,
+				A5A741D22902DEBA00B884F7 /* ApiConstants.swift in Sources */,
+				A5A741D72902E10500B884F7 /* RezkaConstantsApi.swift in Sources */,
+				A5A741CA2902DC7600B884F7 /* CategoryListView.swift in Sources */,
+				A5A7417F28F7F0A200B884F7 /* ImagePreviewView.swift in Sources */,
+				A5A7418328F7F1CA00B884F7 /* CacheAsyncImage.swift in Sources */,
+				A5B79D5128ABF115006CAF8E /* rezka_playerApp.swift in Sources */,
+				A598C17828B2A4A60034717C /* DataFetchPhase.swift in Sources */,
+				A5A7419328F82F9100B884F7 /* Dictionary+SwiftUI.swift in Sources */,
+				A57D2DB628AEB2CD00E98298 /* Media.swift in Sources */,
+				A598C18028B2A5670034717C /* Cache.swift in Sources */,
+				A50D8FD628ABF6AC008C66AA /* MediaCategoriesViewModel.swift in Sources */,
+				A50D8FDC28ABF7CF008C66AA /* MediaBookmarksViewModel.swift in Sources */,
+				A5BB8F5928AEB8920070CC77 /* RezkaMediaApi.swift in Sources */,
+				A57D2DB228AEB11600E98298 /* MediaItemViewView.swift in Sources */,
+				A5DF36E028EC871B00E0C5C0 /* MediaContentViewModel.swift in Sources */,
+				A5C2236C29056FBB002B49D5 /* String+Base64.swift in Sources */,
+				A5A741B02902D86600B884F7 /* CategoryList.swift in Sources */,
+				A5A741C62902DC2A00B884F7 /* ListItemView.swift in Sources */,
+				A5BB8F5028AEB5200070CC77 /* Category.swift in Sources */,
+				A57D2DBF28AEB39D00E98298 /* DataStore.swift in Sources */,
+				A598C18628B2A5670034717C /* CacheImplementation.swift in Sources */,
+				A559FEA629117EEE0004380B /* PlayerViewController.swift in Sources */,
+				A5A741BE2902DBCD00B884F7 /* CategoryView.swift in Sources */,
+				A5A741DF2902EB3E00B884F7 /* Strings+Filter.swift in Sources */,
+				A50D8FF028ABF9A3008C66AA /* MediaHistoryView.swift in Sources */,
+				A5F6AB64291D68DE001D21FA /* MediaSearchContentViewModel.swift in Sources */,
+				A50D8FE028ABF7E4008C66AA /* MediaSearchView.swift in Sources */,
+				A50D8FD128ABF5E7008C66AA /* MediaContentView.swift in Sources */,
+				A5BB8F4C28AEB4E30070CC77 /* CategoryMedias.swift in Sources */,
+				A5B79D5028ABF110006CAF8E /* ContentView.swift in Sources */,
+				A5A7416C28F738F500B884F7 /* DetailedMedia.swift in Sources */,
+				A5A741CE2902DE8B00B884F7 /* RezkaNavigationApi.swift in Sources */,
+				A5F6AB60291D6864001D21FA /* SearchBarView.swift in Sources */,
+				A598C18928B2A5670034717C /* KeysTracker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A50D8FE228ABF838008C66AA /* rezka-player--InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A50D8FE328ABF838008C66AA /* Base */,
+			);
+			name = "rezka-player--InfoPlist.strings";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A5B79D3528ABEF6A006CAF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 16.0;
+			};
+			name = Debug;
+		};
+		A5B79D3628ABEF6A006CAF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 16.0;
+			};
+			name = Release;
+		};
+		A5B79D3828ABEF6A006CAF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DMP42GVPJ3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igrsoft.rezka-player";
+				PRODUCT_NAME = "rezka-player";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A5B79D3928ABEF6A006CAF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DMP42GVPJ3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igrsoft.rezka-player";
+				PRODUCT_NAME = "rezka-player";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A5B79D3B28ABEF6A006CAF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = DMP42GVPJ3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igrsoft.rezka-player";
+				PRODUCT_NAME = "rezka-player";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A5B79D3C28ABEF6A006CAF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = DMP42GVPJ3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igrsoft.rezka-player";
+				PRODUCT_NAME = "rezka-player";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A5B79D4D28ABF0D6006CAF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DMP42GVPJ3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "rezka-player-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igrsoft.rezka-player";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		A5B79D4E28ABF0D6006CAF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DMP42GVPJ3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "rezka-player-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igrsoft.rezka-player";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A5B79D1D28ABEF68006CAF8E /* Build configuration list for PBXProject "rezka-player" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5B79D3528ABEF6A006CAF8E /* Debug */,
+				A5B79D3628ABEF6A006CAF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5B79D3728ABEF6A006CAF8E /* Build configuration list for PBXNativeTarget "rezka-player (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5B79D3828ABEF6A006CAF8E /* Debug */,
+				A5B79D3928ABEF6A006CAF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5B79D3A28ABEF6A006CAF8E /* Build configuration list for PBXNativeTarget "rezka-player (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5B79D3B28ABEF6A006CAF8E /* Debug */,
+				A5B79D3C28ABEF6A006CAF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5B79D4C28ABF0D6006CAF8E /* Build configuration list for PBXNativeTarget "rezka-player" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5B79D4D28ABF0D6006CAF8E /* Debug */,
+				A5B79D4E28ABF0D6006CAF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A5A7418428F7FF4400B884F7 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		A5DF36E128EC9AB200E0C5C0 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A5A7418528F7FF4400B884F7 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5A7418428F7FF4400B884F7 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+		A5A7418828F7FF5500B884F7 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5A7418428F7FF4400B884F7 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+		A5A7418A28F7FF5B00B884F7 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5A7418428F7FF4400B884F7 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+		A5DF36E228EC9AB200E0C5C0 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5DF36E128EC9AB200E0C5C0 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		A5DF36E528EC9ABF00E0C5C0 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5DF36E128EC9AB200E0C5C0 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		A5DF36E728EC9AC600E0C5C0 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5DF36E128EC9AB200E0C5C0 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A5B79D1A28ABEF68006CAF8E /* Project object */;
+}
