@@ -15,6 +15,11 @@ Platforms:
 
 TODO:
  * Bookmarks
+ * History
  * Cache
  * Search from details
  * Subtitles
+
+---
+
+*WIP - work in progress
