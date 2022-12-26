@@ -21,9 +21,7 @@ TODO:
  * Subtitles
 
 Known Issues:
- * not sorts series
- * tvOS icon
- * some media not parses
+ * iOS/macOS content view
 
 ---
 

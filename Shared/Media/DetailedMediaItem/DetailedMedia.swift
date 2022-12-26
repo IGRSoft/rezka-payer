@@ -22,7 +22,7 @@ struct DetailedMedia {
     let translations: OrderedDictionary<Int, String>
     
     private(set) var seasons: [Int: SeasonsData] = [:]
-    func seasons(in translation: Int) -> [Int: String]? {
+    func seasons(in translation: Int) -> OrderedDictionary<Int, String>? {
         return seasons[translation]?.seasons
     }
     

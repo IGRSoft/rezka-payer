@@ -22,9 +22,16 @@ struct MediaRezkaApi {
         }
         
         if media.isSeries {
-            let seasons = try await seasons(mediaId: detailedMedia.mediaId, translationId: currentTranslationId)
-            detailedMedia.setup(seasons: seasons, for: currentTranslationId)
+            detailedMedia = try await fetchSeriesDetails(for: detailedMedia, translation: currentTranslationId)
         }
+                
+        return detailedMedia
+    }
+    
+    func fetchSeriesDetails(for media: DetailedMedia, translation: Int) async throws -> DetailedMedia {
+        var detailedMedia = media
+        let seasons = try await seasons(mediaId: detailedMedia.mediaId, translationId: translation)
+        detailedMedia.setup(seasons: seasons, for: translation)
                 
         return detailedMedia
     }

@@ -7,10 +7,11 @@
 
 import Foundation
 import SwiftSoup
+import OrderedCollections
 
 // MARK: - Seasons
 struct SeasonsData: Codable {
-    let seasons: [Int: String]
+    let seasons: OrderedDictionary<Int, String>
     let episodes: [Int: [Episode]]
     let url: String
     let quality: String
@@ -41,8 +42,8 @@ struct SeasonsData: Codable {
         thumbnails = try values.decode(String.self, forKey: .thumbnails)
     }
     
-    private static func parseSeasons(html: String) -> [Int: String] {
-        var value = [Int: String]()
+    private static func parseSeasons(html: String) -> OrderedDictionary<Int, String> {
+        var value: OrderedDictionary<Int, String> = [:]
         do {
             let doc = try SwiftSoup.parse(html)
             let seasons = try doc.body()?.getElementsByClass("b-simple_season__item")

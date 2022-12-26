@@ -62,7 +62,7 @@ class DetailedMediaItemViewModel: ObservableObject {
         return season?.seasons[currentSeason] ?? "-"
     }
     
-    var seasonsInCurrentTranslation: [Int: String]? {
+    var seasonsInCurrentTranslation: OrderedDictionary<Int, String>? {
         return detailedMedia.seasons(in: currentTranslation)
     }
     
@@ -148,8 +148,18 @@ class DetailedMediaItemViewModel: ObservableObject {
     func setCurrentTranslation(id: Int, mediaId: Int? = nil) async throws {
         currentTranslation = id
         
+        if media.isSeries, mediaId == nil {
+            currentSeason = 1
+            currentEpisode = 1
+        }
+        
         try await updateStreams(of: mediaId ?? detailedMedia.mediaId)
-        phase = .success(detailedMedia)
+        
+        if media.isSeries, mediaId == nil {
+            phase = .success(try await rezkaAPI.fetchSeriesDetails(for: detailedMedia, translation: id))
+        } else {
+            phase = .success(detailedMedia)
+        }
     }
     
     func setCurrentSeason(id: Int) async throws {
