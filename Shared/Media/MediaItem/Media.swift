@@ -68,7 +68,7 @@ extension Media {
     static var previewCategoryArticles: [CategoryMedias] {
         let articles = previewData
         return Category.allCases.map {
-            .init(category: $0, articles: articles.shuffled())
+            .init(category: $0, medias: articles.shuffled())
         }
     }
 }

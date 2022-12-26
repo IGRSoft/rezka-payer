@@ -24,10 +24,12 @@ actor PlistDataStore<T: Codable>: DataStore where T: Equatable {
         self.filename = filename
     }
     
+    private var documentsURL: URL {
+        FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+    }
+    
     private var dataURL: URL {
-        FileManager.default
-            .urls(for: .documentDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("\(filename).plist")
+        documentsURL.appendingPathComponent("\(filename).plist")
     }
     
     func save(_ current: T) {

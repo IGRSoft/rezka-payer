@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor
-class MediaBookmarksViewModel: ObservableObject {
+class `MediaBookmarksViewModel`: ObservableObject {
     
     @Published private(set) var bookmarks: [Media] = []
     private let bookmarkStore = PlistDataStore<[Media]>(filename: "bookmarks")
@@ -25,7 +25,7 @@ class MediaBookmarksViewModel: ObservableObject {
     }
     
     func isBookmarked(for media: Media) -> Bool {
-        bookmarks.first { media.id == $0.id } != nil
+        bookmarks.first { media.url == $0.url } != nil
     }
     
     func addBookmark(for media: Media) {
@@ -38,7 +38,7 @@ class MediaBookmarksViewModel: ObservableObject {
     }
     
     func removeBookmark(for media: Media) {
-        guard let index = bookmarks.firstIndex(where: { $0.id == media.id }) else {
+        guard let index = bookmarks.firstIndex(where: { $0.url == media.url }) else {
             return
         }
         bookmarks.remove(at: index)

@@ -10,5 +10,5 @@ import Foundation
 struct CategoryMedias: Codable {
     
     let category: Category
-    let articles: [Media]
+    let medias: [Media]
 }

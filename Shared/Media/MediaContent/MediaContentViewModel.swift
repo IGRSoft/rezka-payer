@@ -53,9 +53,11 @@ class MediaContentViewModel: ObservableObject {
     }
     
     func loadMore() async {
-        phase = .fetchingNextPage(newMedias)
-        
-        await loadData(page: page)
+        if isFetching == false {
+            phase = .fetchingNextPage(newMedias)
+            
+            await loadData(page: page)
+        }
     }
     
     private func loadData(page: Int = 1) async {

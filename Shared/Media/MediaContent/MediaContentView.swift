@@ -74,7 +74,7 @@ struct MediaContentView: View {
                         GeometryReader { proxy in
                             Color.clear
                                 .onChange(of: proxy.frame(in: .named(scrollViewNameSpace))) { newFrame in
-                                    if newFrame.size.height + newFrame.minY <= scrollViewHeight {
+                                    if newFrame.size.height + newFrame.origin.y <= scrollViewHeight {
                                         loadMoreTask()
                                     }
                                 }
@@ -85,7 +85,8 @@ struct MediaContentView: View {
                     GeometryReader { proxy in
                         Color.clear
                             .onChange(of: proxy.size, perform: { newSize in
-                                scrollViewHeight = newSize.height
+                                print(newSize.height)
+                                scrollViewHeight = newSize.height + 1
                             })
                     }
                 )

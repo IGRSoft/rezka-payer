@@ -47,26 +47,6 @@ struct MediaSearchContentView: View {
         VStack {
             NavigationView {
                 ScrollView {
-                    if let elements = viewModel.subCategories {
-                        ScrollView(.horizontal) {
-                            HStack {
-                                ForEach(elements) { element in
-                                    Button(action: {
-                                        Task {
-                                            //await viewModel.setSubCategory(element)
-                                        }
-                                    }, label: {
-                                        VStack {
-                                            Label(element.name, systemImage: element != viewModel.selectedSubCategory ? "circle" : "circle.inset.filled")
-                                                .symbolRenderingMode(.palette)
-                                                .foregroundStyle(.secondary, .blue)
-                                        }
-                                    })
-                                }
-                            }
-                            .padding(.init(top: 8, leading: 32, bottom: 32, trailing: 32))
-                        }
-                    }
                     LazyVGrid(columns: columns, spacing: 32) {
                         ForEach(viewModel.newMedias) { media in
                             NavigationLink {

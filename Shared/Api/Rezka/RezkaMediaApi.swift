@@ -153,6 +153,10 @@ struct MediaRezkaApi {
     
     private func generateNewMediaURL(from category: Category, subCategory: SubCategoryList?, page: Int = 1) -> URL {
         var url = RezkaConstantsApi.server
+        if page > 1 {
+            url += "/page/\(page)"
+        }
+        
         if category != .general {
             url += "/\(category.rawValue)"
         }
@@ -160,9 +164,6 @@ struct MediaRezkaApi {
             url += "/\(subCategory.uri)"
         }
         
-        if page > 1 {
-            url += "/page/\(page)"
-        }
         return URL(string: url)!
     }
     

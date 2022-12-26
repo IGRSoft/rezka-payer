@@ -12,11 +12,10 @@ import SwiftUI
 class MediaSearchContentViewModel: ObservableObject {
     
     @Published var phase = DataFetchPhase<[Media]>.fetching
+    private let bookmarkViewModel = MediaBookmarksViewModel.shared
     
     private let category: Category
     
-    private(set) var subCategories: [SubCategoryList]?
-    private(set) var selectedSubCategory: SubCategoryList?
     private var searchText: String?
     
     private var page = 1
@@ -60,7 +59,7 @@ class MediaSearchContentViewModel: ObservableObject {
     
     private func loadData(page: Int = 1) async {
         guard let search = searchText, search.isEmpty == false else {
-            phase = .success([])
+            phase = .success(bookmarkViewModel.bookmarks)
             return
         }
         
