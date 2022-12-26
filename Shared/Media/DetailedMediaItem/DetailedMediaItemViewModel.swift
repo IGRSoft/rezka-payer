@@ -164,6 +164,7 @@ class DetailedMediaItemViewModel: ObservableObject {
     
     func setCurrentSeason(id: Int) async throws {
         currentSeason = id
+        currentEpisode = 1
         
         try await updateStreams(of: detailedMedia.mediaId)
         

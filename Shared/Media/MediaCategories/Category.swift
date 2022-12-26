@@ -60,9 +60,9 @@ enum Category: String, CaseIterable, Codable {
         case .series:
             return Color("CategorySeriesColor")
         case .cartoons:
-            return Color("CategoryGeneralColor")
+            return Color("CategoryCartoonsColor")
         case .animation:
-            return Color("CategoryGeneralColor")
+            return Color("CategoryAnimationColor")
         case .search:
             return Color("CategoryGeneralColor")
         case .new:
