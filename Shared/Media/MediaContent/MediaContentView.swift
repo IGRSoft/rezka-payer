@@ -86,7 +86,7 @@ struct MediaContentView: View {
                         Color.clear
                             .onChange(of: proxy.size, perform: { newSize in
                                 print(newSize.height)
-                                scrollViewHeight = newSize.height + 1
+                                scrollViewHeight = newSize.height + 1 //add 1px to skip extra calculation on onChange
                             })
                     }
                 )

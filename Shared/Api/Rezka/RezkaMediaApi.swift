@@ -8,7 +8,7 @@
 import Foundation
 
 struct MediaRezkaApi {
-
+    
     private let session = URLSession.shared
     
     func fetch(from category: Category, subCategory: SubCategoryList?, page: Int = 1) async throws -> [Media] {
@@ -24,7 +24,7 @@ struct MediaRezkaApi {
         if media.isSeries {
             detailedMedia = try await fetchSeriesDetails(for: detailedMedia, translation: currentTranslationId)
         }
-                
+        
         return detailedMedia
     }
     
@@ -32,7 +32,7 @@ struct MediaRezkaApi {
         var detailedMedia = media
         let seasons = try await seasons(mediaId: detailedMedia.mediaId, translationId: translation)
         detailedMedia.setup(seasons: seasons, for: translation)
-                
+        
         return detailedMedia
     }
     
@@ -142,23 +142,26 @@ struct MediaRezkaApi {
     }
     
     private func generateSearchURL(from query: String, page: Int = 1) -> URL {
-        var url = "\(RezkaConstantsApi.server)/search/?do=search&subaction=search&q=\(query)"
-        
+        var urlComponents = URLComponents(string: "\(RezkaConstantsApi.server)/search")
+        urlComponents?.queryItems = [URLQueryItem(name: "do", value: "search"),
+                                     URLQueryItem(name: "subaction", value: "search"),
+                                     URLQueryItem(name: "q", value: query),
+        ]
         if page > 1 {
-            url += "&page=\(page)"
+            urlComponents?.queryItems?.append(URLQueryItem(name: "page", value: "\(page)"))
         }
         
-        return URL(string: url)!
+        return (urlComponents?.url)!
     }
     
     private func generateNewMediaURL(from category: Category, subCategory: SubCategoryList?, page: Int = 1) -> URL {
         var url = RezkaConstantsApi.server
-        if page > 1 {
-            url += "/page/\(page)"
-        }
         
         if category != .general {
             url += "/\(category.rawValue)"
+        }
+        if page > 1 {
+            url += "/page/\(page)"
         }
         if let subCategory = subCategory {
             url += "/\(subCategory.uri)"
