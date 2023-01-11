@@ -166,6 +166,12 @@
 		A5C7590F2959CD6300E8506B /* icon-tv.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5C7590E2959CD6300E8506B /* icon-tv.xcassets */; };
 		A5C759122959CD9300E8506B /* icon-mac.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5C759102959CD9300E8506B /* icon-mac.xcassets */; };
 		A5C759152959CEF500E8506B /* icon-ios.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5C759142959CEF500E8506B /* icon-ios.xcassets */; };
+		A5D130FA296F208600383D08 /* Focusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D130F9296F208600383D08 /* Focusable.swift */; };
+		A5D130FB296F208600383D08 /* Focusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D130F9296F208600383D08 /* Focusable.swift */; };
+		A5D130FC296F208600383D08 /* Focusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D130F9296F208600383D08 /* Focusable.swift */; };
+		A5D130FE296F2C0E00383D08 /* View+FirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D130FD296F2C0E00383D08 /* View+FirstAppear.swift */; };
+		A5D130FF296F2C0E00383D08 /* View+FirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D130FD296F2C0E00383D08 /* View+FirstAppear.swift */; };
+		A5D13100296F2C0E00383D08 /* View+FirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D130FD296F2C0E00383D08 /* View+FirstAppear.swift */; };
 		A5DF36DE28EC871B00E0C5C0 /* MediaContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DF36DD28EC871B00E0C5C0 /* MediaContentViewModel.swift */; };
 		A5DF36DF28EC871B00E0C5C0 /* MediaContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DF36DD28EC871B00E0C5C0 /* MediaContentViewModel.swift */; };
 		A5DF36E028EC871B00E0C5C0 /* MediaContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DF36DD28EC871B00E0C5C0 /* MediaContentViewModel.swift */; };
@@ -240,6 +246,8 @@
 		A5C7590E2959CD6300E8506B /* icon-tv.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "icon-tv.xcassets"; sourceTree = "<group>"; };
 		A5C759102959CD9300E8506B /* icon-mac.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "icon-mac.xcassets"; sourceTree = "<group>"; };
 		A5C759142959CEF500E8506B /* icon-ios.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "icon-ios.xcassets"; sourceTree = "<group>"; };
+		A5D130F9296F208600383D08 /* Focusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Focusable.swift; sourceTree = "<group>"; };
+		A5D130FD296F2C0E00383D08 /* View+FirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+FirstAppear.swift"; sourceTree = "<group>"; };
 		A5DF36DD28EC871B00E0C5C0 /* MediaContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContentViewModel.swift; sourceTree = "<group>"; };
 		A5F6AB5D291D6864001D21FA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		A5F6AB61291D68DE001D21FA /* MediaSearchContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSearchContentViewModel.swift; sourceTree = "<group>"; };
@@ -410,6 +418,7 @@
 				A5A741DC2902EB3E00B884F7 /* Strings+Filter.swift */,
 				A5C2236129053CCC002B49D5 /* CaseIterable+Index.swift */,
 				A5C2236929056FBB002B49D5 /* String+Base64.swift */,
+				A5D130FD296F2C0E00383D08 /* View+FirstAppear.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -432,6 +441,7 @@
 				A5A7416928F738F500B884F7 /* DetailedMedia.swift */,
 				A5A7416028F6F34500B884F7 /* DetailedMediaItemView.swift */,
 				A5A7417728F73E0D00B884F7 /* DetailedMediaItemViewModel.swift */,
+				A5D130F9296F208600383D08 /* Focusable.swift */,
 			);
 			path = DetailedMediaItem;
 			sourceTree = "<group>";
@@ -707,6 +717,7 @@
 				A5A7419528F8745800B884F7 /* MenuView.swift in Sources */,
 				A5A7419928F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */,
 				A5A741D92902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */,
+				A5D130FA296F208600383D08 /* Focusable.swift in Sources */,
 				A598C18128B2A5670034717C /* CacheEntry.swift in Sources */,
 				A5A741E12902F48400B884F7 /* ContentViewModel.swift in Sources */,
 				A5A741C02902DC0200B884F7 /* SubcategoryListView.swift in Sources */,
@@ -731,6 +742,7 @@
 				A5A741AE2902D86600B884F7 /* CategoryList.swift in Sources */,
 				A5A741C42902DC2A00B884F7 /* ListItemView.swift in Sources */,
 				A5BB8F4E28AEB5200070CC77 /* Category.swift in Sources */,
+				A5D130FE296F2C0E00383D08 /* View+FirstAppear.swift in Sources */,
 				A57D2DBD28AEB39D00E98298 /* DataStore.swift in Sources */,
 				A598C18428B2A5670034717C /* CacheImplementation.swift in Sources */,
 				A559FEA429117EEE0004380B /* PlayerViewController.swift in Sources */,
@@ -766,6 +778,7 @@
 				A5A7419628F8745800B884F7 /* MenuView.swift in Sources */,
 				A5A7419A28F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */,
 				A5A741DA2902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */,
+				A5D130FB296F208600383D08 /* Focusable.swift in Sources */,
 				A598C18228B2A5670034717C /* CacheEntry.swift in Sources */,
 				A5A741E22902F48400B884F7 /* ContentViewModel.swift in Sources */,
 				A5A741C12902DC0200B884F7 /* SubcategoryListView.swift in Sources */,
@@ -790,6 +803,7 @@
 				A5A741AF2902D86600B884F7 /* CategoryList.swift in Sources */,
 				A5A741C52902DC2A00B884F7 /* ListItemView.swift in Sources */,
 				A5BB8F4F28AEB5200070CC77 /* Category.swift in Sources */,
+				A5D130FF296F2C0E00383D08 /* View+FirstAppear.swift in Sources */,
 				A57D2DBE28AEB39D00E98298 /* DataStore.swift in Sources */,
 				A598C18528B2A5670034717C /* CacheImplementation.swift in Sources */,
 				A559FEA529117EEE0004380B /* PlayerViewController.swift in Sources */,
@@ -825,6 +839,7 @@
 				A5A7419728F8745800B884F7 /* MenuView.swift in Sources */,
 				A5A7419B28F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */,
 				A5A741DB2902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */,
+				A5D130FC296F208600383D08 /* Focusable.swift in Sources */,
 				A598C18328B2A5670034717C /* CacheEntry.swift in Sources */,
 				A5A741E32902F48400B884F7 /* ContentViewModel.swift in Sources */,
 				A5A741C22902DC0200B884F7 /* SubcategoryListView.swift in Sources */,
@@ -849,6 +864,7 @@
 				A5A741B02902D86600B884F7 /* CategoryList.swift in Sources */,
 				A5A741C62902DC2A00B884F7 /* ListItemView.swift in Sources */,
 				A5BB8F5028AEB5200070CC77 /* Category.swift in Sources */,
+				A5D13100296F2C0E00383D08 /* View+FirstAppear.swift in Sources */,
 				A57D2DBF28AEB39D00E98298 /* DataStore.swift in Sources */,
 				A598C18628B2A5670034717C /* CacheImplementation.swift in Sources */,
 				A559FEA629117EEE0004380B /* PlayerViewController.swift in Sources */,

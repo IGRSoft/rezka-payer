@@ -14,9 +14,7 @@ struct MediaContentView: View {
     
     @State private var scrollViewHeight = CGFloat.infinity
     @Namespace private var scrollViewNameSpace
-    
-    @State private var isLoading = true
-    
+        
     private let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -25,81 +23,80 @@ struct MediaContentView: View {
     
     var body: some View {
         VStack {
-            NavigationView {
-                ScrollView {
-                    if let elements = viewModel.subCategories {
-                        ScrollView(.horizontal) {
-                            HStack {
-                                ForEach(elements) { element in
-                                    Button(action: {
-                                        Task {
-                                            await viewModel.setSubCategory(element)
-                                        }
-                                    }, label: {
-                                        VStack {
-                                            Label(element.name, systemImage: element != viewModel.selectedSubCategory ? "circle" : "circle.inset.filled")
-                                                .symbolRenderingMode(.palette)
-                                                .foregroundStyle(.secondary, .blue)
-                                        }
-                                    })
-                                }
-                            }
-                            .padding(.init(top: 8, leading: 32, bottom: 32, trailing: 32))
-                        }
-                    }
-                    LazyVGrid(columns: columns, spacing: 32) {
-                        ForEach(viewModel.newMedias) { media in
-                            NavigationLink {
-                                DetailedMediaItemView(viewModel: DetailedMediaItemViewModel(media: media), bookmarkViewModel: bookmarkViewModel)
-                            } label: {
-                                MediaItemViewView(media: media, bookmarkViewModel: bookmarkViewModel)
-                                    .frame(width: MediaItemViewView.coverSize.width, height: MediaItemViewView.coverSize.height)
-                            }
-#if os(tvOS)
-                            .buttonStyle(.card)
-#else
-                            .buttonStyle(.bordered)
-#endif
-                            .contextMenu {
-                                Button {
-                                    bookmarkViewModel.toggleBookmark(for: media)
-                                } label: {
-                                    Text(bookmarkViewModel.bookMarkTitle(for: media))
-                                }
-                            }
-                        }
-                    }
-                    .padding()
-                    .background(
-                        GeometryReader { proxy in
-                            Color.clear
-                                .onChange(of: proxy.frame(in: .named(scrollViewNameSpace))) { newFrame in
-                                    if newFrame.size.height + newFrame.origin.y <= scrollViewHeight {
-                                        loadMoreTask()
+            ScrollView {
+                if let elements = viewModel.subCategories {
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(elements) { element in
+                                Button(action: {
+                                    Task {
+                                        await viewModel.setSubCategory(element)
                                     }
-                                }
+                                }, label: {
+                                    VStack {
+                                        Label(element.name, systemImage: element != viewModel.selectedSubCategory ? "circle" : "circle.inset.filled")
+                                            .symbolRenderingMode(.palette)
+                                            .foregroundStyle(.secondary, .blue)
+                                    }
+                                })
+                            }
                         }
-                    )
+                        .padding(.init(top: 8, leading: 32, bottom: 32, trailing: 32))
+                    }
                 }
+                LazyVGrid(columns: columns, spacing: 32) {
+                    ForEach(viewModel.newMedias) { media in
+                        NavigationLink {
+                            DetailedMediaItemView(viewModel: DetailedMediaItemViewModel(media: media), bookmarkViewModel: bookmarkViewModel)
+                        } label: {
+                            MediaItemViewView(media: media, bookmarkViewModel: bookmarkViewModel)
+                                .frame(width: MediaItemViewView.coverSize.width, height: MediaItemViewView.coverSize.height)
+                        }
+#if os(tvOS)
+                        .buttonStyle(.card)
+#else
+                        .buttonStyle(.bordered)
+#endif
+                        .contextMenu {
+                            Button {
+                                bookmarkViewModel.toggleBookmark(for: media)
+                            } label: {
+                                Text(bookmarkViewModel.bookMarkTitle(for: media))
+                            }
+                        }
+                    }
+                }
+                .padding()
                 .background(
                     GeometryReader { proxy in
                         Color.clear
-                            .onChange(of: proxy.size, perform: { newSize in
-                                print(newSize.height)
-                                scrollViewHeight = newSize.height + 1 //add 1px to skip extra calculation on onChange
-                            })
+                            .onChange(of: proxy.frame(in: .named(scrollViewNameSpace))) { newFrame in
+                                if scrollViewHeight != .infinity, newFrame.size.height + newFrame.origin.y <= scrollViewHeight {
+                                    loadMoreTask()
+                                }
+                            }
                     }
                 )
-                .coordinateSpace(name: scrollViewNameSpace)
             }
-            .overlay(overlayView)
-            .task {
-                refreshTask()
-            }
-#if os(macOS)
-            .frame(maxWidth: 1024, maxHeight: 1024)
-#endif
+            .background(
+                GeometryReader { proxy in
+                    Color.clear
+                        .onChange(of: proxy.size, perform: { newSize in
+                            print(newSize.height)
+                            scrollViewHeight = newSize.height + 1 //add 1px to skip extra calculation on onChange
+                        })
+                }
+            )
+            .coordinateSpace(name: scrollViewNameSpace)
         }
+        .overlay(overlayView)
+        .onFirstAppear {
+            refreshTask()
+            
+        }
+#if os(macOS)
+        .frame(maxWidth: 1024, maxHeight: 1024)
+#endif
     }
     
     @ViewBuilder

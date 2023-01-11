@@ -28,32 +28,34 @@ struct ContentView: View {
     
     var body: some View {
 #if os(tvOS)
-        TabView {
-            ForEach(viewModel.categories, id: \.type) { category in
-                if category.type == .search {
-                    MediaSearchView()
-                        .tabItem {
-                            Label(category.name, systemImage: category.iconName)
-                        }
-                } else {
-                    MediaContentView()
-                        .environmentObject(MediaContentViewModel(category: category.type, subCategories: category.items))
-                        .tabItem {
-                            Label(category.name, systemImage: category.iconName)
-                        }
+        NavigationView {
+            TabView {
+                ForEach(viewModel.categories, id: \.type) { category in
+                    if category.type == .search {
+                        MediaSearchView()
+                            .tabItem {
+                                Label(category.name, systemImage: category.iconName)
+                            }
+                    } else {
+                        MediaContentView()
+                            .environmentObject(MediaContentViewModel(category: category.type, subCategories: category.items))
+                            .tabItem {
+                                Label(category.name, systemImage: category.iconName)
+                            }
+                    }
                 }
             }
+            .onChange(of: horizontalSizeClass) { newValue in
+                print("debug ContentView onChange \(String(describing: horizontalSizeClass)) -> \(String(describing: newValue))")
+            }
+            .overlay(overlayView)
+            .onFirstAppear {
+                selectedCategory = viewModel.categories.first
+                refreshTask()
+                
+            }
         }
-        .onAppear() {
-            selectedCategory = viewModel.categories.first
-        }
-        .onChange(of: horizontalSizeClass) { newValue in
-            print("debug ContentView onChange \(String(describing: horizontalSizeClass)) -> \(String(describing: newValue))")
-        }
-        .overlay(overlayView)
-        .task {
-            refreshTask()
-        }
+        
 #else
         Group {
             if horizontalSizeClass == .regular {
@@ -89,7 +91,7 @@ struct ContentView: View {
             }
         }
         .overlay(overlayView)
-        .task {
+        .onFirstAppear {
             refreshTask()
             
         }

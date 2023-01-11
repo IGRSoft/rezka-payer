@@ -16,7 +16,6 @@ class MediaContentViewModel: ObservableObject {
     
     private(set) var subCategories: [SubCategoryList]?
     private(set) var selectedSubCategory: SubCategoryList?
-    private var searchText: String?
     
     private var page = 1
     @Published private(set) var isFetching = true
@@ -65,6 +64,7 @@ class MediaContentViewModel: ObservableObject {
         do {
             let categoryMedias = try await rezkaAPI.fetch(from: category, subCategory: selectedSubCategory, page: page)
             if Task.isCancelled { return }
+            
             let medias = (page == 1 ? [] : newMedias) + categoryMedias
             await cache.setValue(medias, forKey: "new_media_list")
             try? await cache.saveToDisk()
