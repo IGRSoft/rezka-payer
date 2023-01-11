@@ -24,6 +24,7 @@ struct MediaContentView: View {
     var body: some View {
         VStack {
             ScrollView {
+#if !os(macOS)
                 if let elements = viewModel.subCategories {
                     ScrollView(.horizontal) {
                         HStack {
@@ -44,6 +45,7 @@ struct MediaContentView: View {
                         .padding(.init(top: 8, leading: 32, bottom: 32, trailing: 32))
                     }
                 }
+#endif
                 LazyVGrid(columns: columns, spacing: 32) {
                     ForEach(viewModel.newMedias) { media in
                         NavigationLink {

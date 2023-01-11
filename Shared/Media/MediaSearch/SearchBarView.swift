@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+#if !os(macOS)
+
 struct SearchBarView<Content: View>: UIViewControllerRepresentable {
     
     typealias UIViewControllerType = UINavigationController
@@ -72,3 +74,5 @@ struct SearchBarView_Previews: PreviewProvider {
         }
     }
 }
+
+#endif

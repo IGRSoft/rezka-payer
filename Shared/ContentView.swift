@@ -55,7 +55,6 @@ struct ContentView: View {
                 
             }
         }
-        
 #else
         Group {
             if horizontalSizeClass == .regular {
@@ -69,7 +68,11 @@ struct ContentView: View {
                     CategoryView(horizontalSizeClass: horizontalSizeClass, category: selectedCategory, selection: $selectedItem)
                         .navigationSplitViewColumnWidth(min: 200, ideal: 250, max: 300)
                 } detail: {
-                    selectedItem?.detailsView
+                    if let selectedCategory = selectedCategory {
+                        MediaContentView()
+                            .environmentObject(MediaContentViewModel(category: selectedCategory.type, subCategories: selectedCategory.items))
+                    }
+                    
                 }
                 .navigationSplitViewStyle(.prominentDetail)
                 .toolbar {

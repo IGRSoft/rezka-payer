@@ -14,6 +14,7 @@ struct MediaSearchView: View {
     
     var body: some View {
         VStack {
+#if !os(macOS)
             SearchBarView(text: $text) {
                 MediaSearchContentView()
                     .environmentObject(viewModel)
@@ -23,6 +24,7 @@ struct MediaSearchView: View {
                         }
                     }
             }
+#endif
         }
     }
 }
