@@ -43,7 +43,8 @@ struct MediaRezkaAPIResponse: Decodable {
                 category = .animation
             }
             
-            let img = try coverElement?.getElementsByTag("img").first?.attr("src") ?? ""
+            let isPropahanda = desc.contains("Россия") == true
+            let img: String = !isPropahanda ? (try coverElement?.getElementsByTag("img").first?.attr("src") ?? "") : "https://i.imgur.com/hJTNW43.jpg"
             
             let media = Media(title: title, url: url, descriptionShort: desc, description: nil, coverUrl: img, seriesInfo: seriesInfo, category: category, quality: .p1080)
             

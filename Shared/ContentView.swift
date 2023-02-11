@@ -81,15 +81,23 @@ struct ContentView: View {
             } else {
                 NavigationSplitView(columnVisibility: $sideBarVisibility) {
                     List(viewModel.categories, selection: $selectedCategory) { category in
-                        NavigationLink(value: category) {
-                            Text(category.name)
-                        }
+                        CategoryListView(item: category)
                     }
+                    .navigationSplitViewColumnWidth(200)
                     .navigationTitle(K.name)
+                } content: {
+                    CategoryView(horizontalSizeClass: horizontalSizeClass, category: selectedCategory, selection: $selectedItem)
+                        .navigationSplitViewColumnWidth(min: 200, ideal: 250, max: 300)
                 } detail: {
-                    NavigationStack {
-                        CategoryView(horizontalSizeClass: horizontalSizeClass, category: selectedCategory, selection: $selectedItem)
+                    if let selectedCategory = selectedCategory {
+                        MediaContentView()
+                            .environmentObject(MediaContentViewModel(category: selectedCategory.type, subCategories: selectedCategory.items))
                     }
+                    
+                }
+                .navigationSplitViewStyle(.prominentDetail)
+                .toolbar {
+                    EmptyView()
                 }
             }
         }

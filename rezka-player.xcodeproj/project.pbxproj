@@ -85,9 +85,6 @@
 		A5A7419128F82F9100B884F7 /* Dictionary+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419028F82F9100B884F7 /* Dictionary+SwiftUI.swift */; };
 		A5A7419228F82F9100B884F7 /* Dictionary+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419028F82F9100B884F7 /* Dictionary+SwiftUI.swift */; };
 		A5A7419328F82F9100B884F7 /* Dictionary+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419028F82F9100B884F7 /* Dictionary+SwiftUI.swift */; };
-		A5A7419528F8745800B884F7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419428F8745800B884F7 /* MenuView.swift */; };
-		A5A7419628F8745800B884F7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419428F8745800B884F7 /* MenuView.swift */; };
-		A5A7419728F8745800B884F7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419428F8745800B884F7 /* MenuView.swift */; };
 		A5A7419928F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419828F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift */; };
 		A5A7419A28F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419828F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift */; };
 		A5A7419B28F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7419828F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift */; };
@@ -212,7 +209,6 @@
 		A5A7417C28F7F0A200B884F7 /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
 		A5A7418028F7F1CA00B884F7 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
 		A5A7419028F82F9100B884F7 /* Dictionary+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+SwiftUI.swift"; sourceTree = "<group>"; };
-		A5A7419428F8745800B884F7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		A5A7419828F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesMediaRezkaAPIResponse.swift; sourceTree = "<group>"; };
 		A5A7419C28F88E6C00B884F7 /* rezka-player-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "rezka-player-Info.plist"; sourceTree = "<group>"; };
 		A5A741A92902D76900B884F7 /* SizeClassAdaptiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeClassAdaptiveView.swift; sourceTree = "<group>"; };
@@ -341,7 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				A5A7418028F7F1CA00B884F7 /* CacheAsyncImage.swift */,
-				A5A7419428F8745800B884F7 /* MenuView.swift */,
 				A5A741A92902D76900B884F7 /* SizeClassAdaptiveView.swift */,
 				A5A741B62902D93200B884F7 /* Navigation */,
 			);
@@ -714,7 +709,6 @@
 				A5A7416128F6F34500B884F7 /* DetailedMediaItemView.swift in Sources */,
 				A5C2236229053CCC002B49D5 /* CaseIterable+Index.swift in Sources */,
 				A5C22366290551DE002B49D5 /* StreamRezkaApiResponse.swift in Sources */,
-				A5A7419528F8745800B884F7 /* MenuView.swift in Sources */,
 				A5A7419928F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */,
 				A5A741D92902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */,
 				A5D130FA296F208600383D08 /* Focusable.swift in Sources */,
@@ -775,7 +769,6 @@
 				A5A7416228F6F34500B884F7 /* DetailedMediaItemView.swift in Sources */,
 				A5C2236329053CCC002B49D5 /* CaseIterable+Index.swift in Sources */,
 				A5C22367290551DE002B49D5 /* StreamRezkaApiResponse.swift in Sources */,
-				A5A7419628F8745800B884F7 /* MenuView.swift in Sources */,
 				A5A7419A28F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */,
 				A5A741DA2902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */,
 				A5D130FB296F208600383D08 /* Focusable.swift in Sources */,
@@ -836,7 +829,6 @@
 				A5A7416328F6F34500B884F7 /* DetailedMediaItemView.swift in Sources */,
 				A5C2236429053CCC002B49D5 /* CaseIterable+Index.swift in Sources */,
 				A5C22368290551DE002B49D5 /* StreamRezkaApiResponse.swift in Sources */,
-				A5A7419728F8745800B884F7 /* MenuView.swift in Sources */,
 				A5A7419B28F8825D00B884F7 /* SeriesMediaRezkaAPIResponse.swift in Sources */,
 				A5A741DB2902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */,
 				A5D130FC296F208600383D08 /* Focusable.swift in Sources */,

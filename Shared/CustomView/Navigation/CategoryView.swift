@@ -14,16 +14,19 @@ struct CategoryView: View {
     @Binding var selection: SubCategoryList?
     
     var body: some View {
-        SizeClassAdaptiveView(sizeClass: horizontalSizeClass) {
-            SubcategoryListView(items: category?.items ?? [], selection: $selection, useSelection: true)
-        } compact: {
-            SubcategoryListView(items: category?.items ?? [])
-                .navigationDestination(for: SubCategoryList.self) { item in
-                    PreviewDetailView(item: item)
-                }
+        if let category = category {
+            SizeClassAdaptiveView(sizeClass: horizontalSizeClass) {
+                SubcategoryListView(items: category.items ?? [], selection: $selection, useSelection: true)
+            } compact: {
+                SubcategoryListView(items: category.items ?? [])
+                    .navigationDestination(for: SubCategoryList.self) { item in
+                        MediaContentView()
+                            .environmentObject(MediaContentViewModel(category: category.type, subCategories: category.items))
+                    }
+            }
+            .navigationTitle(LocalizedStringKey(category.name))
+            .frame(minWidth: 128, idealWidth: 200)
         }
-        .navigationTitle(LocalizedStringKey(category?.name ?? ""))
-        .frame(minWidth: 128, idealWidth: 200)
     }
 }
 

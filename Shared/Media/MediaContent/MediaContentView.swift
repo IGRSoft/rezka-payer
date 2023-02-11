@@ -14,17 +14,23 @@ struct MediaContentView: View {
     
     @State private var scrollViewHeight = CGFloat.infinity
     @Namespace private var scrollViewNameSpace
-        
+    
+#if os(tvOS)
     private let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
+#else
+    private let columns = [
+        GridItem(.flexible())
+    ]
+#endif
     
     var body: some View {
         VStack {
             ScrollView {
-#if !os(macOS)
+#if os(tvOS)
                 if let elements = viewModel.subCategories {
                     ScrollView(.horizontal) {
                         HStack {
@@ -64,6 +70,11 @@ struct MediaContentView: View {
                                 bookmarkViewModel.toggleBookmark(for: media)
                             } label: {
                                 Text(bookmarkViewModel.bookMarkTitle(for: media))
+                            }
+                            
+                            Button (role: .cancel) {
+                            } label: {
+                                Text("Cancel")
                             }
                         }
                     }

@@ -89,6 +89,9 @@ struct DetailedMediaItemView: View {
                                     } label: {
                                         Text(title)
                                     }
+                                    .alert("Озвучка", isPresented: $isTranslationMenuPresented) {
+                                        translationMenu
+                                    }
 #else
                                     Menu {
                                         translationMenu
@@ -103,15 +106,21 @@ struct DetailedMediaItemView: View {
                                         } label: {
                                             Text(currentSeason)
                                         }
+                                        .alert("Сезоны", isPresented: $isSeasonsMenuPresented) {
+                                            seasonsMenu
+                                        }
                                         
                                         Button {
                                             isEpisodesMenuPresented.toggle()
                                         } label: {
                                             Text(currentEpisodeTitle)
                                         }
+                                        .alert("Эпизоды", isPresented: $isEpisodesMenuPresented) {
+                                            episodesMenu
+                                        }
 #else
                                         Menu {
-                                            translationMenu
+                                            seasonsMenu
                                         } label: {
                                             Text(currentSeason)
                                         }
@@ -123,6 +132,7 @@ struct DetailedMediaItemView: View {
                                         }
 #endif
                                     }
+                                    
                                     Button(role: .destructive) {
                                         isPlayerPresented = true
                                     } label: {
@@ -135,6 +145,9 @@ struct DetailedMediaItemView: View {
                                             isQualityMenuPresented.toggle()
                                         } label: {
                                             Text(viewModel.currentQuality.rawValue)
+                                        }
+                                        .alert("Качество", isPresented: $isQualityMenuPresented) {
+                                            qualitiesMenu
                                         }
 #else
                                         Menu {
@@ -153,18 +166,6 @@ struct DetailedMediaItemView: View {
             }
         }
 #if os(tvOS) || os(iOS)
-        .fullScreenCover(isPresented: $isTranslationMenuPresented) {
-            MenuView(items: AnyView(translationMenu))
-        }
-        .fullScreenCover(isPresented: $isSeasonsMenuPresented) {
-            MenuView(items: AnyView(seasonsMenu))
-        }
-        .fullScreenCover(isPresented: $isEpisodesMenuPresented) {
-            MenuView(items: AnyView(episodesMenu))
-        }
-        .fullScreenCover(isPresented: $isQualityMenuPresented) {
-            MenuView(items: AnyView(qualitiesMenu))
-        }
         .fullScreenCover(isPresented: $isPlayerPresented, content: {
             PlayerViewController(videoURL: URL(string: viewModel.stream))
                 .edgesIgnoringSafeArea(.all)
@@ -176,22 +177,18 @@ struct DetailedMediaItemView: View {
     
     private func selectTranslation(id: Int) async {
         try? await viewModel.setCurrentTranslation(id: id)
-        isTranslationMenuPresented.toggle()
     }
     
     private func selectSeason(id: Int) async {
         try? await viewModel.setCurrentSeason(id: id)
-        isSeasonsMenuPresented.toggle()
     }
     
     private func selectEpisode(id: Int) async {
         try? await viewModel.setCurrentEpisode(id: id)
-        isEpisodesMenuPresented.toggle()
     }
     
     private func selectQuality(id: Media.Quality) async {
         viewModel.setQuality(id)
-        isQualityMenuPresented.toggle()
     }
     
     @ViewBuilder
