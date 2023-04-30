@@ -41,6 +41,9 @@ class MediaSearchContentViewModel: ObservableObject {
     
     func searchMedias() async {
         if Task.isCancelled { return }
+        
+        try? await cache.loadFromDisk()
+        
         if let articles = await cache.value(forKey: "search_media_list") {
             phase = .success(articles)
         }

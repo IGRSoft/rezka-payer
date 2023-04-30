@@ -12,9 +12,6 @@ struct MediaContentView: View {
     
     @StateObject private var bookmarkViewModel = MediaBookmarksViewModel.shared
     
-    @State private var scrollViewHeight = CGFloat.infinity
-    @Namespace private var scrollViewNameSpace
-    
 #if os(tvOS)
     private let columns = [
         GridItem(.flexible()),
@@ -78,29 +75,12 @@ struct MediaContentView: View {
                             }
                         }
                     }
+                    // latest empty label to fetch more data
+                    Label("", image: "")
+                        .onAppear(perform: loadMoreTask)
                 }
                 .padding()
-                .background(
-                    GeometryReader { proxy in
-                        Color.clear
-                            .onChange(of: proxy.frame(in: .named(scrollViewNameSpace))) { newFrame in
-                                if scrollViewHeight != .infinity, newFrame.size.height + newFrame.origin.y <= scrollViewHeight {
-                                    loadMoreTask()
-                                }
-                            }
-                    }
-                )
             }
-            .background(
-                GeometryReader { proxy in
-                    Color.clear
-                        .onChange(of: proxy.size, perform: { newSize in
-                            print(newSize.height)
-                            scrollViewHeight = newSize.height + 1 //add 1px to skip extra calculation on onChange
-                        })
-                }
-            )
-            .coordinateSpace(name: scrollViewNameSpace)
         }
         .overlay(overlayView)
         .onFirstAppear {

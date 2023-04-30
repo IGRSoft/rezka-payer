@@ -13,7 +13,7 @@ struct MediaItemViewView: View {
 #elseif os(macOS)
     static let coverSize = CGSize(width: 300, height: 500)
 #else
-    static let coverSize = CGSize(width: 400, height: 600)
+    static let coverSize = CGSize(width: 400, height: 620)
 #endif
     
     let media: Media
@@ -27,7 +27,7 @@ struct MediaItemViewView: View {
                         CacheAsyncImage(url: media.coverURL) { phase in
                             phase.view
                         }
-                        .frame(width: proxy.size.width, height: MediaItemViewView.coverSize.height * 0.75)
+                        .frame(width: proxy.size.width, height: MediaItemViewView.coverSize.height * 0.73)
                         .padding(.init(top: 16, leading: 0, bottom: 0, trailing: 0))
                         if media.isSeries, let seriesInfo = media.seriesInfo {
                             Text(seriesInfo)
@@ -61,9 +61,10 @@ struct MediaItemViewView: View {
                     Text(media.title)
                         .font(.subheadline)
                         .foregroundStyle(.primary)
-                        .lineLimit(2)
+                        .lineLimit(nil)
+                        .frame(height: 78, alignment: .top)
                     
-                    Spacer(minLength: 12)
+                    Spacer(minLength: 6)
                     
                     HStack {
                         Text(media.descriptionShort)

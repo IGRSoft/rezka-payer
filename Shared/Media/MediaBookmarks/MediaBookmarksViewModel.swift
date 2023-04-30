@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor
-class `MediaBookmarksViewModel`: ObservableObject {
+class MediaBookmarksViewModel: ObservableObject {
     
     @Published private(set) var bookmarks: [Media] = []
     private let bookmarkStore = PlistDataStore<[Media]>(filename: "bookmarks")

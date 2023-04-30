@@ -23,6 +23,9 @@ class ContentViewModel: ObservableObject {
     
     func load() async {
         if Task.isCancelled { return }
+        
+        try? await cache.loadFromDisk()
+        
         if let categories = await cache.value(forKey: "categories_list") {
             phase = .success(categories)
         }

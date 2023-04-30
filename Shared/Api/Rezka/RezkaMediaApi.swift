@@ -15,9 +15,9 @@ struct MediaRezkaApi {
         try await fetchMedias(from: generateNewMediaURL(from: category, subCategory: subCategory, page: page))
     }
     
-    func fetchDetails(from media: Media) async throws -> DetailedMedia {
+    func fetchDetails(from media: Media, translation: Int? = nil) async throws -> DetailedMedia {
         var detailedMedia = try await fetchMedia(from: media.mediaURL)
-        guard let currentTranslationId = detailedMedia.translations.keys.first else {
+        guard let currentTranslationId = translation ?? detailedMedia.translations.keys.first else {
             throw DataError.generate(for: .rezkaConstantsApi, error: .mapping)
         }
         

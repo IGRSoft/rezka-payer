@@ -16,15 +16,20 @@ class DetailedMediaItemViewModel: ObservableObject {
     
     private let rezkaAPI = MediaRezkaApi()
     
-    private let cache: DiskCache<[DetailedMedia]> = .init(filename: "xcadmediacache", expirationInterval: 5 * 60)
+    private let cache: DiskCache<[DetailedMedia]> = .init(filename: "xcadmediacache", expirationInterval: 30 * 60)
+    
+    private let history: DiskCache<[DetailedHistoryMedia]> = .init(filename: "xcadmediahistory", expirationInterval: 60 * 60 * 24 * 365)
     
     let media: Media
     private var detailedMedia: DetailedMedia {
         phase.value ?? DetailedMedia.previewData
     }
     
+    private(set) var historyMedia: DetailedHistoryMedia
+    
     init(media: Media) {
         self.media = media
+        historyMedia = DetailedHistoryMedia(mediaId: 0)
     }
     
     var title: String {
@@ -44,18 +49,20 @@ class DetailedMediaItemViewModel: ObservableObject {
     }
     
     var description: String {
-        detailedMedia.description
+        let dropCount = max(detailedMedia.description.count - 512, 0)
+        if dropCount == 0 {
+            return detailedMedia.description
+        } else {
+            return String(detailedMedia.description.dropLast(dropCount)) + "..."
+        }
     }
-    
-    private(set) var currentTranslation = 0
     
     var currentTranslationTitle: String? {
-        detailedMedia.translations.isEmpty == false ? detailedMedia.translations[currentTranslation] : nil
+        detailedMedia.translations.isEmpty == false ? detailedMedia.translations[historyMedia.translation] : nil
     }
     
-    private(set) var currentSeason: Int?
     var currentSeasonTitle: String {
-        guard let currentSeason = currentSeason else {
+        guard let currentSeason = historyMedia.season else {
             return "-"
         }
         
@@ -63,28 +70,29 @@ class DetailedMediaItemViewModel: ObservableObject {
     }
     
     var seasonsInCurrentTranslation: OrderedDictionary<Int, String>? {
-        return detailedMedia.seasons(in: currentTranslation)
+        return detailedMedia.seasons(in: historyMedia.translation)
     }
     
-    private(set) var currentEpisode: Int?
     var currentEpisodeTitle: String {
         episode?.title ?? "-"
     }
-    
-    private(set) var currentQuality = Media.Quality.unknown
-    
+        
     func setQuality(_ quality: Media.Quality) {
-        currentQuality = quality
+        historyMedia.quality = quality
         phase = .success(detailedMedia)
     }
     
     private(set) var streams: StreamMedia?
     var stream: String {
-        streams?.stream(currentQuality) ?? ""
+        streams?.stream(historyMedia.quality) ?? ""
     }
     
     func loadDetailedMedia() async {
         if Task.isCancelled { return }
+        
+        try? await cache.loadFromDisk()
+        try? await history.loadFromDisk()
+        
         if let medias = await cache.value(forKey: "detailed_media_\(media.id)"), let media = medias.first {
             phase = .success(media)
         } else {
@@ -97,17 +105,25 @@ class DetailedMediaItemViewModel: ObservableObject {
     private func loadData() async {
         isFetching = true
         do {
-            let detailedMedia = try await rezkaAPI.fetchDetails(from: media)
+            var detailedMedia = try await rezkaAPI.fetchDetails(from: media)
             if Task.isCancelled { return }
             
-            guard let currentTranslationId = detailedMedia.translations.keys.first else {
+            guard var currentTranslationId = detailedMedia.translations.keys.first else {
                 phase = .failure(DataError.generate(for: .rezkaConstantsApi, error: .empty))
                 return
             }
             
-            if media.isSeries {
-                currentSeason = 1
-                currentEpisode = 1
+            if let histories = await history.value(forKey: "history_media_\(detailedMedia.mediaId)"), let history = histories.first {
+                historyMedia = history
+                currentTranslationId = history.translation
+                detailedMedia = try await rezkaAPI.fetchDetails(from: media, translation: currentTranslationId)
+            } else {
+                historyMedia = DetailedHistoryMedia(mediaId: detailedMedia.mediaId, translation: currentTranslationId)
+                
+                if media.isSeries {
+                    historyMedia.season = 1
+                    historyMedia.episode = 1
+                }
             }
             
             try? await setCurrentTranslation(id: currentTranslationId, mediaId: detailedMedia.mediaId)
@@ -130,11 +146,11 @@ class DetailedMediaItemViewModel: ObservableObject {
     }
     
     var season: SeasonsData? {
-        detailedMedia.seasons[currentTranslation]
+        detailedMedia.seasons[historyMedia.translation]
     }
     
     var episodes: [Episode]? {
-        guard let currentSeason = currentSeason else {
+        guard let currentSeason = historyMedia.season else {
             return nil
         }
         
@@ -142,20 +158,21 @@ class DetailedMediaItemViewModel: ObservableObject {
     }
     
     var episode: Episode? {
-        episodes?.first{ $0.id == currentEpisode }
+        episodes?.first{ $0.id == historyMedia.episode }
     }
     
     func setCurrentTranslation(id: Int, mediaId: Int? = nil) async throws {
-        currentTranslation = id
+        
+        historyMedia.translation = id
         
         if media.isSeries, mediaId == nil {
-            currentSeason = 1
-            currentEpisode = 1
+            historyMedia.season = 1
+            historyMedia.episode = 1
         }
         
         try await updateStreams(of: mediaId ?? detailedMedia.mediaId)
         
-        if media.isSeries, mediaId == nil {
+        if media.isSeries, (mediaId == nil || seasonsInCurrentTranslation == nil) {
             phase = .success(try await rezkaAPI.fetchSeriesDetails(for: detailedMedia, translation: id))
         } else {
             phase = .success(detailedMedia)
@@ -163,16 +180,13 @@ class DetailedMediaItemViewModel: ObservableObject {
     }
     
     func setCurrentSeason(id: Int) async throws {
-        currentSeason = id
-        currentEpisode = 1
+        historyMedia.season = id
         
-        try await updateStreams(of: detailedMedia.mediaId)
-        
-        phase = .success(detailedMedia)
+        try await setCurrentEpisode(id: historyMedia.episode ?? 1)
     }
     
     func setCurrentEpisode(id: Int) async throws {
-        currentEpisode = id
+        historyMedia.episode = id
         
         try await updateStreams(of: detailedMedia.mediaId)
         
@@ -180,8 +194,11 @@ class DetailedMediaItemViewModel: ObservableObject {
     }
     
     private func updateStreams(of mediaId: Int) async throws {
-        streams = try await rezkaAPI.stream(mediaId: mediaId, translationId: currentTranslation, season: currentSeason, episode: currentEpisode)
+        streams = try await rezkaAPI.stream(mediaId: mediaId, translationId: historyMedia.translation, season: historyMedia.season, episode: historyMedia.episode)
         
-        currentQuality = streams?.bestQualityId ?? .unknown
+        historyMedia.quality = streams?.bestQualityId ?? .unknown
+        
+        await history.setValue([historyMedia], forKey: "history_media_\(mediaId)")
+        try? await history.saveToDisk()
     }
 }

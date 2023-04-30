@@ -14,11 +14,7 @@ class MediaCategoriesViewModel: ObservableObject {
     
     private let rezkaAPI = MediaRezkaApi()
     
-    private let cache: DiskCache<[CategoryMedias]> =
-        .init(
-            filename: "xcamediacache",
-            expirationInterval: 5 * 60
-        )
+    private let cache: DiskCache<[CategoryMedias]> = .init(filename: "xcamediacache", expirationInterval: 30 * 60)
     
     var categoryMedias: [CategoryMedias] {
         phase.value ?? []

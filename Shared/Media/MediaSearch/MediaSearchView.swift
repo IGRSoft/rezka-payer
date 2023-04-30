@@ -33,9 +33,6 @@ struct MediaSearchContentView: View {
     @EnvironmentObject var viewModel: MediaSearchContentViewModel
     
     @StateObject private var bookmarkViewModel = MediaBookmarksViewModel.shared
-    
-    @State private var scrollViewHeight = CGFloat.infinity
-    @Namespace private var scrollViewNameSpace
         
     private let columns = [
         GridItem(.flexible()),
@@ -67,28 +64,12 @@ struct MediaSearchContentView: View {
                             }
                         }
                     }
+                    // latest empty label to fetch more data
+                    Label("", image: "")
+                        .onAppear(perform: loadMoreTask)
                 }
                 .padding()
-                .background(
-                    GeometryReader { proxy in
-                        Color.clear
-                            .onChange(of: proxy.frame(in: .named(scrollViewNameSpace))) { newFrame in
-                                if newFrame.size.height + newFrame.minY <= scrollViewHeight {
-                                    loadMoreTask()
-                                }
-                            }
-                    }
-                )
             }
-            .background(
-                GeometryReader { proxy in
-                    Color.clear
-                        .onChange(of: proxy.size, perform: { newSize in
-                            scrollViewHeight = newSize.height
-                        })
-                }
-            )
-            .coordinateSpace(name: scrollViewNameSpace)
         }
         .overlay(overlayView)
         .onFirstAppear {

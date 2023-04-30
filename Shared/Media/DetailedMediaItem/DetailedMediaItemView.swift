@@ -99,12 +99,12 @@ struct DetailedMediaItemView: View {
                                         Text(title)
                                     }
 #endif
-                                    if let seasons = viewModel.seasonsInCurrentTranslation, seasons.isEmpty == false, let currentSeason = viewModel.currentSeasonTitle , let currentEpisodeTitle = viewModel.currentEpisodeTitle {
+                                    if let seasons = viewModel.seasonsInCurrentTranslation, seasons.isEmpty == false {
 #if os(tvOS)
                                         Button {
                                             isSeasonsMenuPresented.toggle()
                                         } label: {
-                                            Text(currentSeason)
+                                            Text(viewModel.currentSeasonTitle)
                                         }
                                         .alert("Сезоны", isPresented: $isSeasonsMenuPresented) {
                                             seasonsMenu
@@ -113,7 +113,7 @@ struct DetailedMediaItemView: View {
                                         Button {
                                             isEpisodesMenuPresented.toggle()
                                         } label: {
-                                            Text(currentEpisodeTitle)
+                                            Text(viewModel.currentEpisodeTitle)
                                         }
                                         .alert("Эпизоды", isPresented: $isEpisodesMenuPresented) {
                                             episodesMenu
@@ -122,13 +122,13 @@ struct DetailedMediaItemView: View {
                                         Menu {
                                             seasonsMenu
                                         } label: {
-                                            Text(currentSeason)
+                                            Text(viewModel.currentSeasonTitle)
                                         }
                                         
                                         Menu {
                                             episodesMenu
                                         } label: {
-                                            Text(currentEpisodeTitle)
+                                            Text(viewModel.currentEpisodeTitle)
                                         }
 #endif
                                     }
@@ -144,7 +144,7 @@ struct DetailedMediaItemView: View {
                                         Button {
                                             isQualityMenuPresented.toggle()
                                         } label: {
-                                            Text(viewModel.currentQuality.rawValue)
+                                            Text(viewModel.historyMedia.quality.rawValue)
                                         }
                                         .alert("Качество", isPresented: $isQualityMenuPresented) {
                                             qualitiesMenu

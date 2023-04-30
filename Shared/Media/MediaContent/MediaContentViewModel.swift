@@ -22,7 +22,7 @@ class MediaContentViewModel: ObservableObject {
     
     private let rezkaAPI = MediaRezkaApi()
     
-    private let cache: DiskCache<[Media]> = .init(filename: "xcamediacache", expirationInterval: 5 * 60)
+    private let cache: DiskCache<[Media]> = .init(filename: "xcamediacache", expirationInterval: 30 * 60)
     
     var newMedias: [Media] {
         phase.value ?? []
@@ -41,6 +41,9 @@ class MediaContentViewModel: ObservableObject {
     
     func loadMedias() async {
         if Task.isCancelled { return }
+        
+        try? await cache.loadFromDisk()
+        
         if let articles = await cache.value(forKey: "new_media_list") {
             phase = .success(articles)
         }
