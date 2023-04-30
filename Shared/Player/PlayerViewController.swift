@@ -18,13 +18,13 @@ typealias ViewControllerType = AVPlayerViewController
 
 struct PlayerViewController: Representable {
     typealias NSViewControllerType = ViewControllerType
+    
+    let videoURL: URL?
         
-    var videoURL: URL?
-
     private var player: AVPlayer {
         return AVPlayer(url: videoURL!)
     }
-
+    
     func makeNSViewController(context: Context) -> NSViewControllerType {
         return makeViewController(context: context)
     }
@@ -45,7 +45,7 @@ struct PlayerViewController: Representable {
 #endif
         return controller
     }
-
+    
     func updateNSViewController(_ playerController: NSViewControllerType, context: Context) {}
     func updateUIViewController(_ playerController: NSViewControllerType, context: Context) {}
 }

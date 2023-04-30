@@ -26,6 +26,8 @@ struct DetailedMediaItemView: View {
     @State private var isQualityMenuPresented = false
     @State private var isPlayerPresented = false
     
+    let didPlayToEndPublisher = NotificationCenter.Publisher(center: .default, name: .AVPlayerItemDidPlayToEndTime)
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(viewModel.title)
@@ -91,6 +93,7 @@ struct DetailedMediaItemView: View {
                                     }
                                     .alert("Озвучка", isPresented: $isTranslationMenuPresented) {
                                         translationMenu
+                                        cancelButton
                                     }
 #else
                                     Menu {
@@ -108,6 +111,7 @@ struct DetailedMediaItemView: View {
                                         }
                                         .alert("Сезоны", isPresented: $isSeasonsMenuPresented) {
                                             seasonsMenu
+                                            cancelButton
                                         }
                                         
                                         Button {
@@ -117,6 +121,7 @@ struct DetailedMediaItemView: View {
                                         }
                                         .alert("Эпизоды", isPresented: $isEpisodesMenuPresented) {
                                             episodesMenu
+                                            cancelButton
                                         }
 #else
                                         Menu {
@@ -148,6 +153,7 @@ struct DetailedMediaItemView: View {
                                         }
                                         .alert("Качество", isPresented: $isQualityMenuPresented) {
                                             qualitiesMenu
+                                            cancelButton
                                         }
 #else
                                         Menu {
@@ -170,7 +176,9 @@ struct DetailedMediaItemView: View {
             PlayerViewController(videoURL: URL(string: viewModel.stream))
                 .edgesIgnoringSafeArea(.all)
                 .transition(.move(edge: .bottom))
-            
+                .onReceive(didPlayToEndPublisher, perform: {_ in
+                    isPlayerPresented = false
+                })
         })
 #endif
     }
@@ -267,6 +275,14 @@ struct DetailedMediaItemView: View {
             
         default: EmptyView()
         }
+    }
+    
+    @ViewBuilder
+    private var cancelButton: some View {
+        Button (role: .cancel) {
+        } label: {
+            Text("Отмена")
+        }.padding()
     }
     
     private func refreshTask() {
