@@ -18,7 +18,7 @@ class DetailedMediaItemViewModel: ObservableObject {
     
     private let cache: DiskCache<[DetailedMedia]> = .init(filename: "xcadmediacache", expirationInterval: 30 * 60)
     
-    private let history: DiskCache<[DetailedHistoryMedia]> = .init(filename: "xcadmediahistory", expirationInterval: 60 * 60 * 24 * 365)
+    private let history: DiskCache<[DetailedHistoryMedia]> = .init(filename: "xcadmediahistory", expirationInterval: .greatestFiniteMagnitude)
     
     let media: Media
     private var detailedMedia: DetailedMedia {

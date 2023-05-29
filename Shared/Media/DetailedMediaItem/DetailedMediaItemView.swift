@@ -25,7 +25,7 @@ struct DetailedMediaItemView: View {
     @State private var isEpisodesMenuPresented = false
     @State private var isQualityMenuPresented = false
     @State private var isPlayerPresented = false
-    
+        
     let didPlayToEndPublisher = NotificationCenter.Publisher(center: .default, name: .AVPlayerItemDidPlayToEndTime)
     
     var body: some View {
@@ -189,6 +189,7 @@ struct DetailedMediaItemView: View {
     
     private func selectSeason(id: Int) async {
         try? await viewModel.setCurrentSeason(id: id)
+        try? await viewModel.setCurrentEpisode(id: 1)
     }
     
     private func selectEpisode(id: Int) async {
@@ -202,13 +203,19 @@ struct DetailedMediaItemView: View {
     @ViewBuilder
     private var translationMenu: some View {
         let items = viewModel.translations
+        let currentTitle = viewModel.currentTranslationTitle
+        
         ForEach(Array(zip(items.values.indices, items)), id: \.0) { _, translation in
             Button {
                 Task {
                     await selectTranslation(id: translation.key)
                 }
             } label: {
-                Text(translation.value)
+                if currentTitle == translation.value {
+                    Text("> \(translation.value)")
+                } else {
+                    Text(translation.value)
+                }
             }
         }
     }
@@ -217,13 +224,18 @@ struct DetailedMediaItemView: View {
     private var seasonsMenu: some View {
         if let seasons = viewModel.seasonsInCurrentTranslation {
             let items = seasons.keys.compactMap({ Int($0) })
+            let currentTitle = viewModel.currentSeasonTitle
+            
             ForEach(items, id: \.self) { item in
+                let name = seasons[item] ?? ""
                 Button {
                     Task {
                         await selectSeason(id: item)
                     }
                 } label: {
-                    if let name = seasons[item] {
+                    if currentTitle == name {
+                        Text("> \(name)")
+                    } else {
                         Text(name)
                     }
                 }
@@ -235,6 +247,8 @@ struct DetailedMediaItemView: View {
     private var episodesMenu: some View {
         if let episodes = viewModel.episodes {
             let items = episodes.map({ $0.id })
+            let currentTitle = viewModel.currentEpisodeTitle
+            
             ForEach(items, id: \.self) { episodeId in
                 Button {
                     Task {
@@ -242,7 +256,11 @@ struct DetailedMediaItemView: View {
                     }
                 } label: {
                     if let episode = episodes.first(where: { $0.id == episodeId }) {
-                        Text(episode.title)
+                        if currentTitle == episode.title {
+                            Text("> \(episode.title)")
+                        } else {
+                            Text(episode.title)
+                        }
                     }
                 }
             }
@@ -252,14 +270,20 @@ struct DetailedMediaItemView: View {
     @ViewBuilder
     private var qualitiesMenu: some View {
         if let qualities = viewModel.streams?.qualities {
-            let items = qualities.map({ $0.rawValue })
+            let items = qualities.map { $0.rawValue }
+            let currentTitle = viewModel.historyMedia.quality.rawValue
+            
             ForEach(items, id: \.self) { quality in
                 Button {
                     Task {
                         await selectQuality(id: Media.Quality(rawValue: quality) ?? .unknown)
                     }
                 } label: {
-                    Text(quality)
+                    if currentTitle == quality {
+                        Text("> \(quality)")
+                    } else {
+                        Text(quality)
+                    }
                 }
             }
         }
