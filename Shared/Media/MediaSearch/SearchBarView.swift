@@ -28,7 +28,7 @@ struct SearchBarView<Content: View>: UIViewControllerRepresentable {
         }
         
         func updateSearchResults(for searchController: UISearchController) {
-            if( self.text != searchController.searchBar.text ) {
+            if (self.text != searchController.searchBar.text ) {
                 self.text = searchController.searchBar.text ?? ""
             }
         }

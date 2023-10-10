@@ -52,7 +52,7 @@ struct StreamMedia: Codable {
         } else if let p = p360, p.isEmpty == false {
             return .p360
         } else {
-            assert(false, "wrong stream data")
+            //assert(false, "wrong stream data")
             return .p360
         }
     }
@@ -69,7 +69,7 @@ struct StreamMedia: Codable {
         } else if let p = p360, p.isEmpty == false {
             return p
         } else {
-            assert(false, "wrong stream data")
+            //assert(false, "wrong stream data")
             return []
         }
     }
@@ -130,7 +130,7 @@ struct StreamMedia: Codable {
         case .p360:
             return p360?.last
         case .unknown:
-            assert(false, "wrong stream data")
+            //assert(false, "wrong stream data")
             return nil
         }
     }

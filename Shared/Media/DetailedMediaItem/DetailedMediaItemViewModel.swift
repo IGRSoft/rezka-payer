@@ -61,6 +61,20 @@ class DetailedMediaItemViewModel: ObservableObject {
         detailedMedia.translations.isEmpty == false ? detailedMedia.translations[historyMedia.translation] : nil
     }
     
+    var nextSeasonId: Int? {
+        guard let seasons = seasonsInCurrentTranslation, let currentSeason = seasons.first(where: { $1 == currentSeasonTitle }) else {
+            return nil
+        }
+        
+        let nextId = currentSeason.key + 1
+        
+        guard nextId <= seasons.count else {
+            return nil
+        }
+        
+        return nextId
+    }
+    
     var currentSeasonTitle: String {
         guard let currentSeason = historyMedia.season else {
             return "-"
@@ -75,6 +89,20 @@ class DetailedMediaItemViewModel: ObservableObject {
     
     var currentEpisodeTitle: String {
         episode?.title ?? "-"
+    }
+    
+    var nextEpisodeId: Int? {
+        guard let id = episode?.id, let episodesCount = episodes?.count else {
+            return nil
+        }
+        
+        let nextId = id + 1
+        
+        guard nextId <= episodesCount else {
+            return nil
+        }
+        
+        return nextId
     }
         
     func setQuality(_ quality: Media.Quality) {

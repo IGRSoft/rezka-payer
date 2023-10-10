@@ -55,6 +55,8 @@ class MediaSearchContentViewModel: ObservableObject {
     }
     
     func loadMore() async {
+        guard isFetching == false else { return }
+        
         phase = .fetchingNextPage(newMedias)
         
         await loadData(page: page)
@@ -70,6 +72,8 @@ class MediaSearchContentViewModel: ObservableObject {
         do {
             let categoryMedias = try await rezkaAPI.search(for: search, page: page)
             
+            isFetching = false
+            
             if Task.isCancelled { return }
             let medias = (page == 1 ? [] : newMedias) + categoryMedias
             await cache.setValue(medias, forKey: "new_media_list")
@@ -77,12 +81,11 @@ class MediaSearchContentViewModel: ObservableObject {
             
             phase = .success(medias)
             self.page = page + 1
-            isFetching = false
             
         } catch {
+            isFetching = false
             if Task.isCancelled { return }
             phase = .failure(error)
-            isFetching = false
         }
     }
 }

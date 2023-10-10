@@ -22,7 +22,9 @@ struct DetailedMediaItemView: View {
     
     @State private var isTranslationMenuPresented = false
     @State private var isSeasonsMenuPresented = false
+    @State private var skipSeasonsMenuPresented = false
     @State private var isEpisodesMenuPresented = false
+    @State private var skipEpisodesMenuPresented = false
     @State private var isQualityMenuPresented = false
     @State private var isPlayerPresented = false
         
@@ -105,7 +107,10 @@ struct DetailedMediaItemView: View {
                                     if let seasons = viewModel.seasonsInCurrentTranslation, seasons.isEmpty == false {
 #if os(tvOS)
                                         Button {
-                                            isSeasonsMenuPresented.toggle()
+                                            if skipSeasonsMenuPresented == false {
+                                                isSeasonsMenuPresented.toggle()
+                                            }
+                                            skipSeasonsMenuPresented = false
                                         } label: {
                                             Text(viewModel.currentSeasonTitle)
                                         }
@@ -113,9 +118,20 @@ struct DetailedMediaItemView: View {
                                             seasonsMenu
                                             cancelButton
                                         }
+                                        .simultaneousGesture(LongPressGesture().onEnded { _ in
+                                            if let nextSeasonId = viewModel.nextSeasonId {
+                                                Task {
+                                                    await selectSeason(id: nextSeasonId)
+                                                }
+                                                skipSeasonsMenuPresented = true
+                                            }
+                                        })
                                         
                                         Button {
-                                            isEpisodesMenuPresented.toggle()
+                                            if skipEpisodesMenuPresented == false {
+                                                isEpisodesMenuPresented.toggle()
+                                            }
+                                            skipEpisodesMenuPresented = false
                                         } label: {
                                             Text(viewModel.currentEpisodeTitle)
                                         }
@@ -123,6 +139,14 @@ struct DetailedMediaItemView: View {
                                             episodesMenu
                                             cancelButton
                                         }
+                                        .simultaneousGesture(LongPressGesture().onEnded { _ in
+                                            if let nextEpisode = viewModel.nextEpisodeId {
+                                                Task {
+                                                    await selectEpisode(id: nextEpisode)
+                                                }
+                                                skipEpisodesMenuPresented = true
+                                            }
+                                        })
 #else
                                         Menu {
                                             seasonsMenu
