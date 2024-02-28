@@ -140,6 +140,11 @@ class DetailedMediaItemViewModel: ObservableObject {
                 phase = .failure(DataError.generate(for: .rezkaConstantsApi, error: .empty))
                 return
             }
+          
+            let preferedTranslation = UserDefaults.group?.translate ?? -1
+            if detailedMedia.translations.keys.contains(preferedTranslation){
+              currentTranslationId = preferedTranslation
+            }
             
             if let histories = await history.value(forKey: "history_media_\(detailedMedia.mediaId)"), let history = histories.first {
                 historyMedia = history
@@ -224,8 +229,16 @@ class DetailedMediaItemViewModel: ObservableObject {
     private func updateStreams(of mediaId: Int) async throws {
         streams = try await rezkaAPI.stream(mediaId: mediaId, translationId: historyMedia.translation, season: historyMedia.season, episode: historyMedia.episode)
         
-        historyMedia.quality = streams?.bestQualityId ?? .unknown
-        
+        let lastQ: Media.Quality = UserDefaults.group!.quality
+        let bestQ:Media.Quality = streams?.bestQualityId ?? .unknown
+      
+        if lastQ != .unknown && bestQ > lastQ {
+          historyMedia.quality = lastQ
+        }
+        else{
+          historyMedia.quality = bestQ
+        }
+      
         await history.setValue([historyMedia], forKey: "history_media_\(mediaId)")
         try? await history.saveToDisk()
     }

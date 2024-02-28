@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AA43CA52B8D950B003CA4FF /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA43CA42B8D950B003CA4FF /* Defaults.swift */; };
+		4AA43CA62B8D950B003CA4FF /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA43CA42B8D950B003CA4FF /* Defaults.swift */; };
+		4AA43CA72B8D950B003CA4FF /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA43CA42B8D950B003CA4FF /* Defaults.swift */; };
 		A50D8FCF28ABF5E7008C66AA /* MediaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FCE28ABF5E7008C66AA /* MediaContentView.swift */; };
 		A50D8FD028ABF5E7008C66AA /* MediaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FCE28ABF5E7008C66AA /* MediaContentView.swift */; };
 		A50D8FD128ABF5E7008C66AA /* MediaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D8FCE28ABF5E7008C66AA /* MediaContentView.swift */; };
@@ -184,6 +187,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4AA43CA42B8D950B003CA4FF /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		A50D8FCE28ABF5E7008C66AA /* MediaContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContentView.swift; sourceTree = "<group>"; };
 		A50D8FD328ABF6AC008C66AA /* MediaCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCategoriesViewModel.swift; sourceTree = "<group>"; };
 		A50D8FD928ABF7CF008C66AA /* MediaBookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaBookmarksViewModel.swift; sourceTree = "<group>"; };
@@ -499,6 +503,7 @@
 				A5B79D1F28ABEF68006CAF8E /* rezka_playerApp.swift */,
 				A5B79D2028ABEF68006CAF8E /* ContentView.swift */,
 				A5A741E02902F48400B884F7 /* ContentViewModel.swift */,
+				4AA43CA42B8D950B003CA4FF /* Defaults.swift */,
 				A5B79D2128ABEF6A006CAF8E /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -726,6 +731,7 @@
 				A598C17628B2A4A60034717C /* DataFetchPhase.swift in Sources */,
 				A5A7419128F82F9100B884F7 /* Dictionary+SwiftUI.swift in Sources */,
 				A57D2DB428AEB2CD00E98298 /* Media.swift in Sources */,
+				4AA43CA52B8D950B003CA4FF /* Defaults.swift in Sources */,
 				A598C17E28B2A5670034717C /* Cache.swift in Sources */,
 				A50D8FD428ABF6AC008C66AA /* MediaCategoriesViewModel.swift in Sources */,
 				A50D8FDA28ABF7CF008C66AA /* MediaBookmarksViewModel.swift in Sources */,
@@ -786,6 +792,7 @@
 				A598C17728B2A4A60034717C /* DataFetchPhase.swift in Sources */,
 				A5A7419228F82F9100B884F7 /* Dictionary+SwiftUI.swift in Sources */,
 				A57D2DB528AEB2CD00E98298 /* Media.swift in Sources */,
+				4AA43CA62B8D950B003CA4FF /* Defaults.swift in Sources */,
 				A598C17F28B2A5670034717C /* Cache.swift in Sources */,
 				A50D8FD528ABF6AC008C66AA /* MediaCategoriesViewModel.swift in Sources */,
 				A50D8FDB28ABF7CF008C66AA /* MediaBookmarksViewModel.swift in Sources */,
@@ -846,6 +853,7 @@
 				A598C17828B2A4A60034717C /* DataFetchPhase.swift in Sources */,
 				A5A7419328F82F9100B884F7 /* Dictionary+SwiftUI.swift in Sources */,
 				A57D2DB628AEB2CD00E98298 /* Media.swift in Sources */,
+				4AA43CA72B8D950B003CA4FF /* Defaults.swift in Sources */,
 				A598C18028B2A5670034717C /* Cache.swift in Sources */,
 				A50D8FD628ABF6AC008C66AA /* MediaCategoriesViewModel.swift in Sources */,
 				A50D8FDC28ABF7CF008C66AA /* MediaBookmarksViewModel.swift in Sources */,

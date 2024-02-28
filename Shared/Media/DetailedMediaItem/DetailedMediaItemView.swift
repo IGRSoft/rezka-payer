@@ -183,7 +183,7 @@ struct DetailedMediaItemView: View {
                                         Menu {
                                             qualitiesMenu
                                         } label: {
-                                            Text(viewModel.currentQuality.rawValue)
+                                          Text(viewModel.media.quality.rawValue)
                                         }
 #endif
                                     }
@@ -209,6 +209,7 @@ struct DetailedMediaItemView: View {
     
     private func selectTranslation(id: Int) async {
         try? await viewModel.setCurrentTranslation(id: id)
+        UserDefaults.group?.translate = id
     }
     
     private func selectSeason(id: Int) async {
@@ -221,7 +222,8 @@ struct DetailedMediaItemView: View {
     }
     
     private func selectQuality(id: Media.Quality) async {
-        viewModel.setQuality(id)
+      viewModel.setQuality(id)
+      UserDefaults.group?.quality = id
     }
     
     @ViewBuilder
