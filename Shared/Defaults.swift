@@ -8,12 +8,12 @@
 
 import Foundation
 
-let quality_key   = "quality.key"
-let translate_key = "translate.key"
+fileprivate let quality_key   = "quality.key"
+fileprivate let translate_key = "translate.key"
 
 
 extension UserDefaults {
-  static let group = UserDefaults(suiteName: "group.identifier")
+  static let group = UserDefaults(suiteName: "group.rezka-player")
   
   var quality : Media.Quality {
     set(val){

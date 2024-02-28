@@ -7,47 +7,17 @@
 
 import Foundation
 
-fileprivate let activityTypeViewKey = "com.rezka-player.media.view"
-fileprivate let activityURLKey = "media.url.key"
+let activityTypeViewKey = "com.rezka-player.media.view"
+let activityURLKey = "media.url.key"
 
 struct Media {
-    enum Quality: String, Codable, Equatable {
+    enum Quality: String, Codable {
         case p1080u = "1080p Ultra"
         case p1080 = "1080p"
         case p720 = "720p"
         case p480 = "480p"
         case p360 = "360p"
         case unknown
-      
-    
-      static func index(of aStatus: Quality) -> Int {
-        switch aStatus {
-        case .p360:
-          return 1
-        case .p480:
-          return 2
-        case .p720:
-          return 3
-        case .p1080:
-          return 4
-        case .p1080u:
-          return 5
-        default:
-          return 0
-        }
-      }
-
-      static func > (lhs: Quality, rhs: Quality) -> Bool {
-        return Quality.index(of: lhs) >  Quality.index(of: rhs)
-      }
-      
-      static func < (lhs: Quality, rhs: Quality) -> Bool {
-        return Quality.index(of: lhs) <  Quality.index(of: rhs)
-      }
-      
-      static func == (lhs: Quality, rhs: Quality) -> Bool {
-        return Quality.index(of: lhs) ==  Quality.index(of: rhs)
-      }
     }
     
     var id = UUID()
@@ -101,4 +71,38 @@ extension Media {
             .init(category: $0, medias: articles.shuffled())
         }
     }
+}
+
+
+extension Media.Quality: Comparable, Equatable{
+  
+    static func index(of aStatus: Media.Quality) -> Int {
+      switch aStatus {
+      case .p360:
+        return 1
+      case .p480:
+        return 2
+      case .p720:
+        return 3
+      case .p1080:
+        return 4
+      case .p1080u:
+        return 5
+      default:
+        return 0
+      }
+    }
+
+    static func > (lhs: Media.Quality, rhs: Media.Quality) -> Bool {
+      return Media.Quality.index(of: lhs) >  Media.Quality.index(of: rhs)
+    }
+    
+    static func < (lhs: Media.Quality, rhs: Media.Quality) -> Bool {
+      return Media.Quality.index(of: lhs) <  Media.Quality.index(of: rhs)
+    }
+    
+    static func == (lhs: Media.Quality, rhs: Media.Quality) -> Bool {
+      return Media.Quality.index(of: lhs) ==  Media.Quality.index(of: rhs)
+    }
+  
 }
