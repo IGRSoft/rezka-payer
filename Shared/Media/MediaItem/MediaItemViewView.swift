@@ -32,11 +32,11 @@ struct MediaItemViewView: View {
                         if media.isSeries, let seriesInfo = media.seriesInfo {
                             Text(seriesInfo)
                                 .font(.caption)
-                                .foregroundColor(.black)
-                                .foregroundStyle(.secondary)
                                 .lineLimit(1)
                                 .padding(.init(top: 8, leading: 16, bottom: 8, trailing: 16))
-                                .background(.primary)
+                                .foregroundStyle(.primary)
+                                .colorInvert()
+                                .background(Color("MediaTileSeriesBackgroundColor"))
                                 .cornerRadius(8)
                         }
                     }

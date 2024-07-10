@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+fileprivate let SelectionIcon = "⦿"
+
 struct DetailedMediaItemView: View {
 #if os(iOS)
     static let coverSize = CGSize(width: 200, height: 300)
@@ -238,7 +240,7 @@ struct DetailedMediaItemView: View {
                 }
             } label: {
                 if currentTitle == translation.value {
-                    Text("> \(translation.value)")
+                    Text("\(SelectionIcon) \(translation.value)")
                 } else {
                     Text(translation.value)
                 }
@@ -260,7 +262,7 @@ struct DetailedMediaItemView: View {
                     }
                 } label: {
                     if currentTitle == name {
-                        Text("> \(name)")
+                        Text("\(SelectionIcon) \(name)")
                     } else {
                         Text(name)
                     }
@@ -283,7 +285,7 @@ struct DetailedMediaItemView: View {
                 } label: {
                     if let episode = episodes.first(where: { $0.id == episodeId }) {
                         if currentTitle == episode.title {
-                            Text("> \(episode.title)")
+                            Text("\(SelectionIcon) \(episode.title)")
                         } else {
                             Text(episode.title)
                         }
@@ -306,7 +308,7 @@ struct DetailedMediaItemView: View {
                     }
                 } label: {
                     if currentTitle == quality {
-                        Text("> \(quality)")
+                        Text("\(SelectionIcon) \(quality)")
                     } else {
                         Text(quality)
                     }
