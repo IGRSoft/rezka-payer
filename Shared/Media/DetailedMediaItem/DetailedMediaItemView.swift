@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+fileprivate let SelectionIcon = "⦿"
+
 struct DetailedMediaItemView: View {
 #if os(iOS)
     static let coverSize = CGSize(width: 200, height: 300)
@@ -183,7 +185,7 @@ struct DetailedMediaItemView: View {
                                         Menu {
                                             qualitiesMenu
                                         } label: {
-                                            Text(viewModel.currentQuality.rawValue)
+                                          Text(viewModel.media.quality.rawValue)
                                         }
 #endif
                                     }
@@ -209,6 +211,7 @@ struct DetailedMediaItemView: View {
     
     private func selectTranslation(id: Int) async {
         try? await viewModel.setCurrentTranslation(id: id)
+        UserDefaults.group?.translate = id
     }
     
     private func selectSeason(id: Int) async {
@@ -221,7 +224,8 @@ struct DetailedMediaItemView: View {
     }
     
     private func selectQuality(id: Media.Quality) async {
-        viewModel.setQuality(id)
+      viewModel.setQuality(id)
+      UserDefaults.group?.quality = id
     }
     
     @ViewBuilder
@@ -236,7 +240,7 @@ struct DetailedMediaItemView: View {
                 }
             } label: {
                 if currentTitle == translation.value {
-                    Text("> \(translation.value)")
+                    Text("\(SelectionIcon) \(translation.value)")
                 } else {
                     Text(translation.value)
                 }
@@ -258,7 +262,7 @@ struct DetailedMediaItemView: View {
                     }
                 } label: {
                     if currentTitle == name {
-                        Text("> \(name)")
+                        Text("\(SelectionIcon) \(name)")
                     } else {
                         Text(name)
                     }
@@ -281,7 +285,7 @@ struct DetailedMediaItemView: View {
                 } label: {
                     if let episode = episodes.first(where: { $0.id == episodeId }) {
                         if currentTitle == episode.title {
-                            Text("> \(episode.title)")
+                            Text("\(SelectionIcon) \(episode.title)")
                         } else {
                             Text(episode.title)
                         }
@@ -304,7 +308,7 @@ struct DetailedMediaItemView: View {
                     }
                 } label: {
                     if currentTitle == quality {
-                        Text("> \(quality)")
+                        Text("\(SelectionIcon) \(quality)")
                     } else {
                         Text(quality)
                     }

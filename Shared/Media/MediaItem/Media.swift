@@ -72,3 +72,37 @@ extension Media {
         }
     }
 }
+
+
+extension Media.Quality: Comparable, Equatable{
+  
+    static func index(of aStatus: Media.Quality) -> Int {
+      switch aStatus {
+      case .p360:
+        return 1
+      case .p480:
+        return 2
+      case .p720:
+        return 3
+      case .p1080:
+        return 4
+      case .p1080u:
+        return 5
+      default:
+        return 0
+      }
+    }
+
+    static func > (lhs: Media.Quality, rhs: Media.Quality) -> Bool {
+      return Media.Quality.index(of: lhs) >  Media.Quality.index(of: rhs)
+    }
+    
+    static func < (lhs: Media.Quality, rhs: Media.Quality) -> Bool {
+      return Media.Quality.index(of: lhs) <  Media.Quality.index(of: rhs)
+    }
+    
+    static func == (lhs: Media.Quality, rhs: Media.Quality) -> Bool {
+      return Media.Quality.index(of: lhs) ==  Media.Quality.index(of: rhs)
+    }
+  
+}

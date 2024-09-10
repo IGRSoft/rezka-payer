@@ -58,7 +58,8 @@ struct MediaContentView: View {
                                 .frame(width: MediaItemViewView.coverSize.width, height: MediaItemViewView.coverSize.height)
                         }
 #if os(tvOS)
-                        .buttonStyle(.card)
+                        .buttonStyle(MediaButtonStyle())
+                        .modifier(FocusMediaAnimationModifier())
 #else
                         .buttonStyle(.bordered)
 #endif
@@ -127,6 +128,30 @@ struct MediaContentView: View {
         Task {
             await viewModel.loadMore()
         }
+    }
+}
+
+struct FocusMediaAnimationModifier: ViewModifier {
+    @FocusState private var isFocused: Bool
+
+    func body(content: Content) -> some View {
+        content
+        .padding(5)
+        .border(.blue, width: isFocused ? 10 : 0)
+        .cornerRadius(10)
+        .scaleEffect(isFocused ? 1.05 : 1.0)
+        .animation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0), value: isFocused)
+        .focused($isFocused)
+    }
+}
+
+struct MediaButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                .fill(Color("MediaTileBackgroundColor"))
+            )
     }
 }
 

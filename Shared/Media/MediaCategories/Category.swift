@@ -33,7 +33,7 @@ enum Category: String, CaseIterable, Codable {
         case .films:
             return Image(systemName: "video.fill")
         case .series:
-            return Image(systemName: "play.rectangle.fill")
+            return Image(systemName: "play.square.stack")
         case .cartoons:
             return Image(systemName: "ticket")
         case .animation:
