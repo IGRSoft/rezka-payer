@@ -13,30 +13,30 @@ fileprivate let translate_key = "translate.key"
 
 
 extension UserDefaults {
-  static let group = UserDefaults(suiteName: "group.rezka-player")
-  
-  var quality : Media.Quality {
-    set(val){
-      UserDefaults.group?.set(val.rawValue, forKey: quality_key)
+    static let group = UserDefaults(suiteName: "group.rezka-player")
+    
+    var quality : Media.Quality {
+        set(val){
+            UserDefaults.group?.set(val.rawValue, forKey: quality_key)
+        }
+        get{
+            guard let val = UserDefaults.group?.string(forKey: quality_key) else {
+                return Media.Quality.unknown
+            }
+            return Media.Quality(rawValue: val)!
+        }
     }
-    get{
-      guard let val = UserDefaults.group?.string(forKey: quality_key) else {
-        return Media.Quality.unknown
-      }
-      return Media.Quality(rawValue: val)!
+    
+    var translate : Int? {
+        set(val){
+            UserDefaults.group?.set(val, forKey: translate_key)
+        }
+        get{
+            guard let val = UserDefaults.group?.integer(forKey: translate_key) else {
+                return nil
+            }
+            return val
+        }
     }
-  }
-  
-  var translate : Int? {
-    set(val){
-      UserDefaults.group?.set(val, forKey: translate_key)
-    }
-    get{
-      guard let val = UserDefaults.group?.integer(forKey: translate_key) else {
-        return nil
-      }
-      return val
-    }
-  }
-
+    
 }

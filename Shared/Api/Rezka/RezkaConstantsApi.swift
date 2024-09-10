@@ -8,6 +8,6 @@
 import Foundation
 
 struct RezkaConstantsApi {
-    static let server = "https://rezka.ag"
+    static let server = ""
     static let domain = "RezkaAPI"
 }

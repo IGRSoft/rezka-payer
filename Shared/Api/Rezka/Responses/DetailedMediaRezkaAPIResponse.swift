@@ -37,16 +37,14 @@ struct DetailedMediaRezkaAPIResponse: Decodable {
                 info[title] = String(persons)
             }
         })
-        
-        let isPropahanda = info.values.contains("Россия") == true
-        
+                
         let defaultTranslation = info["В переводе:"] ?? ""
         
         let desc = try item?.getElementsByClass("b-post__description_text").last?.text() ?? ""
         
         let coverElement = try item?.getElementsByClass("b-sidecover").first
         
-        let img: String = !isPropahanda ? (try coverElement?.getElementsByTag("img").first?.attr("src") ?? "") : "https://i.imgur.com/hJTNW43.jpg"
+        let img: String = (try coverElement?.getElementsByTag("img").first?.attr("src") ?? "")
         
         let translation = try DetailedMediaRezkaAPIResponse.translations(in: doc, default: defaultTranslation)
         
