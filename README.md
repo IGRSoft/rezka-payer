@@ -1,3 +1,5 @@
+# PLEASE NOTE, THIS PROJECT IS NO LONGER BEING MAINTAINED
+
 # rezka-payer
 Watch video from HD Rezka on Apple TV / macOS / iOS / ipadOS
 

@@ -42,35 +42,35 @@ private struct StreamData: Codable {
 struct StreamMedia: Codable {
     var bestQualityId: Media.Quality {
         if let p = p1080u, p.isEmpty == false {
-            return .p1080u
+            .p1080u
         } else if let p = p1080, p.isEmpty == false {
-            return .p1080
+            .p1080
         } else if let p = p720, p.isEmpty == false {
-            return .p720
+            .p720
         } else if let p = p480, p.isEmpty == false {
-            return .p480
+            .p480
         } else if let p = p360, p.isEmpty == false {
-            return .p360
+            .p360
         } else {
             //assert(false, "wrong stream data")
-            return .p360
+            .p360
         }
     }
     
     var bestQualityUrl: [String] {
         if let p = p1080u, p.isEmpty == false {
-            return p
+            p
         } else if let p = p1080, p.isEmpty == false {
-            return p
+            p
         } else if let p = p720, p.isEmpty == false {
-            return p
+            p
         } else if let p = p480, p.isEmpty == false {
-            return p
+            p
         } else if let p = p360, p.isEmpty == false {
-            return p
+            p
         } else {
             //assert(false, "wrong stream data")
-            return []
+            []
         }
     }
     
@@ -102,36 +102,25 @@ struct StreamMedia: Codable {
     
     func stream(_ quality: Media.Quality) -> String? {
         switch quality {
-        case .p1080u:
-            return p1080u?.first
-        case .p1080:
-            return p1080?.first
-        case .p720:
-            return p720?.first
-        case .p480:
-            return p480?.first
-        case .p360:
-            return p360?.first
-        case .unknown:
-            return nil
+        case .p1080u: p1080u?.first
+        case .p1080: p1080?.first
+        case .p720: p720?.first
+        case .p480: p480?.first
+        case .p360: p360?.first
+        case .unknown: nil
         }
     }
     
     func alternativeStream(_ quality: Media.Quality) -> String? {
         switch quality {
-        case .p1080u:
-            return p1080u?.last
-        case .p1080:
-            return p1080?.last
-        case .p720:
-            return p720?.last
-        case .p480:
-            return p480?.last
-        case .p360:
-            return p360?.last
+        case .p1080u: p1080u?.last
+        case .p1080: p1080?.last
+        case .p720: p720?.last
+        case .p480: p480?.last
+        case .p360: p360?.last
         case .unknown:
             //assert(false, "wrong stream data")
-            return nil
+            nil
         }
     }
 }
@@ -202,18 +191,12 @@ struct StreamRezkaApiResponse: Decodable {
             let urls = tempStreams.split(separator: " or ").compactMap { String($0) }
             
             switch type {
-            case .p1080u:
-                p1080u = urls
-            case .p1080:
-                p1080 = urls
-            case .p720:
-                p720 = urls
-            case .p480:
-                p480 = urls
-            case .p360:
-                p360 = urls
-            case .unknown:
-                break
+            case .p1080u: p1080u = urls
+            case .p1080: p1080 = urls
+            case .p720: p720 = urls
+            case .p480: p480 = urls
+            case .p360: p360 = urls
+            case .unknown: break
             }
         })
         

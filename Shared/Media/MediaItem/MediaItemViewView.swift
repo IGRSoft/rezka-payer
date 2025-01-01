@@ -21,65 +21,77 @@ struct MediaItemViewView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            VStack(alignment: .leading, spacing: 24) {
+            ZStack(alignment: .top) {
                 ZStack(alignment: .topTrailing) {
                     ZStack (alignment: .bottomLeading) {
-                        CacheAsyncImage(url: media.coverURL) { phase in
-                            phase.view
+                        if let url = media.coverURL {
+                            CacheAsyncImage(url: url) { $0.view }
+                                .frame(maxWidth: proxy.size.width, maxHeight: proxy.size.height * 0.73)
+                                .padding(.top, 16)
                         }
-                        .frame(width: proxy.size.width, height: MediaItemViewView.coverSize.height * 0.73)
-                        .padding(.init(top: 16, leading: 0, bottom: 0, trailing: 0))
+                        
                         if media.isSeries, let seriesInfo = media.seriesInfo {
                             Text(seriesInfo)
-                                .font(.caption)
+                                .font(.headline)
                                 .lineLimit(1)
-                                .padding(.init(top: 8, leading: 16, bottom: 8, trailing: 16))
+                                .padding(16)
                                 .foregroundStyle(.primary)
                                 .colorInvert()
                                 .background(Color("MediaTileSeriesBackgroundColor"))
                                 .cornerRadius(8)
                         }
                     }
+                    
                     HStack(spacing: 16) {
                         Text(media.category.rawValue)
-                            .font(.caption)
+                            .font(.headline)
                             .foregroundStyle(.primary)
                             .lineLimit(2)
-                            .padding(.init(top: 8, leading: 16, bottom: 8, trailing: 8))
+                            .padding(.leading, 16)
                         
                         media.category.icon
-                            .frame(width: 14, height: 14)
+                            .frame(width: 18, height: 18)
+                            .padding(.trailing, 24)
                             .foregroundStyle(.primary)
-                            .padding(.init(top: 8, leading: 0, bottom: 8, trailing: 24))
                     }
+                    .padding(8)
                     .background(media.category.color)
                     .cornerRadius(8)
                 }
                 
-                VStack(alignment: .leading) {
-                    
-                    Text(media.title)
-                        .font(.subheadline)
-                        .foregroundStyle(.primary)
-                        .lineLimit(nil)
-                        .frame(height: 78, alignment: .top)
-                    
-                    Spacer(minLength: 6)
-                    
-                    HStack {
-                        Text(media.descriptionShort)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(2)
+                ZStack(alignment: .bottomLeading) {
+                    VStack(alignment: .leading, spacing: 8) {
                         
-                        if bookmarkViewModel.isBookmarked(for: media) {
-                            Spacer()
-                            Image(systemName: "bookmark.fill")
+                        Spacer()
+                        
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(media.title)
+                                .font(.headline)
+                                .foregroundStyle(.primary)
+                                .lineLimit(2)
+                                .frame(height: 92, alignment: .top)
+                            
+                            HStack {
+                                Text(media.descriptionShort)
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                                    .lineLimit(2)
+                                Spacer()
+                                
+                                if bookmarkViewModel.isBookmarked(for: media) {
+                                    
+                                    Image(systemName: "bookmark.fill")
+                                }
+                            }
                         }
+                        .padding(12)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.gray.opacity(0.8))
+                        .cornerRadius(8)
                     }
                 }
-                .padding([.horizontal, .bottom])
             }
+            .opacity(media.category == .loadMore ? 0.001 : 1)
         }
     }
 }

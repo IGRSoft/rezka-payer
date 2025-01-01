@@ -46,19 +46,19 @@ extension AsyncImagePhase {
     var view: AnyView {
         switch self {
         case .empty:
-            return AnyView(HStack {
+            AnyView(HStack {
                 Spacer()
                 ProgressView()
                 Spacer()
             })
             
         case .success(let image):
-            return AnyView(image
+            AnyView(image
                 .resizable()
                 .aspectRatio(contentMode: .fit))
             
         case .failure:
-            return AnyView(HStack {
+            AnyView(HStack {
                 Spacer()
                 Image(systemName: "photo")
                     .imageScale(.large)

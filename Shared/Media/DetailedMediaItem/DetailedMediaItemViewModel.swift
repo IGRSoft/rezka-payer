@@ -230,7 +230,7 @@ class DetailedMediaItemViewModel: ObservableObject {
         streams = try await rezkaAPI.stream(mediaId: mediaId, translationId: historyMedia.translation, season: historyMedia.season, episode: historyMedia.episode)
         
         let lastQ: Media.Quality = UserDefaults.group!.quality
-        let bestQ:Media.Quality = streams?.bestQualityId ?? .unknown
+        let bestQ: Media.Quality = streams?.bestQualityId ?? .unknown
       
         if lastQ != .unknown && bestQ > lastQ {
           historyMedia.quality = lastQ

@@ -16,11 +16,11 @@ enum DataFetchPhase<T> {
     
     var value: T? {
         if case .success(let value) = self {
-            return value
+            value
         } else if case .fetchingNextPage(let value) = self {
-            return value
+            value
+        } else {
+            nil
         }
-        
-        return nil
     }
 }

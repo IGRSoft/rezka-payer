@@ -13,19 +13,16 @@ struct MediaSearchView: View {
     @StateObject private var viewModel = MediaSearchContentViewModel(search: "")
     
     var body: some View {
-        VStack {
 #if !os(macOS)
-            SearchBarView(text: $text) {
-                MediaSearchContentView()
-                    .environmentObject(viewModel)
-                    .onChange(of: text) { newValue in
-                        Task {
-                            await viewModel.updateSearch(text: text)
-                        }
-                    }
+        MediaSearchContentView()
+            .environmentObject(viewModel)
+            .onChange(of: text) { _, newValue in
+                Task {
+                    await viewModel.updateSearch(text: newValue)
+                }
             }
+            .searchable(text: $text)
 #endif
-        }
     }
 }
 
@@ -33,7 +30,9 @@ struct MediaSearchContentView: View {
     @EnvironmentObject var viewModel: MediaSearchContentViewModel
     
     @StateObject private var bookmarkViewModel = MediaBookmarksViewModel.shared
-        
+    
+    @State private var cardSize: CGSize = MediaItemViewView.coverSize
+    
     private let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -49,7 +48,7 @@ struct MediaSearchContentView: View {
                             DetailedMediaItemView(viewModel: DetailedMediaItemViewModel(media: media), bookmarkViewModel: bookmarkViewModel)
                         } label: {
                             MediaItemViewView(media: media, bookmarkViewModel: bookmarkViewModel)
-                                .frame(width: MediaItemViewView.coverSize.width, height: MediaItemViewView.coverSize.height)
+                                .frame(width: cardSize.width, height: cardSize.height)
                         }
 #if os(tvOS)
                         .buttonStyle(.card)
@@ -65,16 +64,21 @@ struct MediaSearchContentView: View {
                         }
                     }
                     // latest empty label to fetch more data
-                    Label("", image: "")
+                    Color.clear
+                        .frame(height: 1)
                         .onAppear(perform: loadMoreTask)
                 }
-                .padding()
+            }
+            .onScrollGeometryChange(for: Double.self) { geo in
+                geo.contentSize.width
+            } action: { oldValue, newValue in
+                let newWidth = (newValue - 96) / (newValue > 1000 ? 4 : 3)
+                cardSize = .init(width: newWidth, height: newWidth * 1.6)
             }
         }
         .overlay(overlayView)
         .onFirstAppear {
             refreshTask()
-            
         }
 #if os(macOS)
         .frame(maxWidth: 1024, maxHeight: 1024)

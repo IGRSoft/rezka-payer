@@ -22,15 +22,18 @@ struct PlayerViewController: Representable {
     let videoURL: URL?
         
     private var player: AVPlayer {
-        return AVPlayer(url: videoURL!)
+        let playerItem = AVPlayerItem(url: videoURL!)
+        playerItem.canUseNetworkResourcesForLiveStreamingWhilePaused = false
+        playerItem.preferredForwardBufferDuration = TimeInterval(30)
+        return AVPlayer(playerItem: playerItem)
     }
     
     func makeNSViewController(context: Context) -> NSViewControllerType {
-        return makeViewController(context: context)
+        makeViewController(context: context)
     }
     
     func makeUIViewController(context: Context) -> NSViewControllerType {
-        return makeViewController(context: context)
+        makeViewController(context: context)
     }
     
     func makeViewController(context: Context) -> NSViewControllerType {

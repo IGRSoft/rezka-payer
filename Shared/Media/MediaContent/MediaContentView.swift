@@ -25,27 +25,26 @@ struct MediaContentView: View {
 #endif
     
     var body: some View {
-        VStack {
+        VStack(spacing: .zero) {
             ScrollView {
 #if os(tvOS)
                 if let elements = viewModel.subCategories {
                     ScrollView(.horizontal) {
-                        HStack {
+                        HStack(spacing: 24) {
                             ForEach(elements) { element in
                                 Button(action: {
                                     Task {
                                         await viewModel.setSubCategory(element)
                                     }
                                 }, label: {
-                                    VStack {
-                                        Label(element.name, systemImage: element != viewModel.selectedSubCategory ? "circle" : "circle.inset.filled")
-                                            .symbolRenderingMode(.palette)
-                                            .foregroundStyle(.secondary, .blue)
-                                    }
+                                    Label(element.name, systemImage: element != viewModel.selectedSubCategory ? "circle" : "circle.inset.filled")
+                                        .symbolRenderingMode(.palette)
+                                        .foregroundStyle(.secondary, .blue)
                                 })
                             }
                         }
-                        .padding(.init(top: 8, leading: 32, bottom: 32, trailing: 32))
+                        .padding(.horizontal, 32)
+                        .padding(.vertical, 4)
                     }
                 }
 #endif
@@ -75,19 +74,18 @@ struct MediaContentView: View {
                                 Text("Cancel")
                             }
                         }
+                        .onAppear() {
+                            if media.category == .loadMore {
+                                loadMoreTask()
+                            }
+                        }
                     }
-                    // latest empty label to fetch more data
-                    Label("", image: "")
-                        .onAppear(perform: loadMoreTask)
                 }
-                .padding()
+                .padding(.top, 16)
             }
         }
         .overlay(overlayView)
-        .onFirstAppear {
-            refreshTask()
-            
-        }
+        .onFirstAppear(refreshTask)
 #if os(macOS)
         .frame(maxWidth: 1024, maxHeight: 1024)
 #endif

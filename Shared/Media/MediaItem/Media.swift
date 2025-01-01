@@ -39,8 +39,8 @@ struct Media {
         URL(string: url)!
     }
     
-    var coverURL: URL {
-        URL(string: coverUrl)!
+    var coverURL: URL? {
+        URL(string: coverUrl)
     }
     
     var isSeries: Bool {
@@ -73,36 +73,35 @@ extension Media {
     }
 }
 
+extension Media {
+    static var empty: Media {
+        .init(id: .init(uuidString: "EEEAAAF2-DA0B-4A8F-8F8F-FFFADA2DDDD4")!, title: "", url: "", descriptionShort: "", description: "", coverUrl: "", seriesInfo: "", category: .loadMore, quality: .unknown)
+    }
+}
+
 
 extension Media.Quality: Comparable, Equatable{
-  
+    
     static func index(of aStatus: Media.Quality) -> Int {
-      switch aStatus {
-      case .p360:
-        return 1
-      case .p480:
-        return 2
-      case .p720:
-        return 3
-      case .p1080:
-        return 4
-      case .p1080u:
-        return 5
-      default:
-        return 0
-      }
+        switch aStatus {
+        case .p360: 1
+        case .p480: 2
+        case .p720: 3
+        case .p1080: 4
+        case .p1080u: 5
+        default: 0
+        }
     }
-
+    
     static func > (lhs: Media.Quality, rhs: Media.Quality) -> Bool {
-      return Media.Quality.index(of: lhs) >  Media.Quality.index(of: rhs)
+        Media.Quality.index(of: lhs) >  Media.Quality.index(of: rhs)
     }
     
     static func < (lhs: Media.Quality, rhs: Media.Quality) -> Bool {
-      return Media.Quality.index(of: lhs) <  Media.Quality.index(of: rhs)
+        Media.Quality.index(of: lhs) <  Media.Quality.index(of: rhs)
     }
     
     static func == (lhs: Media.Quality, rhs: Media.Quality) -> Bool {
-      return Media.Quality.index(of: lhs) ==  Media.Quality.index(of: rhs)
+        Media.Quality.index(of: lhs) ==  Media.Quality.index(of: rhs)
     }
-  
 }

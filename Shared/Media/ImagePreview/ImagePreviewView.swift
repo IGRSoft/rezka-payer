@@ -11,14 +11,9 @@ struct ImagePreview : View {
     var url: URL
     
     var body: some View {
-        ZStack {
-            CacheAsyncImage(url: url) { phase in
-                phase.view
-            }
-        }
-        .padding(8)
-        .background(Color.white)
-        .cornerRadius(5)
-        .shadow(radius: 5)
+        CacheAsyncImage(url: url) { $0.view }
+            .background(Color.clear)
+            .cornerRadius(5)
+            .shadow(radius: 5)
     }
 }

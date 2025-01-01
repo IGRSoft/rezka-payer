@@ -38,5 +38,4 @@ extension UserDefaults {
             return val
         }
     }
-    
 }

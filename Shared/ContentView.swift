@@ -40,12 +40,12 @@ struct ContentView: View {
                         MediaContentView()
                             .environmentObject(MediaContentViewModel(category: category.type, subCategories: category.items))
                             .tabItem {
-                                Label(category.name, systemImage: category.iconName)
+                                Text(category.name)
                             }
                     }
                 }
             }
-            .onChange(of: horizontalSizeClass) { newValue in
+            .onChange(of: horizontalSizeClass) { _, newValue in
                 print("debug ContentView onChange \(String(describing: horizontalSizeClass)) -> \(String(describing: newValue))")
             }
             .overlay(overlayView)

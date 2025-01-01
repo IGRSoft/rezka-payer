@@ -178,9 +178,6 @@
 		A5DF36E328EC9AB200E0C5C0 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A5DF36E228EC9AB200E0C5C0 /* SwiftSoup */; };
 		A5DF36E628EC9ABF00E0C5C0 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A5DF36E528EC9ABF00E0C5C0 /* SwiftSoup */; };
 		A5DF36E828EC9AC600E0C5C0 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A5DF36E728EC9AC600E0C5C0 /* SwiftSoup */; };
-		A5F6AB5E291D6864001D21FA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6AB5D291D6864001D21FA /* SearchBarView.swift */; };
-		A5F6AB5F291D6864001D21FA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6AB5D291D6864001D21FA /* SearchBarView.swift */; };
-		A5F6AB60291D6864001D21FA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6AB5D291D6864001D21FA /* SearchBarView.swift */; };
 		A5F6AB62291D68DE001D21FA /* MediaSearchContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6AB61291D68DE001D21FA /* MediaSearchContentViewModel.swift */; };
 		A5F6AB63291D68DE001D21FA /* MediaSearchContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6AB61291D68DE001D21FA /* MediaSearchContentViewModel.swift */; };
 		A5F6AB64291D68DE001D21FA /* MediaSearchContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F6AB61291D68DE001D21FA /* MediaSearchContentViewModel.swift */; };
@@ -252,7 +249,6 @@
 		A5D130F9296F208600383D08 /* Focusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Focusable.swift; sourceTree = "<group>"; };
 		A5D130FD296F2C0E00383D08 /* View+FirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+FirstAppear.swift"; sourceTree = "<group>"; };
 		A5DF36DD28EC871B00E0C5C0 /* MediaContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContentViewModel.swift; sourceTree = "<group>"; };
-		A5F6AB5D291D6864001D21FA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		A5F6AB61291D68DE001D21FA /* MediaSearchContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSearchContentViewModel.swift; sourceTree = "<group>"; };
 		A5FEBD7B29D5F77B0008D8D3 /* DetailedHistoryMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHistoryMedia.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -311,7 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				A50D8FDD28ABF7E4008C66AA /* MediaSearchView.swift */,
-				A5F6AB5D291D6864001D21FA /* SearchBarView.swift */,
 				A5F6AB61291D68DE001D21FA /* MediaSearchContentViewModel.swift */,
 			);
 			path = MediaSearch;
@@ -762,7 +757,6 @@
 				A5B79D2F28ABEF6A006CAF8E /* rezka_playerApp.swift in Sources */,
 				A5A7416A28F738F500B884F7 /* DetailedMedia.swift in Sources */,
 				A5A741CC2902DE8B00B884F7 /* RezkaNavigationApi.swift in Sources */,
-				A5F6AB5E291D6864001D21FA /* SearchBarView.swift in Sources */,
 				A598C18728B2A5670034717C /* KeysTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -824,7 +818,6 @@
 				A5B79D3028ABEF6A006CAF8E /* rezka_playerApp.swift in Sources */,
 				A5A7416B28F738F500B884F7 /* DetailedMedia.swift in Sources */,
 				A5A741CD2902DE8B00B884F7 /* RezkaNavigationApi.swift in Sources */,
-				A5F6AB5F291D6864001D21FA /* SearchBarView.swift in Sources */,
 				A598C18828B2A5670034717C /* KeysTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -886,7 +879,6 @@
 				A5B79D5028ABF110006CAF8E /* ContentView.swift in Sources */,
 				A5A7416C28F738F500B884F7 /* DetailedMedia.swift in Sources */,
 				A5A741CE2902DE8B00B884F7 /* RezkaNavigationApi.swift in Sources */,
-				A5F6AB60291D6864001D21FA /* SearchBarView.swift in Sources */,
 				A598C18928B2A5670034717C /* KeysTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -959,15 +951,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TVOS_DEPLOYMENT_TARGET = 16.0;
+				TVOS_DEPLOYMENT_TARGET = 18.0;
 			};
 			name = Debug;
 		};
@@ -1019,14 +1011,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
-				TVOS_DEPLOYMENT_TARGET = 16.0;
+				TVOS_DEPLOYMENT_TARGET = 18.0;
 			};
 			name = Release;
 		};
@@ -1162,7 +1154,6 @@
 				SDKROOT = appletvos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 16.0;
 			};
 			name = Debug;
 		};
@@ -1189,7 +1180,6 @@
 				SDKROOT = appletvos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 16.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1241,7 +1231,7 @@
 			repositoryURL = "https://github.com/apple/swift-collections.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.4;
+				minimumVersion = 1.1.4;
 			};
 		};
 		A5DF36E128EC9AB200E0C5C0 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
@@ -1249,7 +1239,7 @@
 			repositoryURL = "https://github.com/scinfu/SwiftSoup";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.4.3;
+				minimumVersion = 2.7.6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

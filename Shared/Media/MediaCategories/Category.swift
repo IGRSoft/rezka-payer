@@ -18,6 +18,7 @@ enum Category: String, CaseIterable, Codable {
     case animation
     case announce
     case collections
+    case loadMore
     
     var text: String {
         if self == .general {
@@ -28,51 +29,33 @@ enum Category: String, CaseIterable, Codable {
     
     var icon: Image {
         switch self {
-        case .general:
-            return Image(systemName: "video.fill")
-        case .films:
-            return Image(systemName: "video.fill")
-        case .series:
-            return Image(systemName: "play.square.stack")
-        case .cartoons:
-            return Image(systemName: "ticket")
-        case .animation:
-            return Image(systemName: "paintbrush.pointed")
-        case .search:
-            return Image(systemName: "magnifyingglass")
-        case .new:
-            return Image(systemName: "magnifyingglass")
-        case .none:
-            return Image(systemName: "magnifyingglass")
-        case .announce:
-            return Image(systemName: "magnifyingglass")
-        case .collections:
-            return Image(systemName: "magnifyingglass")
+        case .general: Image(systemName: "video.fill")
+        case .films: Image(systemName: "video.fill")
+        case .series: Image(systemName: "play.square.stack")
+        case .cartoons: Image(systemName: "ticket")
+        case .animation: Image(systemName: "paintbrush.pointed")
+        case .search: Image(systemName: "magnifyingglass")
+        case .new: Image(systemName: "magnifyingglass")
+        case .none: Image(systemName: "magnifyingglass")
+        case .announce: Image(systemName: "magnifyingglass")
+        case .collections: Image(systemName: "magnifyingglass")
+        case .loadMore: Image(systemName: "circle.dashed")
         }
     }
     
     var color: Color {
         switch self {
-        case .general:
-            return Color("CategoryGeneralColor")
-        case .films:
-            return Color("CategoryFilmColor")
-        case .series:
-            return Color("CategorySeriesColor")
-        case .cartoons:
-            return Color("CategoryCartoonsColor")
-        case .animation:
-            return Color("CategoryAnimationColor")
-        case .search:
-            return Color("CategoryGeneralColor")
-        case .new:
-            return Color("CategoryGeneralColor")
-        case .none:
-            return Color("CategoryGeneralColor")
-        case .announce:
-            return Color("CategoryGeneralColor")
-        case .collections:
-            return Color("CategoryGeneralColor")
+        case .general: Color("CategoryGeneralColor")
+        case .films: Color("CategoryFilmColor")
+        case .series: Color("CategorySeriesColor")
+        case .cartoons: Color("CategoryCartoonsColor")
+        case .animation: Color("CategoryAnimationColor")
+        case .search: Color("CategoryGeneralColor")
+        case .new: Color("CategoryGeneralColor")
+        case .none: Color("CategoryGeneralColor")
+        case .announce: Color("CategoryGeneralColor")
+        case .collections: Color("CategoryGeneralColor")
+        case .loadMore: Color("CategoryGeneralColor")
         }
     }
     

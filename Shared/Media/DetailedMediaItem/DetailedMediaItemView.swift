@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-fileprivate let SelectionIcon = "⦿"
-
 struct DetailedMediaItemView: View {
 #if os(iOS)
     static let coverSize = CGSize(width: 200, height: 300)
 #elseif os(macOS)
     static let coverSize = CGSize(width: 300, height: 500)
 #else
-    static let coverSize = CGSize(width: 400, height: 600)
+    static let coverSize = CGSize(width: 340, height: 520)
 #endif
+    
+    private let selectionIcon = "🟢"
     
     @StateObject var viewModel: DetailedMediaItemViewModel
     
@@ -33,11 +33,10 @@ struct DetailedMediaItemView: View {
     let didPlayToEndPublisher = NotificationCenter.Publisher(center: .default, name: .AVPlayerItemDidPlayToEndTime)
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: .zero) {
             Text(viewModel.title)
                 .font(.title)
                 .foregroundStyle(.primary)
-                .padding(.bottom)
             
             Text(viewModel.originalTitle)
                 .font(.subheadline)
@@ -67,7 +66,6 @@ struct DetailedMediaItemView: View {
                                         }
                                         .frame(width: DetailedMediaItemView.coverSize.width, height: DetailedMediaItemView.coverSize.height)
                                         .clipped()
-                                        .padding(.init(top: 16, leading: 0, bottom: 0, trailing: 0))
                                     }
                                     
                                     Button {
@@ -169,6 +167,7 @@ struct DetailedMediaItemView: View {
                                     } label: {
                                         Image(systemName: "play.circle")
                                     }
+                                    .disabled(viewModel.stream.isEmpty)
                                     
                                     if let _ = viewModel.streams?.qualities {
 #if os(tvOS)
@@ -240,7 +239,7 @@ struct DetailedMediaItemView: View {
                 }
             } label: {
                 if currentTitle == translation.value {
-                    Text("\(SelectionIcon) \(translation.value)")
+                    Text("\(selectionIcon)  \(translation.value)")
                 } else {
                     Text(translation.value)
                 }
@@ -262,7 +261,7 @@ struct DetailedMediaItemView: View {
                     }
                 } label: {
                     if currentTitle == name {
-                        Text("\(SelectionIcon) \(name)")
+                        Text("\(selectionIcon)  \(name)")
                     } else {
                         Text(name)
                     }
@@ -285,7 +284,7 @@ struct DetailedMediaItemView: View {
                 } label: {
                     if let episode = episodes.first(where: { $0.id == episodeId }) {
                         if currentTitle == episode.title {
-                            Text("\(SelectionIcon) \(episode.title)")
+                            Text("\(selectionIcon)  \(episode.title)")
                         } else {
                             Text(episode.title)
                         }
@@ -308,7 +307,7 @@ struct DetailedMediaItemView: View {
                     }
                 } label: {
                     if currentTitle == quality {
-                        Text("\(SelectionIcon) \(quality)")
+                        Text("\(selectionIcon)  \(quality)")
                     } else {
                         Text(quality)
                     }
@@ -322,6 +321,7 @@ struct DetailedMediaItemView: View {
         switch viewModel.phase {
         case .fetching:
             ProgressView()
+                .scaleEffect(2)
         case .failure(let error):
             RetryView(text: error.localizedDescription, retryAction: refreshTask)
             
@@ -331,8 +331,7 @@ struct DetailedMediaItemView: View {
     
     @ViewBuilder
     private var cancelButton: some View {
-        Button (role: .cancel) {
-        } label: {
+        Button(role: .cancel) {} label: {
             Text("Отмена")
         }.padding()
     }
