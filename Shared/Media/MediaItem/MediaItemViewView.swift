@@ -20,84 +20,77 @@ struct MediaItemViewView: View {
     @StateObject var bookmarkViewModel: MediaBookmarksViewModel
     
     var body: some View {
-        GeometryReader { proxy in
-            ZStack(alignment: .top) {
-                ZStack(alignment: .topTrailing) {
-                    ZStack (alignment: .bottomLeading) {
-                        if let url = media.coverURL {
-                            CacheAsyncImage(url: url) { $0.view }
-                                .frame(maxWidth: proxy.size.width, maxHeight: proxy.size.height * 0.73)
-                                .padding(.top, 16)
-                        }
-                        
-                        if media.isSeries, let seriesInfo = media.seriesInfo {
-                            Text(seriesInfo)
-                                .font(.headline)
-                                .lineLimit(1)
-                                .padding(16)
-                                .foregroundStyle(.primary)
-                                .colorInvert()
-                                .background(Color("MediaTileSeriesBackgroundColor"))
-                                .cornerRadius(8)
-                        }
-                    }
-                    
-                    HStack(spacing: 16) {
-                        Text(media.category.rawValue)
-                            .font(.headline)
-                            .foregroundStyle(.primary)
-                            .lineLimit(2)
-                            .padding(.leading, 16)
-                        
-                        media.category.icon
-                            .frame(width: 18, height: 18)
-                            .padding(.trailing, 24)
-                            .foregroundStyle(.primary)
-                    }
-                    .padding(8)
-                    .background(media.category.color)
-                    .cornerRadius(8)
+        ZStack(alignment: .top) {
+            ZStack(alignment: .topTrailing) {
+                if let url = media.coverURL {
+                    CacheAsyncImage(url: url) { $0.view }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 
-                ZStack(alignment: .bottomLeading) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        
-                        Spacer()
-                        
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(media.title)
-                                .font(.headline)
-                                .foregroundStyle(.primary)
-                                .lineLimit(2)
-                                .frame(height: 92, alignment: .top)
-                            
-                            HStack {
-                                Text(media.descriptionShort)
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                                    .lineLimit(2)
-                                Spacer()
-                                
-                                if bookmarkViewModel.isBookmarked(for: media) {
-                                    
-                                    Image(systemName: "bookmark.fill")
-                                }
-                            }
-                        }
-                        .padding(12)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.gray.opacity(0.8))
-                        .cornerRadius(8)
+                HStack(spacing: 16) {
+                    Text(media.category.rawValue)
+                        .font(.headline)
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .padding(.leading, 16)
+                    
+                    media.category.icon
+                        .frame(width: 18, height: 18)
+                        .padding(.trailing, 24)
+                        .foregroundStyle(.primary)
+                }
+                .padding(8)
+                .background(media.category.color.opacity(0.9))
+                .clipShape(.rect(bottomLeadingRadius: 8))
+            }
+            
+            ZStack(alignment: .bottomLeading) {
+                VStack(alignment: .leading, spacing: 8) {
+                    
+                    if media.isSeries, let seriesInfo = media.seriesInfo {
+                        Text(seriesInfo)
+                            .font(.subheadline)
+                            .lineLimit(1)
+                            .padding(16)
+                            .foregroundStyle(.primary)
+                            .colorInvert()
+                            .background(Color("MediaTileSeriesBackgroundColor"))
+                            .clipShape(.rect(bottomTrailingRadius: 8, topTrailingRadius: 8))
                     }
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(media.title)
+                            .font(.subheadline)
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                        
+                        HStack {
+                            Text(media.descriptionShort)
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                                .lineLimit(2)
+                            
+                            Spacer()
+                            
+                            Image(systemName: "bookmark.fill")
+                                .opacity(bookmarkViewModel.isBookmarked(for: media) ? 1 : 0.1)
+                        }
+                    }
+                    .padding(12)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.gray.opacity(0.8))
+                    .cornerRadius(8)
                 }
             }
-            .opacity(media.category == .loadMore ? 0.001 : 1)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
         }
+        .opacity(media.category == .loadMore ? 0.001 : 1)
     }
 }
 
 struct MediaItemViewView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaItemViewView(media: Media.previewData.first!, bookmarkViewModel: MediaBookmarksViewModel.shared)
+        MediaContentView()
+            .environmentObject(MediaContentViewModel())
     }
 }

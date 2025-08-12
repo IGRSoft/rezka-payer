@@ -24,6 +24,10 @@ struct Media {
     
     let title: String
     let url: String
+    var uri: String {
+        let components = url.components(separatedBy: "/")
+        return components.suffix(from: 3).joined(separator: "/")
+    }
     let descriptionShort: String
     let description: String?
     let coverUrl: String
@@ -36,7 +40,7 @@ struct Media {
     }
     
     var mediaURL: URL {
-        URL(string: url)!
+        URL(string: "\(RezkaConstantsApi.server)/\(uri)")!
     }
     
     var coverURL: URL? {
@@ -55,14 +59,9 @@ extension Media: Identifiable {}
 extension Media {
     
     static var previewData: [Media] {
-        let previewDataURL = Bundle.main.url(forResource: "medias", withExtension: "json")!
-        let data = try! Data(contentsOf: previewDataURL)
-        
-        let jsonDecoder = JSONDecoder()
-        jsonDecoder.dateDecodingStrategy = .iso8601
-        
-        let apiResponse = try! jsonDecoder.decode(MediaRezkaAPIResponse.self, from: data)
-        return apiResponse.medias
+        [
+            .init(id: .init(uuidString: "EEEAAAF2-DA0B-4A8F-8F8F-FFFADA2DDDD4")!, title: "one", url: "https://example.com", descriptionShort: "description short", description: "description", coverUrl: "", seriesInfo: "", category: .films, quality: .unknown)
+        ]
     }
     
     static var previewCategoryArticles: [CategoryMedias] {

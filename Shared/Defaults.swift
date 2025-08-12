@@ -16,10 +16,10 @@ extension UserDefaults {
     static let group = UserDefaults(suiteName: "group.rezka-player")
     
     var quality : Media.Quality {
-        set(val){
+        set(val) {
             UserDefaults.group?.set(val.rawValue, forKey: quality_key)
         }
-        get{
+        get {
             guard let val = UserDefaults.group?.string(forKey: quality_key) else {
                 return Media.Quality.unknown
             }
@@ -28,10 +28,10 @@ extension UserDefaults {
     }
     
     var translate : Int? {
-        set(val){
+        set(val) {
             UserDefaults.group?.set(val, forKey: translate_key)
         }
-        get{
+        get {
             guard let val = UserDefaults.group?.integer(forKey: translate_key) else {
                 return nil
             }

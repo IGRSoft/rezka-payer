@@ -8,6 +8,6 @@
 
 extension String {
     func isPropaganda() -> Bool {
-        lowercased().contains("россия") || lowercased().contains("ссср")
+        lowercased().contains("россия") || lowercased().contains("ссср") || lowercased().contains("китай")
     }
 }

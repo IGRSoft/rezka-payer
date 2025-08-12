@@ -19,13 +19,28 @@ typealias ViewControllerType = AVPlayerViewController
 struct PlayerViewController: Representable {
     typealias NSViewControllerType = ViewControllerType
     
+    let queue: DispatchQueue = DispatchQueue(label: "LoaderQueue")
+    
     let videoURL: URL?
-        
+    let router: HLSURLRouter
+    
+    let loader: HLSCachingLoader
+    
     private var player: AVPlayer {
-        let playerItem = AVPlayerItem(url: videoURL!)
-        playerItem.canUseNetworkResourcesForLiveStreamingWhilePaused = false
-        playerItem.preferredForwardBufferDuration = TimeInterval(30)
-        return AVPlayer(playerItem: playerItem)
+        if let asset = asset(with: videoURL!, router: router, loader: loader) {
+            let playerItem = AVPlayerItem(asset: asset)
+            playerItem.preferredForwardBufferDuration = TimeInterval(90)
+            return AVPlayer(playerItem: playerItem)
+        } else {
+            let options = [
+                AVURLAssetPreferPreciseDurationAndTimingKey: true,
+                AVURLAssetAllowsCellularAccessKey: true
+            ]
+            let asset = AVURLAsset(url: videoURL!, options: options)
+            let playerItem = AVPlayerItem(asset: asset)
+            playerItem.preferredForwardBufferDuration = TimeInterval(90)
+            return AVPlayer(playerItem: playerItem)
+        }
     }
     
     func makeNSViewController(context: Context) -> NSViewControllerType {
@@ -51,4 +66,42 @@ struct PlayerViewController: Representable {
     
     func updateNSViewController(_ playerController: NSViewControllerType, context: Context) {}
     func updateUIViewController(_ playerController: NSViewControllerType, context: Context) {}
+    
+    /// Creates a caching AVURLAsset from a source URL.
+    /// - Parameters:
+    ///   - url: Original remote media URL.
+    ///   - cache: A configured URLCache.
+    /// - Returns: An AVURLAsset with caching support.
+    func asset(with url: URL, router: HLSURLRouter, loader: HLSCachingLoader) -> AVURLAsset? {
+//        if let data = try? Data(contentsOf: url, options: .uncached) {
+//            let rewrittenData = rewritePlaylist(data, router: router)
+//            let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("local_playlist.m3u8")
+//            try? rewrittenData.write(to: tempURL)
+//
+//            let fakeURL = router.register(tempURL)
+//            let asset = AVURLAsset(url: fakeURL)
+//            asset.resourceLoader.setDelegate(loader, queue: DispatchQueue(label: "LoaderQueue"))
+//            
+//            return asset
+//        } else {
+            return nil
+        //}
+    }
+    
+    func rewritePlaylist(_ rawData: Data, router: HLSURLRouter) -> Data {
+        guard let text = String(data: rawData, encoding: .utf8) else { return rawData }
+
+        let rewritten = text.split(separator: "\n").map { line -> String in
+            if line.hasPrefix("#") {
+                return String(line)
+            }
+            if let originalURL = URL(string: String(line)),
+               let fakeURL = router.register(originalURL) as URL? {
+                return fakeURL.absoluteString
+            }
+            return String(line)
+        }.joined(separator: "\n")
+
+        return Data(rewritten.utf8)
+    }
 }

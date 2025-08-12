@@ -55,6 +55,7 @@ struct MediaContentView: View {
                         } label: {
                             MediaItemViewView(media: media, bookmarkViewModel: bookmarkViewModel)
                                 .frame(width: MediaItemViewView.coverSize.width, height: MediaItemViewView.coverSize.height)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
                         }
 #if os(tvOS)
                         .buttonStyle(MediaButtonStyle())

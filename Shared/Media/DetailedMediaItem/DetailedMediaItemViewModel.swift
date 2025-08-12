@@ -27,8 +27,13 @@ class DetailedMediaItemViewModel: ObservableObject {
     
     private(set) var historyMedia: DetailedHistoryMedia
     
+    private(set) var router = HLSURLRouter(cache: URLCache(memoryCapacity: 10 * 1024 * 1024, diskCapacity: 100 * 1024 * 1024, diskPath: "AVPlayerCache"))
+    
+    private(set) var loader: HLSCachingLoader
+    
     init(media: Media) {
         self.media = media
+        self.loader = HLSCachingLoader(router: router, cache: router.cache)
         historyMedia = DetailedHistoryMedia(mediaId: 0)
     }
     

@@ -64,6 +64,9 @@
 		A598C19328B2A7B00034717C /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C19228B2A7B00034717C /* RetryView.swift */; };
 		A598C19428B2A7B00034717C /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C19228B2A7B00034717C /* RetryView.swift */; };
 		A598C19528B2A7B00034717C /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A598C19228B2A7B00034717C /* RetryView.swift */; };
+		A59DD3BD2DB18C17000E3B0D /* HLSURLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DD3BC2DB18C17000E3B0D /* HLSURLRouter.swift */; };
+		A59DD3BE2DB18C17000E3B0D /* HLSURLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DD3BC2DB18C17000E3B0D /* HLSURLRouter.swift */; };
+		A59DD3BF2DB18C17000E3B0D /* HLSURLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DD3BC2DB18C17000E3B0D /* HLSURLRouter.swift */; };
 		A5A7416128F6F34500B884F7 /* DetailedMediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7416028F6F34500B884F7 /* DetailedMediaItemView.swift */; };
 		A5A7416228F6F34500B884F7 /* DetailedMediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7416028F6F34500B884F7 /* DetailedMediaItemView.swift */; };
 		A5A7416328F6F34500B884F7 /* DetailedMediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7416028F6F34500B884F7 /* DetailedMediaItemView.swift */; };
@@ -188,6 +191,7 @@
 
 /* Begin PBXFileReference section */
 		4AA43CA42B8D950B003CA4FF /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		A505F1CE2E096C390021FDFC /* rezka-player.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "rezka-player.entitlements"; sourceTree = "<group>"; };
 		A50D8FCE28ABF5E7008C66AA /* MediaContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContentView.swift; sourceTree = "<group>"; };
 		A50D8FD328ABF6AC008C66AA /* MediaCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCategoriesViewModel.swift; sourceTree = "<group>"; };
 		A50D8FD928ABF7CF008C66AA /* MediaBookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaBookmarksViewModel.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 		A598C17D28B2A5670034717C /* KeysTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeysTracker.swift; sourceTree = "<group>"; };
 		A598C18D28B2A7730034717C /* EmptyPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceholderView.swift; sourceTree = "<group>"; };
 		A598C19228B2A7B00034717C /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
+		A59DD3BC2DB18C17000E3B0D /* HLSURLRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSURLRouter.swift; sourceTree = "<group>"; };
 		A5A7416028F6F34500B884F7 /* DetailedMediaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMediaItemView.swift; sourceTree = "<group>"; };
 		A5A7416928F738F500B884F7 /* DetailedMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMedia.swift; sourceTree = "<group>"; };
 		A5A7416E28F73A4200B884F7 /* DetailedMediaRezkaAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMediaRezkaAPIResponse.swift; sourceTree = "<group>"; };
@@ -349,6 +354,7 @@
 		A559FEA229117EDB0004380B /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				A59DD3BC2DB18C17000E3B0D /* HLSURLRouter.swift */,
 				A559FEA329117EEE0004380B /* PlayerViewController.swift */,
 			);
 			path = Player;
@@ -481,6 +487,7 @@
 		A5B79D1928ABEF68006CAF8E = {
 			isa = PBXGroup;
 			children = (
+				A505F1CE2E096C390021FDFC /* rezka-player.entitlements */,
 				A5A7419C28F88E6C00B884F7 /* rezka-player-Info.plist */,
 				A50D8FE128ABF838008C66AA /* Localizations */,
 				A5B79D1E28ABEF68006CAF8E /* Shared */,
@@ -737,6 +744,7 @@
 				A50D8FDA28ABF7CF008C66AA /* MediaBookmarksViewModel.swift in Sources */,
 				A5BB8F5728AEB8920070CC77 /* RezkaMediaApi.swift in Sources */,
 				A57D2DB028AEB11600E98298 /* MediaItemViewView.swift in Sources */,
+				A59DD3BE2DB18C17000E3B0D /* HLSURLRouter.swift in Sources */,
 				A5DF36DE28EC871B00E0C5C0 /* MediaContentViewModel.swift in Sources */,
 				A5C2236A29056FBB002B49D5 /* String+Base64.swift in Sources */,
 				A5A741AE2902D86600B884F7 /* CategoryList.swift in Sources */,
@@ -798,6 +806,7 @@
 				A50D8FDB28ABF7CF008C66AA /* MediaBookmarksViewModel.swift in Sources */,
 				A5BB8F5828AEB8920070CC77 /* RezkaMediaApi.swift in Sources */,
 				A57D2DB128AEB11600E98298 /* MediaItemViewView.swift in Sources */,
+				A59DD3BD2DB18C17000E3B0D /* HLSURLRouter.swift in Sources */,
 				A5DF36DF28EC871B00E0C5C0 /* MediaContentViewModel.swift in Sources */,
 				A5C2236B29056FBB002B49D5 /* String+Base64.swift in Sources */,
 				A5A741AF2902D86600B884F7 /* CategoryList.swift in Sources */,
@@ -859,6 +868,7 @@
 				A50D8FDC28ABF7CF008C66AA /* MediaBookmarksViewModel.swift in Sources */,
 				A5BB8F5928AEB8920070CC77 /* RezkaMediaApi.swift in Sources */,
 				A57D2DB228AEB11600E98298 /* MediaItemViewView.swift in Sources */,
+				A59DD3BF2DB18C17000E3B0D /* HLSURLRouter.swift in Sources */,
 				A5DF36E028EC871B00E0C5C0 /* MediaContentViewModel.swift in Sources */,
 				A5C2236C29056FBB002B49D5 /* String+Base64.swift in Sources */,
 				A5A741B02902D86600B884F7 /* CategoryList.swift in Sources */,
@@ -1136,6 +1146,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "rezka-player.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
@@ -1162,6 +1173,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "rezka-player.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;

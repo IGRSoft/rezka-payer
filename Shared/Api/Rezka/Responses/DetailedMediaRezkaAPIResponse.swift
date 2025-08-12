@@ -71,8 +71,11 @@ struct DetailedMediaRezkaAPIResponse: Decodable {
             }
         }
         
-        let list = try doc.getElementsByClass("b-translators__list").first?.getElementsByTag("li")
-        try list?.forEach({ translationElement in
+        let list = try doc.getElementsByClass("b-translators__list").first
+        let itemsLi = try list?.getElementsByTag("li")
+        let itemsA = try list?.getElementsByTag("a")
+        let items = itemsLi?.isEmpty() == true ? itemsA : itemsLi
+        try items?.forEach({ translationElement in
             let title = try translationElement.attr("title")
             let id = Int(try translationElement.attr("data-translator_id")) ?? 0
             

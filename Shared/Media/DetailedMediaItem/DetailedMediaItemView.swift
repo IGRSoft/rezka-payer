@@ -29,7 +29,7 @@ struct DetailedMediaItemView: View {
     @State private var skipEpisodesMenuPresented = false
     @State private var isQualityMenuPresented = false
     @State private var isPlayerPresented = false
-        
+    
     let didPlayToEndPublisher = NotificationCenter.Publisher(center: .default, name: .AVPlayerItemDidPlayToEndTime)
     
     var body: some View {
@@ -198,7 +198,7 @@ struct DetailedMediaItemView: View {
         }
 #if os(tvOS) || os(iOS)
         .fullScreenCover(isPresented: $isPlayerPresented, content: {
-            PlayerViewController(videoURL: URL(string: viewModel.stream))
+            PlayerViewController(videoURL: URL(string: viewModel.stream), router: viewModel.router, loader: viewModel.loader)
                 .edgesIgnoringSafeArea(.all)
                 .transition(.move(edge: .bottom))
                 .onReceive(didPlayToEndPublisher, perform: {_ in

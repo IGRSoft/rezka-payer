@@ -55,7 +55,7 @@ extension AsyncImagePhase {
         case .success(let image):
             AnyView(image
                 .resizable()
-                .aspectRatio(contentMode: .fit))
+                .aspectRatio(contentMode: .fill))
             
         case .failure:
             AnyView(HStack {

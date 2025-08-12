@@ -35,7 +35,6 @@ struct MediaSearchContentView: View {
     
     private let columns = [
         GridItem(.flexible()),
-        GridItem(.flexible()),
         GridItem(.flexible())
     ]
     
@@ -49,6 +48,7 @@ struct MediaSearchContentView: View {
                         } label: {
                             MediaItemViewView(media: media, bookmarkViewModel: bookmarkViewModel)
                                 .frame(width: cardSize.width, height: cardSize.height)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
                         }
 #if os(tvOS)
                         .buttonStyle(.card)
@@ -68,18 +68,11 @@ struct MediaSearchContentView: View {
                         .frame(height: 1)
                         .onAppear(perform: loadMoreTask)
                 }
-            }
-            .onScrollGeometryChange(for: Double.self) { geo in
-                geo.contentSize.width
-            } action: { oldValue, newValue in
-                let newWidth = (newValue - 96) / (newValue > 1000 ? 4 : 3)
-                cardSize = .init(width: newWidth, height: newWidth * 1.6)
+                .padding(.vertical, 24)
             }
         }
         .overlay(overlayView)
-        .onFirstAppear {
-            refreshTask()
-        }
+        .onFirstAppear(refreshTask)
 #if os(macOS)
         .frame(maxWidth: 1024, maxHeight: 1024)
 #endif

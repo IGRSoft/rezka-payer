@@ -11,7 +11,7 @@ import SwiftUI
 class MediaBookmarksViewModel: ObservableObject {
     
     @Published private(set) var bookmarks: [Media] = []
-    private let bookmarkStore = PlistDataStore<[Media]>(filename: "bookmarks")
+    private let bookmarkStore = CloudKitDataStore<[Media]>(recordType: "Media", recordName: "bookmarks")
     
     static let shared = MediaBookmarksViewModel()
     private init() {
@@ -21,7 +21,11 @@ class MediaBookmarksViewModel: ObservableObject {
     }
     
     private func load() async {
-        bookmarks = await bookmarkStore.load() ?? []
+        do {
+            bookmarks = try await bookmarkStore.load() ?? []
+        } catch {
+            bookmarks = []
+        }
     }
     
     func isBookmarked(for media: Media) -> Bool {
@@ -77,7 +81,7 @@ class MediaBookmarksViewModel: ObservableObject {
     private func bookmarkUpdated() {
         let bookmarks = self.bookmarks
         Task {
-            await bookmarkStore.save(bookmarks)
+            try? await bookmarkStore.save(bookmarks)
         }
     }
 }
