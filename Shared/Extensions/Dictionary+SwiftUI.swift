@@ -31,7 +31,7 @@ extension OrderedDictionary {
             VStack {
                 NavigationView {
                     ScrollView {
-                        LazyVGrid(columns: columns, alignment: .leading, spacing: 32) {
+                        LazyVGrid(columns: columns, alignment: .leading, spacing: 16) {
                             ForEach(Array(zip(items.indices, items)), id: \.0) { index, item in
                                 if index % 2 == 1 {
                                     Button(action: {}) {

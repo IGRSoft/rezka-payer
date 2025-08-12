@@ -18,7 +18,13 @@ final class DetailedMediaItemViewModel: ObservableObject {
     
     private let cache: DiskCache<[DetailedMedia]> = .init(filename: "xcadmediacache", expirationInterval: 30 * 60)
     
-    private let history: DiskCache<[DetailedHistoryMedia]> = .init(filename: "xcadmediahistory", expirationInterval: .greatestFiniteMagnitude)
+    private let historyStorage = CloudKitDataStore<[DetailedHistoryMedia]>(recordType: "HistoryMedia", recordName: "history")
+    
+    private let settingsStorage = CloudKitDataStore<MediaSettings>(recordType: "SettingsMedia", recordName: "settings")
+    
+    private var settings: MediaSettings = .init()
+    
+    private var history: [DetailedHistoryMedia] = .init()
     
     let media: Media
     private var detailedMedia: DetailedMedia {
@@ -109,10 +115,14 @@ final class DetailedMediaItemViewModel: ObservableObject {
         
         return nextId
     }
-        
+    
     func setQuality(_ quality: Media.Quality) {
         historyMedia.quality = quality
         phase = .success(detailedMedia)
+        settings.quality = quality
+        Task {
+            try? await settingsStorage.save(settings)
+        }
     }
     
     private(set) var streams: StreamMedia?
@@ -124,7 +134,8 @@ final class DetailedMediaItemViewModel: ObservableObject {
         if Task.isCancelled { return }
         
         try? await cache.loadFromDisk()
-        try? await history.loadFromDisk()
+        history = (try? await historyStorage.load()) ?? .init()
+        settings = (try? await settingsStorage.load()) ?? .init()
         
         if let medias = await cache.value(forKey: "detailed_media_\(media.id)"), let media = medias.first {
             phase = .success(media)
@@ -145,13 +156,13 @@ final class DetailedMediaItemViewModel: ObservableObject {
                 phase = .failure(DataError.generate(for: .rezkaConstantsApi, error: .empty))
                 return
             }
-          
-            let preferedTranslation = UserDefaults.group?.translate ?? -1
-            if detailedMedia.translations.keys.contains(preferedTranslation){
-              currentTranslationId = preferedTranslation
+            
+            let preferedTranslation = settings.translationId
+            if detailedMedia.translations.keys.contains(preferedTranslation) {
+                currentTranslationId = preferedTranslation
             }
             
-            if let histories = await history.value(forKey: "history_media_\(detailedMedia.mediaId)"), let history = histories.first {
+            if let history = history.first(where: { $0.mediaId ==  detailedMedia.mediaId }) {
                 historyMedia = history
                 currentTranslationId = history.translation
                 detailedMedia = try await rezkaAPI.fetchDetails(from: media, translation: currentTranslationId)
@@ -215,6 +226,9 @@ final class DetailedMediaItemViewModel: ObservableObject {
         } else {
             phase = .success(detailedMedia)
         }
+        
+        settings.translationId = id
+        try await settingsStorage.save(settings)
     }
     
     func setCurrentSeason(id: Int) async throws {
@@ -234,17 +248,19 @@ final class DetailedMediaItemViewModel: ObservableObject {
     private func updateStreams(of mediaId: Int) async throws {
         streams = try await rezkaAPI.stream(mediaId: mediaId, translationId: historyMedia.translation, season: historyMedia.season, episode: historyMedia.episode)
         
-        let lastQ: Media.Quality = UserDefaults.group!.quality
+        let lastQ: Media.Quality = settings.quality
         let bestQ: Media.Quality = streams?.bestQualityId ?? .unknown
-      
+        
         if lastQ != .unknown && bestQ > lastQ {
-          historyMedia.quality = lastQ
+            historyMedia.quality = lastQ
         }
         else{
-          historyMedia.quality = bestQ
+            historyMedia.quality = bestQ
         }
-      
-        await history.setValue([historyMedia], forKey: "history_media_\(mediaId)")
-        try? await history.saveToDisk()
+        
+        history.removeAll { $0.mediaId == mediaId }
+        history.append(historyMedia)
+        
+        try await historyStorage.save(history)
     }
 }

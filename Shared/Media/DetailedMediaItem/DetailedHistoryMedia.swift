@@ -51,3 +51,13 @@ final class DetailedHistoryMedia: ObservableObject, Codable {
         try container.encode(quality, forKey: .quality)
     }
 }
+
+extension DetailedHistoryMedia: Equatable {
+    static func == (lhs: DetailedHistoryMedia, rhs: DetailedHistoryMedia) -> Bool {
+        return lhs.mediaId == rhs.mediaId &&
+            lhs.translation == rhs.translation &&
+            lhs.season == rhs.season &&
+            lhs.episode == rhs.episode &&
+            lhs.quality == rhs.quality
+    }
+}

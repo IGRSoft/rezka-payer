@@ -54,7 +54,7 @@ struct DetailedMediaItemView: View {
         VStack {
             NavigationView {
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 32) {
+                    VStack(alignment: .leading, spacing: 16) {
                         HStack(alignment: .top) {
                             if let coverUrl = viewModel.coverUrl {
                                 VStack {
@@ -79,7 +79,7 @@ struct DetailedMediaItemView: View {
                             viewModel.info.grid
                         }
                         
-                        VStack(alignment: .leading, spacing: 32) {
+                        VStack(alignment: .leading, spacing: 16) {
                             Text(viewModel.description)
                                 .font(.headline)
                             
@@ -210,7 +210,6 @@ struct DetailedMediaItemView: View {
     
     private func selectTranslation(id: Int) async {
         try? await viewModel.setCurrentTranslation(id: id)
-        UserDefaults.group?.translate = id
     }
     
     private func selectSeason(id: Int) async {
@@ -224,7 +223,6 @@ struct DetailedMediaItemView: View {
     
     private func selectQuality(id: Media.Quality) async {
       viewModel.setQuality(id)
-      UserDefaults.group?.quality = id
     }
     
     @ViewBuilder
