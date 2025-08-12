@@ -39,7 +39,7 @@ struct NavigationRezkaApi {
     }
     
     func generateNavigationUrl() -> URL {
-        URL(string: RezkaConstantsApi.server)!
+        URL(string: ConstantsApi.server)!
     }
     
     private func request(for url: URL) -> URLRequest {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor
-class MediaContentViewModel: ObservableObject {
+final class MediaContentViewModel: ObservableObject {
     
     @Published var phase = DataFetchPhase<[Media]>.fetching
     

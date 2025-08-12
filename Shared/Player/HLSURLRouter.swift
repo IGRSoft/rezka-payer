@@ -39,9 +39,8 @@ final class HLSCachingLoader: NSObject, AVAssetResourceLoaderDelegate {
                 return
             }
 
-            guard let data = data,
-                  let response = response,
-                  //let contentInfo = request.contentInformationRequest,
+            guard let data = data/*, let response,
+                  let contentInfo = request.contentInformationRequest*/,
                   let dataRequest = request.dataRequest else {
                 request.finishLoading(with: NSError(domain: "HLSData", code: -2))
                 return

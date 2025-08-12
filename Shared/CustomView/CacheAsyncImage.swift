@@ -71,7 +71,7 @@ extension AsyncImagePhase {
     }
 }
 
-fileprivate class ImageCache {
+fileprivate final class ImageCache {
     static private var cache: [URL: Image] = [:]
     static subscript(url: URL) -> Image? {
         get {

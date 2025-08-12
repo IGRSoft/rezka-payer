@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor
-class ContentViewModel: ObservableObject {
+final class ContentViewModel: ObservableObject {
     
     @Published var phase = DataFetchPhase<[CategoryList]>.fetching
     @Published private(set) var isFetching = true

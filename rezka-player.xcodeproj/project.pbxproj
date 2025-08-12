@@ -124,9 +124,9 @@
 		A5A741D02902DEBA00B884F7 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741CF2902DEBA00B884F7 /* ApiConstants.swift */; };
 		A5A741D12902DEBA00B884F7 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741CF2902DEBA00B884F7 /* ApiConstants.swift */; };
 		A5A741D22902DEBA00B884F7 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741CF2902DEBA00B884F7 /* ApiConstants.swift */; };
-		A5A741D52902E10500B884F7 /* RezkaConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D42902E10500B884F7 /* RezkaConstantsApi.swift */; };
-		A5A741D62902E10500B884F7 /* RezkaConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D42902E10500B884F7 /* RezkaConstantsApi.swift */; };
-		A5A741D72902E10500B884F7 /* RezkaConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D42902E10500B884F7 /* RezkaConstantsApi.swift */; };
+		A5A741D52902E10500B884F7 /* ConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D42902E10500B884F7 /* ConstantsApi.swift */; };
+		A5A741D62902E10500B884F7 /* ConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D42902E10500B884F7 /* ConstantsApi.swift */; };
+		A5A741D72902E10500B884F7 /* ConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D42902E10500B884F7 /* ConstantsApi.swift */; };
 		A5A741D92902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D82902E5AA00B884F7 /* NavigationRezkaApiResponse.swift */; };
 		A5A741DA2902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D82902E5AA00B884F7 /* NavigationRezkaApiResponse.swift */; };
 		A5A741DB2902E5AA00B884F7 /* NavigationRezkaApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A741D82902E5AA00B884F7 /* NavigationRezkaApiResponse.swift */; };
@@ -230,7 +230,7 @@
 		A5A741C72902DC7600B884F7 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		A5A741CB2902DE8B00B884F7 /* RezkaNavigationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RezkaNavigationApi.swift; sourceTree = "<group>"; };
 		A5A741CF2902DEBA00B884F7 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
-		A5A741D42902E10500B884F7 /* RezkaConstantsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RezkaConstantsApi.swift; sourceTree = "<group>"; };
+		A5A741D42902E10500B884F7 /* ConstantsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsApi.swift; sourceTree = "<group>"; };
 		A5A741D82902E5AA00B884F7 /* NavigationRezkaApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRezkaApiResponse.swift; sourceTree = "<group>"; };
 		A5A741DC2902EB3E00B884F7 /* Strings+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Filter.swift"; sourceTree = "<group>"; };
 		A5A741E02902F48400B884F7 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
@@ -479,7 +479,7 @@
 				A5A7416D28F73A2D00B884F7 /* Responses */,
 				A5BB8F5628AEB8920070CC77 /* RezkaMediaApi.swift */,
 				A5A741CB2902DE8B00B884F7 /* RezkaNavigationApi.swift */,
-				A5A741D42902E10500B884F7 /* RezkaConstantsApi.swift */,
+				A5A741D42902E10500B884F7 /* ConstantsApi.swift */,
 			);
 			path = Rezka;
 			sourceTree = "<group>";
@@ -635,7 +635,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 2600;
 				ORGANIZATIONNAME = "IGR Soft";
 				TargetAttributes = {
 					A5B79D2528ABEF6A006CAF8E = {
@@ -730,7 +730,7 @@
 				A5BB8F5328AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift in Sources */,
 				A5A741B82902D97200B884F7 /* CategoriesListItem.swift in Sources */,
 				A5A741D02902DEBA00B884F7 /* ApiConstants.swift in Sources */,
-				A5A741D52902E10500B884F7 /* RezkaConstantsApi.swift in Sources */,
+				A5A741D52902E10500B884F7 /* ConstantsApi.swift in Sources */,
 				A5A741C82902DC7600B884F7 /* CategoryListView.swift in Sources */,
 				A5A7417D28F7F0A200B884F7 /* ImagePreviewView.swift in Sources */,
 				A5A7418128F7F1CA00B884F7 /* CacheAsyncImage.swift in Sources */,
@@ -792,7 +792,7 @@
 				A5BB8F5428AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift in Sources */,
 				A5A741B92902D97200B884F7 /* CategoriesListItem.swift in Sources */,
 				A5A741D12902DEBA00B884F7 /* ApiConstants.swift in Sources */,
-				A5A741D62902E10500B884F7 /* RezkaConstantsApi.swift in Sources */,
+				A5A741D62902E10500B884F7 /* ConstantsApi.swift in Sources */,
 				A5A741C92902DC7600B884F7 /* CategoryListView.swift in Sources */,
 				A5A7417E28F7F0A200B884F7 /* ImagePreviewView.swift in Sources */,
 				A5A7418228F7F1CA00B884F7 /* CacheAsyncImage.swift in Sources */,
@@ -854,7 +854,7 @@
 				A5BB8F5528AEB7AB0070CC77 /* MediaRezkaAPIResponse.swift in Sources */,
 				A5A741BA2902D97200B884F7 /* CategoriesListItem.swift in Sources */,
 				A5A741D22902DEBA00B884F7 /* ApiConstants.swift in Sources */,
-				A5A741D72902E10500B884F7 /* RezkaConstantsApi.swift in Sources */,
+				A5A741D72902E10500B884F7 /* ConstantsApi.swift in Sources */,
 				A5A741CA2902DC7600B884F7 /* CategoryListView.swift in Sources */,
 				A5A7417F28F7F0A200B884F7 /* ImagePreviewView.swift in Sources */,
 				A5A7418328F7F1CA00B884F7 /* CacheAsyncImage.swift in Sources */,
@@ -966,6 +966,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1025,6 +1026,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;

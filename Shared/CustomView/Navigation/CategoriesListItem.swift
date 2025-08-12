@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class CategoriesListItem: SubCategoryList {
+final class CategoriesListItem: SubCategoryList {
     typealias ItemType = String
     
     @ViewBuilder

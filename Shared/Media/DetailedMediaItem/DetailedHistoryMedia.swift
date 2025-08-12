@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DetailedHistoryMedia: ObservableObject, Codable {
+final class DetailedHistoryMedia: ObservableObject, Codable {
     
     private(set) var mediaId: Int
     

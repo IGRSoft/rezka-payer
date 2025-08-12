@@ -40,7 +40,7 @@ struct Media {
     }
     
     var mediaURL: URL {
-        URL(string: "\(RezkaConstantsApi.server)/\(uri)")!
+        URL(string: "\(ConstantsApi.server)/\(uri)")!
     }
     
     var coverURL: URL? {

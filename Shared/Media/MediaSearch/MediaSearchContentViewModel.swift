@@ -9,7 +9,7 @@
 import SwiftUI
 
 @MainActor
-class MediaSearchContentViewModel: ObservableObject {
+final class MediaSearchContentViewModel: ObservableObject {
     
     @Published var phase = DataFetchPhase<[Media]>.fetching
     private let bookmarkViewModel = MediaBookmarksViewModel.shared

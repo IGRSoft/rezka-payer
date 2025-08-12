@@ -43,7 +43,7 @@ actor CloudKitDataStore<T: Codable & Equatable>: DataStore {
        - recordType: Type name for CKRecord.
        - recordName: Unique record name.
      */
-    init(containerIdentifier: String = "iCloud.com.igrsoft.rezka-player",
+    init(containerIdentifier: String = ConstantsApi.iCloudKey,
          databaseScope: CKDatabase.Scope = .private,
          recordType: String,
          recordName: String) {

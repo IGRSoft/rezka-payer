@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor
-class MediaBookmarksViewModel: ObservableObject {
+final class MediaBookmarksViewModel: ObservableObject {
     
     @Published private(set) var bookmarks: [Media] = []
     private let bookmarkStore = CloudKitDataStore<[Media]>(recordType: "Media", recordName: "bookmarks")

@@ -9,7 +9,7 @@ import SwiftUI
 import OrderedCollections
 
 @MainActor
-class DetailedMediaItemViewModel: ObservableObject {
+final class DetailedMediaItemViewModel: ObservableObject {
     
     @Published var phase = DataFetchPhase<DetailedMedia>.fetching
     @Published private(set) var isFetching = true

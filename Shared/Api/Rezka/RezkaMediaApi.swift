@@ -142,7 +142,7 @@ struct MediaRezkaApi {
     }
     
     private func generateSearchURL(from query: String, page: Int = 1) -> URL {
-        var urlComponents = URLComponents(string: "\(RezkaConstantsApi.server)/search")
+        var urlComponents = URLComponents(string: "\(ConstantsApi.server)/search")
         urlComponents?.queryItems = [URLQueryItem(name: "do", value: "search"),
                                      URLQueryItem(name: "subaction", value: "search"),
                                      URLQueryItem(name: "q", value: query),
@@ -155,7 +155,7 @@ struct MediaRezkaApi {
     }
     
     private func generateNewMediaURL(from category: Category, subCategory: SubCategoryList?, page: Int = 1) -> URL {
-        var url = RezkaConstantsApi.server
+        var url = ConstantsApi.server
         
         if category != .general {
             url += "/\(category.rawValue)"
@@ -185,7 +185,7 @@ struct MediaRezkaApi {
                                      URLQueryItem(name: "action", value: "get_episodes"),
         ]
         
-        var request = URLRequest(url: URL(string: "\(RezkaConstantsApi.server)/ajax/get_cdn_series/")!)
+        var request = URLRequest(url: URL(string: "\(ConstantsApi.server)/ajax/get_cdn_series/")!)
         request.httpMethod = ApiConstants.HttpMethod.post.rawValue
         request.httpBody = bodyComponents.query?.data(using: .utf8)
         request.setValue(ApiConstants.userAgent, forHTTPHeaderField: ApiConstants.userAgentKey)
@@ -211,7 +211,7 @@ struct MediaRezkaApi {
         
         bodyComponents.queryItems?.append(contentsOf: additionalData)
         
-        var request = URLRequest(url: URL(string: "\(RezkaConstantsApi.server)/ajax/get_cdn_series/")!)
+        var request = URLRequest(url: URL(string: "\(ConstantsApi.server)/ajax/get_cdn_series/")!)
         request.httpMethod = ApiConstants.HttpMethod.post.rawValue
         request.httpBody = bodyComponents.query?.data(using: .utf8)
         request.setValue(ApiConstants.userAgent, forHTTPHeaderField: ApiConstants.userAgentKey)
